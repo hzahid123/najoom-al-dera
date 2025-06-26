@@ -1,0 +1,426 @@
+<mat-card class="cardWithShadow">
+  <div class="hero-section">
+    <div class="hero-image-container-aboutus">
+      <div class="hero-content">
+        <!-- transparent card  make in below clas   -->
+        <mat-card class=" card-transparent overflow-hidden" style="margin-top: 30px;">
+          <mat-card-content class="p-32 p-b-0">         <div class="row justify-content-between">
+              <div class="col-sm-12">
+                <mat-card-title class="f-s-24 m-t-16 lh-24 m-b-24">About Us</mat-card-title>
+                <mat-card-subtitle class="f-s-16 m-t-16 lh-24 m-b-24" style="color: white">
+                  <div class="floating-card-content">
+                    <h1 class="service-title-dis" style="color: rgb(248, 248, 247); font-size: clamp(1.5rem, 3vw, 3rem); line-height: 1.3; margin: 0.5em 0;">
+                      {{ service.headingdata }}
+                    </h1>
+                    <h4 class="service-title" style="color: rgb(248, 248, 247)">
+                      {{ service.description }}
+                    </h4>
+                    <button mat-flat-button style="margin-top: 20px">
+                      {{ service.btndiscription }}
+                    </button>
+                  </div>
+                </mat-card-subtitle>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="row align-items-start margins">
+    <!-- Video Column -->
+    <div class="col-md-6 d-flex justify-content-center video-column">
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="350"
+         [src]="safeVideoUrl"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Content Column -->
+    <div class="col-md-6 content-column">
+      <h1 class="service-main-title">
+        <span class="first-letter">{{ service.content.title.substring(0, 3) }}</span>
+        <span class="text-primary">&nbsp;{{ ' ' + service.content.title.substring(3) }}</span>
+      </h1>
+      <div class="overview-paragraphs">
+        <p>{{ service.content.paragraphs[0] }}</p>
+        <p>{{ service.content.paragraphs[1] }}</p>
+      </div>
+    </div>
+  </div>
+
+  @if(service) {
+  <mat-card class="cardWithShadow margins">
+    <mat-card-content class="p-24">
+      <!-- Mission Section -->
+      <div class="mission-section">
+        <div class="mission-container">
+          <h1 class="mission-heading text-primary">
+            <span style="color: black">Our </span>Mission
+          </h1>
+          <mat-card class="mission-card">
+            <mat-card-content>
+              <p class="mission-text">
+                To empower businesses with cutting-edge technology solutions,
+                unlocking their growth potential by connecting them with
+                passionate and skilled engineers.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <!-- Vision Section -->
+      <div class="mission-section">
+        <div class="mission-container">
+          <h1 class="mission-heading text-primary">
+            <span style="color: black">Our </span>Vision
+          </h1>
+          <mat-card class="mission-card">
+            <div class="card-boundary"></div>
+            <mat-card-content>
+              <p class="mission-text">
+                At DryRun, we envision transforming IT systems into smart,
+                agile, and AI-driven digital assets. With a decade of expertise,
+                we empower global clients through innovative, adaptive
+                solutions, shaping a future where technology meets the dynamic
+                demands of a connected world.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      <!-- Values Section with Swiper  in which swiper also work on mobile screen -->
+       
+<div class="values-section">
+  <div class="values-header">
+    <h2 class="section-title text-primary">OUR VALUES</h2>
+    <h3 class="section-subtitle">We Believe in Providing Values.</h3>
+  </div>
+
+  <div class="values-container">
+    <!-- Desktop Grid View -->
+    <div class="values-grid desktop-only">
+      <!-- Value 1 -->
+      <mat-card class="value-card">
+        <mat-card-content>
+          <mat-icon class="value-icon text-primary">rocket_launch</mat-icon>
+          <h4 class="value-title">Ship & Iterate</h4>
+          <p class="value-description">
+            We move swiftly, refining our approach with every step to
+            maintain a leading edge.
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Value 2 -->
+      <mat-card class="value-card">
+        <mat-card-content>
+          <mat-icon class="value-icon text-primary">handshake</mat-icon>
+          <h4 class="value-title">Trusted Pair of Hands</h4>
+          <p class="value-description">
+            Dependable and steadfast, we are always there when it matters
+            most.
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Value 3 -->
+      <mat-card class="value-card">
+        <mat-card-content>
+          <mat-icon class="value-icon text-primary">star</mat-icon>
+          <h4 class="value-title">Overdeliver on the Promise</h4>
+          <p class="value-description">
+            Exceeding expectations is our standard, going beyond what's
+            assured.
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Value 4 -->
+      <mat-card class="value-card">
+        <mat-card-content>
+          <mat-icon class="value-icon text-primary">visibility</mat-icon>
+          <h4 class="value-title">Clear is Kind</h4>
+          <p class="value-description">
+            Transparent, honest communication keeps everyone on the same
+            page.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Mobile Swiper -->
+<div class="swiper valuesSwiper mobile-only" style="width: 100%; height: 100%;">
+      <div class="swiper-wrapper">
+        <!-- Value 1 -->
+        <div class="swiper-slide">
+          <mat-card class="value-card">
+            <mat-card-content>
+              <mat-icon class="value-icon text-primary">rocket_launch</mat-icon>
+              <h4 class="value-title">Ship & Iterate</h4>
+              <p class="value-description">
+                We move swiftly, refining our approach with every step to
+                maintain a leading edge.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="swiper-slide">
+          <mat-card class="value-card">
+            <mat-card-content>
+              <mat-icon class="value-icon text-primary">handshake</mat-icon>
+              <h4 class="value-title">Trusted Pair of Hands</h4>
+              <p class="value-description">
+                Dependable and steadfast, we are always there when it matters
+                most.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="swiper-slide">
+          <mat-card class="value-card">
+            <mat-card-content>
+              <mat-icon class="value-icon text-primary">star</mat-icon>
+              <h4 class="value-title">Overdeliver on the Promise</h4>
+              <p class="value-description">
+                Exceeding expectations is our standard, going beyond what's
+                assured.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="swiper-slide">
+          <mat-card class="value-card">
+            <mat-card-content>
+              <mat-icon class="value-icon text-primary">visibility</mat-icon>
+              <h4 class="value-title">Clear is Kind</h4>
+              <p class="value-description">
+                Transparent, honest communication keeps everyone on the same
+                page.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Leadership Section  in which swiper also work on mobile screen -->
+<!-- <div class="leadership-section">
+  <h1 class="section-heading text-primary">
+    <span style="color: black">Our </span>Leadership
+  </h1>
+  
+  <div class="leadership-container">
+    <div class="leadership-grid desktop-only">
+      <mat-card class="leader-card">
+        <div class="leader-image-container">
+          <img src="/assets/images/aboutus/img11.jpeg" alt="Atta Ul Mohamin" class="leader-image"/>
+          <a href="https://linkedin.com/in/atta-ul-mohamin" target="_blank" class="linkedin-icon">
+            <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+          </a>
+        </div>
+        <mat-card-content>
+          <h3>
+            <span>Atta Ul</span> &nbsp;
+            <span class="text-primary">Mohamin</span>
+          </h3>
+          <p class="leader-title">Founder, CEO</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="leader-card">
+        <div class="leader-image-container">
+          <img src="/assets/images/aboutus/img3.jpeg" alt="Hassan Nissar" class="leader-image"/>
+          <a href="https://linkedin.com/in/hassan-nissar" target="_blank" class="linkedin-icon">
+            <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+          </a>
+        </div>
+        <mat-card-content>
+          <h3>
+            <span  >Hassan </span>
+            <span class="text-primary">Nissar</span>
+          </h3>
+          <p class="leader-title">Founder, CEO</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="leader-card">
+        <div class="leader-image-container">
+          <img src="/assets/images/aboutus/img2.jpeg" alt="Haseeb Zahid" class="leader-image"/>
+          <a href="https://linkedin.com/in/haseeb-zahid" target="_blank" class="linkedin-icon">
+            <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+          </a>
+        </div>
+        <mat-card-content>
+          <h3>
+            <span  >Haseeb </span>
+            <span class="text-primary">Zahid</span>
+          </h3>
+          <p class="leader-title">Founder, CEO</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="leader-card">
+        <div class="leader-image-container">
+          <img src="/assets/images/aboutus/img4.jpeg" alt="Aleena Ahmed" class="leader-image"/>
+          <a href="https://linkedin.com/in/aleena-ahmed" target="_blank" class="linkedin-icon">
+            <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+          </a>
+        </div>
+        <mat-card-content>
+          <h3>
+            <span  >Aleena </span>
+            <span class="text-primary">Ahmed</span>
+          </h3>
+          <p class="leader-title">HR Director</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="swiper leadershipSwiper mobile-only">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <mat-card class="leader-card">
+            <div class="leader-image-container">
+              <img src="/assets/images/aboutus/img11.jpeg" alt="Atta Ul Mohamin" class="leader-image"/>
+              <a href="https://linkedin.com/in/atta-ul-mohamin" target="_blank" class="linkedin-icon">
+                <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+              </a>
+            </div>
+            <mat-card-content>
+              <h3>
+                <span style="color: black">Atta </span> <span>Ul </span>
+                <span class="text-primary">Mohamin</span>
+              </h3>
+              <p class="leader-title">Founder, CEO</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="swiper-slide">
+          <mat-card class="leader-card">
+            <div class="leader-image-container">
+              <img src="/assets/images/aboutus/img3.jpeg" alt="Hassan Nissar" class="leader-image"/>
+              <a href="https://linkedin.com/in/hassan-nissar" target="_blank" class="linkedin-icon">
+                <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+              </a>
+            </div>
+            <mat-card-content>
+              <h3>
+                <span style="color: black">Hassan </span>
+                <span class="text-primary">Nissar</span>
+              </h3>
+              <p class="leader-title">Founder, CEO</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="swiper-slide">
+          <mat-card class="leader-card">
+            <div class="leader-image-container">
+              <img src="/assets/images/aboutus/img2.jpeg" alt="Haseeb Zahid" class="leader-image"/>
+              <a href="https://linkedin.com/in/haseeb-zahid" target="_blank" class="linkedin-icon">
+                <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+              </a>
+            </div>
+            <mat-card-content>
+              <h3>
+                <span style="color: black">Haseeb </span>
+                <span class="text-primary">Zahid</span>
+              </h3>
+              <p class="leader-title">Founder, CEO</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="swiper-slide">
+          <mat-card class="leader-card">
+            <div class="leader-image-container">
+              <img src="/assets/images/aboutus/img4.jpeg" alt="Aleena Ahmed" class="leader-image"/>
+              <a href="https://linkedin.com/in/aleena-ahmed" target="_blank" class="linkedin-icon">
+                <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+              </a>
+            </div>
+            <mat-card-content>
+              <h3>
+                <span style="color: black">Aleena </span>
+                <span class="text-primary">Ahmed</span>
+              </h3>
+              <p class="leader-title">HR Director</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div> -->
+    </mat-card-content>
+  </mat-card>
+  }
+</mat-card>

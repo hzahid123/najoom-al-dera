@@ -1,0 +1,255 @@
+@use "../variables" as *;
+
+html .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  height: $header-height;
+}
+
+.topbar-dd {
+  min-width: 360px !important;
+}
+
+.apps-dd {
+  min-width: 530px !important;
+  overflow: unset !important;
+
+  .mat-mdc-menu-content {
+    padding: 0;
+  }
+}
+.hide-on-mobile {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+
+
+.about-dd {
+  min-width: 200px !important;
+  overflow: unset !important;
+
+  .mat-mdc-menu-content {
+    padding: 0;
+  }
+}
+
+.blog-dd {
+  min-width: 200px !important;
+  overflow: unset !important;
+  
+  .mat-mdc-menu-content {
+    padding: 0;
+  }
+
+  .menu-content {
+    display: flex;
+    flex-direction: column;  // Key change for vertical layout
+    padding: 16px;          // Adjust padding as needed
+  }
+
+  .menu-item {
+    padding: 12px 16px;     // Consistent item padding
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); // Optional separator
+    
+    &:last-child {
+      border-bottom: none;  // Remove border from last item
+    }
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04); // Hover effect
+    }
+  }
+}
+
+
+.text-hover-primary:hover {
+  .hover-text {
+    color: $primary;
+  }
+}
+
+.upgrade-bg {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.profile-dd {
+  margin-top: -5px;
+  margin-left: -5px;
+}
+
+.dark-theme {
+  .topbar {
+    .mat-mdc-icon-button {
+      color: $dark-text-secondary !important;
+    }
+
+    .mdc-button {
+      --mdc-text-button-label-text-color: $dark-text-secondary !important;
+    }
+  }
+}
+
+
+
+
+/* Mobile Menu */
+.mobile-menu-container {
+  position: fixed;
+  top: 64px; /* Adjust based on your header height */
+  left: -100%;
+  width: 100%;
+  height: calc(100vh - 64px);
+background-color: #1c2733;
+  z-index: 1000;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,.2);
+
+  &.open {
+    left: 0;
+  }
+
+  &.rtl-menu {
+    left: auto;
+    right: -100%;
+    
+    &.open {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .mobile-menu-content {
+    padding: 20px;
+
+    .mat-accordion {
+      width: 100%;
+
+      .mat-expansion-panel {
+        box-shadow: none;
+        border-radius: 0;
+        border-bottom: 1px solid #eee;
+
+        .mat-expansion-panel-header {
+          padding: 0 16px;
+          height: 48px;
+        }
+      }
+    }
+
+    .mobile-submenu {
+      display: flex;
+      flex-direction: column;
+      padding: 8px 0;
+
+      .mobile-menu-item {
+        padding: 12px 16px;
+        text-decoration: none;
+        color: inherit;
+        border-left: 3px solid transparent;
+        transition: all 0.3s;
+
+        &:hover {
+          background: rgba(0,0,0,0.04);
+          border-left-color: #3f51b5;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 959px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .actions-container {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .mobile-menu-container {
+    display: none !important;
+  }
+}
+
+/* RTL Mobile Menu Adjustments */
+.rtl-menu {
+  .mobile-submenu {
+    .mobile-menu-item {
+      border-left: none;
+      border-right: 3px solid transparent;
+
+      &:hover {
+        border-left-color: transparent;
+        border-right-color: #3f51b5;
+      }
+    }
+  }
+}
+
+/* Ensure these buttons stay visible on mobile */
+.home-button,
+.lets-talk-button {
+  display: flex !important; /* Override any hiding classes */
+}
+
+/* Adjust spacing for mobile */
+@media (max-width: 599px) {
+  .actions-container {
+    gap: 4px !important; /* Reduce gap on small screens */
+  }
+  
+  .home-button,
+  .lets-talk-button {
+    min-width: auto !important; /* Allow buttons to shrink */
+    padding: 0 8px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Hide desktop nav completely on mobile */
+@media (max-width: 959px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  /* Ensure mobile menu button stays visible */
+  .mobile-menu-button {
+    display: flex !important;
+  }
+}
+
+//////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dropdown menu styling */
+.mat-menu-panel {
+  border-radius: 12px !important; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important; /* Soft shadow */
+  border: 1px solid #f0f0f0 !important; /* Light border */
+  margin-top: 8px !important; /* Space from button */
+}

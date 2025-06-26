@@ -1,0 +1,122 @@
+.footer-container {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  margin-top: 100px;
+
+  .footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 48px 16px 24px;
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+
+      .footer-section {
+        h1, h3 {
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+
+        p, li {
+          font-size: 14px;
+          line-height: 1.6;
+          margin-bottom: 10px;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #8e2157;
+            }
+          }
+        }
+
+        &.subscribe {
+          .subscribe-form {
+            .mat-form-field {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: start;
+      gap: 20px;
+      margin: 20px 0;
+
+      a {
+        font-size: 20px;
+          color: #8e2157;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #5b595a;
+        }
+      }
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      padding-top: 10px;
+    }
+  }
+}
+
+// RTL Support
+.rtl-footer {
+  direction: rtl;
+
+  .footer-grid {
+    direction: rtl;
+  }
+
+  .footer-section {
+    text-align: right;
+
+    ul {
+      padding-right: 0;
+    }
+
+    .mat-form-field {
+      direction: rtl;
+      text-align: right;
+
+      .mat-form-field-infix {
+        text-align: right;
+      }
+
+      .mat-form-field-suffix {
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 768px) {
+  .footer-container {
+    .footer-content {
+      padding: 24px 16px;
+    }
+
+    .footer-social {
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+}

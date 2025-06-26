@@ -1,0 +1,223 @@
+<mat-toolbar class="topbar  " [class.rtl-header]="selectedLanguage.code === 'ar-KW'">
+  <!-- Branding - Hidden on mobile -->
+  <div class="d-flex branding align-items-center">
+    <app-branding></app-branding>
+  </div>
+
+  <!-- Desktop Navigation - Hidden on mobile -->
+
+  <div class="d-none d-lg-flex desktop-nav ">
+
+
+
+    <!-- What We Do -->
+    <button mat-button [matMenuTriggerFor]="servicemenu" aria-label="Services">
+      <div class="d-flex align-items-center">
+        {{ 'HEADER.WHAT_WE_DO' | translate }}
+        <i-tabler name="chevron-down" class="icon-16 m-l-4"></i-tabler>
+      </div>
+    </button>
+
+    <mat-menu #servicemenu="matMenu" class="apps-dd cardWithShadow">
+      <div class="row">
+        <div class="col-sm-8 p-r-0">
+          <div class="p-x-16 p-y-32">
+            <h4 style="text-decoration: underline; cursor: pointer;" class="f-s-18 f-w-600 m-b-16"
+              [routerLink]="['/apps/services/list']">
+              {{ 'SERVICES.TITLE' | translate }}
+            </h4>
+            @for(service of translatedServices; track service.id) {
+            <div class="text-hover-primary">
+              <a [routerLink]="[service.link]" class="hover-text text-decoration-none f-s-14 f-w-600 d-block p-y-8">
+                {{ service.translatedTitle }}
+              </a>
+            </div>
+            }
+          </div>
+          <div class="b-t-1 p-24 d-none d-lg-flex align-items-center justify-content-between apps-dd">
+            <span class="d-flex align-items-center f-s-16 f-w-500">
+              <i-tabler name="help" class="icon-20 m-r-8"></i-tabler>
+              {{ 'HEADER.FAQ' | translate }}
+            </span>
+            <a (click)="goToFaq()" mat-flat-button color="primary">
+              {{ 'HEADER.CHECK' | translate }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </mat-menu>
+
+    <!-- How We Deliver -->
+    <button mat-button [matMenuTriggerFor]="appsmenu" aria-label="How We Deliver">
+      <div class="d-flex align-items-center">
+        {{ 'HEADER.HOW_WE_DELIVER' | translate }}
+        <i-tabler name="chevron-down" class="icon-16 m-l-4"></i-tabler>
+      </div>
+    </button>
+
+    <mat-menu #appsmenu="matMenu" class="blog-dd cardWithShadow">
+      <div class="menu-content">
+        @for(appdd of translatedApps; track appdd.id) {
+        <a [routerLink]="[appdd.link]" class="menu-item d-flex align-items-center text-decoration-none">
+          <div>
+            <h5 class="f-s-14 f-w-600 m-0 textprimary hover-text">
+              {{ appdd.translatedTitle }}
+            </h5>
+          </div>
+        </a>
+        }
+      </div>
+    </mat-menu>
+
+    <!-- Who We Are -->
+    <button mat-button [matMenuTriggerFor]="aboutmenu" aria-label="About Us">
+      <div class="d-flex align-items-center">
+        {{ 'HEADER.WHO_WE_ARE' | translate }}
+        <i-tabler name="chevron-down" class="icon-16 m-l-4"></i-tabler>
+      </div>
+    </button>
+
+    <mat-menu #aboutmenu="matMenu" class="about-dd cardWithShadow">
+      <div class="row">
+        <div class="col-sm-8 p-r-0">
+          <div class="p-x-16 p-y-32">
+            @for (about of translatedAboutUs; track about.id) {
+            <div class="text-hover-primary mb-2">
+              <a class="hover-text f-s-14 f-w-600 d-block p-y-8 text-decoration-none" [routerLink]="[about.link]"
+                style="text-decoration: none; cursor: pointer;">
+                {{ about.translatedTitle }}
+              </a>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </mat-menu>
+
+  </div>
+
+  <!-- Spacer -->
+  <span class="flex-1-auto"></span>
+
+  <!-- Right Side Actions -->
+
+  <!-- home -->
+  <!-- Right Side Actions - Always visible even on mobile -->
+  <div class="actions-container">
+    <div class="d-flex gap-8 align-items-center ">
+      <!-- Home Button - Always visible -->
+      <a mat-button [routerLink]="['/']" class="home-button hide-on-mobile">
+        {{ 'HEADER.HOME' | translate }}
+      </a>
+
+      <!-- Let's Talk Button - Always visible -->
+      <button mat-button class="lets-talk-button b-1 border-secondary text-secondary hide-on-mobile"
+        (click)="goToContact()">
+        {{ 'HEADER.LETS_TALK' | translate }}
+      </button>
+
+
+      <!-- Theme Toggle - Always visible -->
+      @if(options.theme=='light'){
+      <button mat-icon-button aria-label="lightdark" (click)="setlightDark('dark')">
+        <i-tabler class="d-flex icon-22" [name]="'moon'"></i-tabler>
+      </button>
+      }@else{
+      <button mat-icon-button aria-label="lightdark" (click)="setlightDark('light')">
+        <i-tabler class="d-flex icon-22" [name]="'sun'"></i-tabler>
+      </button>
+      }
+
+      <!-- Language Selector -->
+      <button [matMenuTriggerFor]="flags" mat-icon-button class="m-r-5">
+        <img [src]="selectedLanguage.icon" class="rounded-circle object-cover icon-20" />
+      </button>
+      <mat-menu #flags="matMenu" class="cardWithShadow">
+        @for(lang of languages; track lang.icon) {
+        <button mat-menu-item (click)="changeLanguage(lang)">
+          <div class="d-flex align-items-center">
+            <img [src]="lang.icon" class="rounded-circle object-cover m-r-8 icon-20" />
+            <span class="f-s-14">{{ lang.language }}</span>
+          </div>
+        </button>
+        }
+      </mat-menu>
+
+      <!-- Mobile Menu Toggle - Only visible on mobile -->
+      <button mat-icon-button (click)="toggleMobileMenu()" class="d-flex d-lg-none mobile-menu-button">
+        <i-tabler [name]="isMobileMenuOpen ? 'x' : 'menu-2'" class="icon-20 d-flex"></i-tabler>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Mobile Menu -->
+<div class="mobile-menu-container" [class.open]="isMobileMenuOpen" [class.rtl-menu]="selectedLanguage.code === 'ar-KW'">
+  <div class="mobile-menu-content">
+    <!-- <a mat-button [routerLink]="['/']" (click)="toggleMobileMenu()">
+      {{ 'HEADER.HOME' | translate }}
+    </a>
+    
+    <button mat-button (click)="toggleMobileMenu()" [routerLink]="['/apps/contactus']">
+      {{ 'HEADER.LETS_TALK' | translate }}
+    </button> -->
+
+    <!-- What We Do Mobile -->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ 'HEADER.WHAT_WE_DO' | translate }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="mobile-submenu">
+          <a *ngFor="let service of translatedServices" [routerLink]="[service.link]" (click)="toggleMobileMenu()"
+            class="mobile-menu-item">
+            {{ service.translatedTitle }}
+          </a>
+          <a [routerLink]="['/theme-pages/faq']" (click)="toggleMobileMenu()" class="mobile-menu-item">
+            {{ 'HEADER.FAQ' | translate }}
+          </a>
+        </div>
+      </mat-expansion-panel>
+
+      <!-- How We Deliver Mobile -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ 'HEADER.HOW_WE_DELIVER' | translate }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="mobile-submenu">
+          <a *ngFor="let app of translatedApps" [routerLink]="[app.link]" (click)="toggleMobileMenu()"
+            class="mobile-menu-item">
+            {{ app.translatedTitle }}
+          </a>
+        </div>
+      </mat-expansion-panel>
+
+      <!-- Who We Are Mobile -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ 'HEADER.WHO_WE_ARE' | translate }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="mobile-submenu">
+          <a *ngFor="let about of translatedAboutUs" [routerLink]="[about.link]" (click)="toggleMobileMenu()"
+            class="mobile-menu-item">
+            {{ about.translatedTitle }}
+          </a>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

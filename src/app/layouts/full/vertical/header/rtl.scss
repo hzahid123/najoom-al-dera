@@ -1,0 +1,25 @@
+/* Global RTL overrides */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+
+  .mat-menu-panel {
+    direction: rtl;
+    text-align: right;
+    left: auto !important;
+    right: 0 !important;
+  }
+
+  .mat-menu-item {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .m-l-4 {
+    margin-left: 0 !important;
+    margin-right: 4px !important;
+  }
+
+  /* Add other RTL overrides as needed */
+}

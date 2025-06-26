@@ -1,0 +1,454 @@
+{
+  
+  "HEADER": {
+    "WHAT_WE_DO": "What We Do",
+    "HOW_WE_DELIVER": "How We Deliver",
+    "WHO_WE_ARE": "Who We Are",
+    "HOME": "Home",
+    "LETS_TALK": "Let's Talk Business",
+    "FAQ": "Frequently Asked Questions",
+    "CHECK": "Check"
+  },
+  "SERVICES": {
+    "TITLE": "Services",
+    "WEB_DEV": "Web Development",
+    "MOBILE_DEV": "Mobile App Development",
+    "UI_UX": "UX/UI Design",
+    "ECOMMERCE": "E-commerce Solutions",
+    "CUSTOM_SOFTWARE": "Custom Software Development",
+    "QA": "Quality Assurance"
+  },
+  "APPS": {
+    "BLOGS": "Blogs",
+    "SERVICES": "Services"
+  },
+  "ABOUT": {
+    "ABOUT_US": "About Us",
+    "GEOGRAPHIES": "Geographies"
+  },
+
+
+  "CONTACT": {
+    "CONTACT_US": "Contact Us",
+    "LETS_TALK": "Let's Talk Business",
+    "HAVE_PROJECT": "Have A Project To Discuss?",
+    "WE_ARE_READY": "We Are Ready",
+    "COMMITMENT": "We are committed to understanding your requirements and crafting a tailored solution that aligns with your goals.",
+    "CONNECTION_DETAILS": "Enter your details and someone from our team will reach out to find a time to connect with you.",
+    "NAME": "Name",
+    "NAME_PLACEHOLDER": "",
+    "COMPANY": "Company",
+    "COMPANY_PLACEHOLDER": "",
+    "EMAIL": "Email",
+    "EMAIL_PLACEHOLDER": "",
+    "REGION": "Region",
+    "PHONE": "Phone No",
+    "PHONE_PLACEHOLDER": "",
+    "BUDGET": "Budget",
+    "SERVICES_NEEDED": "Services you're looking for*",
+    "PROJECT_DETAILS": "Project Details",
+    "SEND": "Send",
+    "SUCCESS_MESSAGE": "Thank you! Your message has been sent.",
+    "ERROR_MESSAGE": "Oops! Something went wrong. Please try later."
+  },
+  "SERVICES_contactform": {
+    "REMOTE_IT": "Remote IT Resources",
+    "CUSTOM_SOFTWARE": "Custom Software Development",
+    "WEB_DEV": "Web Development",
+    "MOBILE_APP": "Mobile App Development",
+    "AR_VR": "AR/VR",
+    "GAMING": "Gaming",
+    "CYBER_SECURITY": "Cyber Security",
+    "OTHER": "Other IT Services"
+  }
+
+
+
+
+
+
+
+
+
+  ,"FAQ": {
+    "TITLE": "Frequently asked questions",
+    "SUBTITLE": "Get to know more about ready-to-use our products",
+    "QUESTIONS": {
+      "Q1": {
+        "TITLE": "What Services Do DryRun Offer?",
+        "CONTENT": "We offer a wide range of digital solutions, such as custom software development, cloud services and integration, Next-Gen technologies, staff augmentation, digital marketing, QA & support, creative designing, and many more."
+      },
+      "Q2": {
+        "TITLE": "How Do You Process At DryRun?",
+        "CONTENT": "Our process is comprehensive and structured. We start with a thorough analysis of your requirements. It goes through multiple steps, including strategic planning, design, testing, and deployment."
+      },
+      "Q3": {
+        "TITLE": "Do You Offer Free Consultation?",
+        "CONTENT": "Yes, we offer free consultation for web development services. We welcome our clients and listen to their ideas. We discuss their goals and ensure a successful collaboration."
+      },
+      "Q4": {
+        "TITLE": "How Does DryRun Ensure Quality Standards?",
+        "CONTENT": "Our experts ensure we meet all the requirements of our customers using the latest technology and deliver error-free projects to our clients."
+      },
+      "Q5": {
+        "TITLE": "Does DryRun Provide Customer Support After Project Delivery?",
+        "CONTENT": "Yes, we offer ongoing support and maintenance to keep the digital solution secure & optimized for performance. Our team also considers customer feedback analysis to provide post-launch customer support."
+      }
+    }
+  },
+
+
+  "FOOTER": {
+    "COMPANY_NAME": "Dry Run",
+    "ADDRESS": {
+      "LINE1": "40-B1 MM Alam Rd, Block B1 Block C 1",
+      "LINE2": "Gulberg III, Lahore, Punjab 54680"
+    },
+    "EMAIL": "contact@dryrunsolutions.com",
+    "PHONE": "+92 3126449414",
+    "SERVICES": {
+      "TITLE": "Services"
+    },
+    "COMPANY": {
+      "TITLE": "Company",
+      "PRODUCT": "Product",
+      "GEOGRAPHIES": "Geographies",
+      "ABOUT_US": "About Us",
+      "CONTACT": "Contact Us",
+      "BLOGS": "Blogs"
+    },
+    "LOCATION": {
+      "TITLE": "Location",
+      "USA": "United States (USA)",
+      "KUWAIT": "Kuwait",
+      "UAE": "United Arab Emirates (UAE)",
+      "KSA": "Saudi Arabia (KSA)",
+      "PAKISTAN": "Pakistan"
+    },
+    "SUBSCRIBE": {
+      "TITLE": "Subscribe",
+      "DESCRIPTION": "Get exclusive insights, curated resources and expert guidance.",
+      "EMAIL_PLACEHOLDER": "Enter your email"
+    },
+    "COPYRIGHT": "DRY RUN 1.0 | All Rights Reserved"
+  },
+  "SERVICES_footer": {
+    "WEB_DEV": "Web Development",
+    "MOBILE_APP": "Mobile App Development",
+    "CUSTOM_SOFTWARE": "Custom Software Development",
+    "UI_UX": "UX/UI Design",
+    "ECOMMERCE": "E-commerce Solutions",
+    "AUTOMATION": "Automation & Apps"
+  }
+,
+
+
+
+
+
+
+
+
+
+  "LANDING": {
+    "BANNER": {
+      "SUBTITLE": "Build smarter. Launch faster. Succeed with",
+      "TITLE_PART1": "Future-ready",
+      "TITLE_PART2": ".Net Core Angular & AI",
+      "TITLE_PART3": "Solutions",
+      "DESCRIPTION": "At {{company}}, we transform your ideas into powerful digital products using cutting-edge technologies, scalable boilerplates, and intelligent automation.",
+      "BUTTON": "Get In Touch"
+    },
+    "TRUSTED_BY": "Trusted by",
+    "COMPANIES": "75+ startups & enterprises worldwide",
+    "SECTION_TITLE": "Production-Ready, AI-Driven & Angular + .NET Core by Dry Run",
+    "SERVICES": "Digital Solutions & Services",
+        "SERVICESpara": "We design, develop, and deliver solutions tailored to your business needs.",
+"VIEW_MORE_SERVICES": "View More Services",
+  "VIEW_LESS_SERVICES": "View Less Services",
+    
+    "DEMOS_BLOGS": "Tech Insights & Blogs ",
+        "DEMOS_BLOGSpara": "Stay updated with expert articles, tech trends, and practical solutions",
+         "VIEW_MORE_DEMOS": "View More Demos",
+  "VIEW_LESS_DEMOS": "View Less Demos",
+"VIEW_MORE_feature": "View More Feature",
+"VIEW_LESS_feature": "View Less Feature",
+
+
+    
+    "LIVE_PREVIEW": "Live preview",
+    "DEMO_SLIDER": "   Our Tech Stack",
+    "DEMO_SLIDERdis": "  Equipped with the latest tools, our teams deliver impactful solutions designed to grow your business",
+
+            
+
+    "TESTIMONIALS_TITLE": "Don't just take our words for it, See what Clients like you are saying",
+    "FEATURES_SUBTITLE": "ALMOST COVERED EVERYTHING",
+    "FEATURES_TITLE": "Other Amazing Features & Flexibility Provided",
+    "DEMOS": {
+      "WEBSITE_DEV": "Website Development",
+      "MOBILE_DEV": "Mobile Development",
+      "UI_UX": "UI/UX Design",
+      "ECOMMERCE": "E-commerce Solutions",
+      "CUSTOM_SOFTWARE": "Custom Software Development",
+      "QA": "Quality Assurance"
+    },
+    "APP_DEMOS": {
+      "WEB_APPS": "Dynamic Web Applications",
+      "MOBILE_APPS": "Mobile Gamificationt",
+      "AI": "Generative AI",
+      "PATIENT_MONITORING": "Custom Web App",
+      "WEB_DEV": "Effective System Integrations",
+      "WEB_DEV_2": "Cross Platform Web App"
+    },
+    "TESTIMONIALS": {
+      "MOBILE_APP_DEV": "Mobile App Development",
+      "DOTNET_ANGULAR": ".NET & Angular Web Solution",
+      "AI_INTEGRATION": "AI Integration & Backend",
+      "TESTIMONIAL_1": "Their mobile app team was incredible. Smooth delivery and great UI/UX — exactly what we needed for our ecommerce app in Kuwait.",
+"TESTIMONIAL_2": "We received a secure, scalable, and high-performing system built using .NET Core and Angular. The results truly exceeded our expectations and boosted our operational efficiency.",
+      "TESTIMONIAL_3": "Their AI integration saved our customer support hours per week. The backend is reliable, and the support team is very responsive."
+    },
+    
+  "FEATURES": {
+  "CUSTOM_PORTALS": "Custom Web Portals",
+  "CUSTOM_PORTALS_DESC": "Tailored dashboards and admin panels built with Angular & .NET.",
+  "MOBILE_APP_DEV": "Mobile App Development",
+  "MOBILE_APP_DEV_DESC": "We deliver scalable mobile apps for iOS and Android using modern frameworks.",
+  "AI_INTEGRATION": "AI Integration",
+  "AI_INTEGRATION_DESC": "From chatbots to automation, we implement AI to improve your workflows.",
+  "REUSABLE_BOILERPLATES": "Reusable Boilerplates",
+  "REUSABLE_BOILERPLATES_DESC": "Prebuilt Angular/.NET solutions for faster development cycles.",
+  "SECURE_ARCHITECTURE": "Secure Architecture",
+  "SECURE_ARCHITECTURE_DESC": "We follow best practices to build secure APIs and data handling layers.",
+  "DATA_ANALYTICS": "Data Analytics",
+  "DATA_ANALYTICS_DESC": "Track KPIs with real-time dashboards powered by your data.",
+  "MULTILINGUAL_SUPPORT": "Multilingual Support",
+  "MULTILINGUAL_SUPPORT_DESC": "We provide i18n-ready apps with RTL and Arabic localization.",
+  "EASY_MAINTENANCE": "Easy Maintenance",
+  "EASY_MAINTENANCE_DESC": "Our solutions are clean-coded and easy to maintain or scale.",
+  "API_DEVELOPMENT": "API Development",
+  "API_DEVELOPMENT_DESC": "We build scalable RESTful and GraphQL APIs for any platform.",
+  "PAYMENT_INTEGRATION": "Payment Integration",
+  "PAYMENT_INTEGRATION_DESC": "Integrate local and global payment gateways like KNET, Stripe, etc.",
+  "ONGOING_SUPPORT": "Ongoing Support",
+  "ONGOING_SUPPORT_DESC": "We provide long-term support and updates post-deployment.",
+  "DEVELOPER_DOCS": "Developer Docs",
+  "DEVELOPER_DOCS_DESC": "Clean developer documentation for easier onboarding and use.",
+  "PROJECT_SCHEDULING": "Project Scheduling",
+  "PROJECT_SCHEDULING_DESC": "We stick to realistic timelines and communicate at every phase.",
+  "CLIENT_COMMUNICATION": "Client-first Communication",
+  "CLIENT_COMMUNICATION_DESC": "Our team is always available on WhatsApp, Teams, and Zoom."
+}
+  },
+
+   "GEO": {
+    "TITLE": "Our Global Presence",
+    "SUBTITLE": "We support clients in 23+ countries and drive continued growth through innovation and transformation.",
+    "LAHTITLE": "Lahore | Head Office",
+    "KWTITLE": "Kuwait | Office",
+    "IMG_ALT": "Service overview",
+    "KUWAIT_ADDRESS": {
+    "CENTER_NAME": "Najum Al-Deera Center",
+    "SERVICE": "Car Seat Upholstery",
+    "TYPES": "Private - Express - Trien",
+    "PHONE": "Phone: 96686771 - 911119771",
+    "ADDRESS": "Kuwait - Shuwaikh - International Street - Opp. Beirut Restaurant"
+  }
+  },
+  "LEADERSHIP": {
+    "OUR": "Our",
+    "TITLE": "Leadership",
+    "ATTA_NAME": "Atta Ul Mohamin",
+    "HASSAN_NAME": "Hassan Nissar",
+    "HASEEB_NAME": "Haseeb Zahid",
+    "ALEENA_NAME": "Aleena Ahmed",
+    "CEO_TITLE": "Founder, CEO",
+    "COFOUNDER": " Co-Founder",
+    "HR_TITLE": "HR Director"
+  }
+,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "EXTRAS": {
+    "Analytical": "Analytical",
+    "eCommerce": "eCommerce",
+    "Chat": "Chat",
+    "Calendar": "Calendar",
+    "Email": "Email",
+    "Contacts": "Contacts",
+    "Courses": "Courses",
+    "Employee": "Employee",
+    "Notes": "Notes",
+    "Tickets": "Tickets",
+    "Invoice": "Invoice",
+    "Blog": "Blog",
+    "Posts": "Posts",
+    "Detail": "Detail",
+    "ToDo": "ToDo",
+    "Taskboard": "Taskboard",
+    "Roll Base Access": "Roll Base Access",
+    "Treeview": "Treeview",
+    "Pricing": "Pricing",
+    "Account Setting": "Account Setting",
+    "FAQ": "FAQ",
+    "Landingpage": "Landingpage",
+    "Widgets": "Widgets",
+    "Cards": "Cards",
+    "Banners": "Banners",
+    "Charts": "Charts",
+    "Form elements": "Form elements",
+    "Autocomplete": "Autocomplete",
+    "Button": "Button",
+    "Checkbox": "Checkbox",
+    "Radio": "Radio",
+    "Datepicker": "Datepicker",
+    "Form Layouts": "Form Layouts",
+    "Form Horizontal": "Form Horizontal",
+    "Form Vertical": "Form Vertical",
+    "Form Wizard": "Form Wizard",
+    "Tables": "Tables",
+    "Basic Table": "Basic Table",
+    "Dynamic Table": "Dynamic Table",
+    "Expand Table": "Expand Table",
+    "Filterable Table": "Filterable Table",
+    "Footer Row Table": "Footer Row Table",
+    "HTTP Table": "HTTP Table",
+    "Mix Table": "Mix Table",
+    "Multi Header Footer": "Multi Header Footer",
+    "Pagination Table": "Pagination Table",
+    "Row Context Table": "Row Context Table",
+    "Selection Table": "Selection Table",
+    "Sortable Table": "Sortable Table",
+    "Sticky Column": "Sticky Column",
+    "Sticky Header Footer": "Sticky Header Footer",
+    "Datatables": "Datatables",
+    "Basic DataTable": "Basic DataTable",
+    "Material Table": "Material Table",
+    "Table Editing": "Table Editing",
+    "Filter Table": "Filter Table",
+    "Line": "Line",
+    "Gredient": "Gredient",
+    "Area": "Area",
+    "Candlestick": "Candlestick",
+    "Column": "Column",
+    "Doughnut & Pie": "Doughnut & Pie",
+    "Radialbar & Radar": "Radialbar & Radar",
+    "Ui Components": "Ui Components",
+    "Badge": "Badge",
+    "Expansion Panel": "Expansion Panel",
+    "Chips": "Chips",
+    "Dialog": "Dialog",
+    "Lists": "Lists",
+    "Divider": "Divider",
+    "Menu": "Menu",
+    "Paginator": "Paginator",
+    "Progress Bar": "Progress Bar",
+    "Progress Spinner": "Progress Spinner",
+    "Ripples": "Ripples",
+    "Slide Toggle": "Slide Toggle",
+    "Slider": "Slider",
+    "Snackbar": "Snackbar",
+    "Tabs": "Tabs",
+    "Toolbar": "Toolbar",
+    "Tooltips": "Tooltips",
+    "Login": "Login",
+    "Side Login": "Side Login",
+    "Boxed Login": "Boxed Login",
+    "Register": "Register",
+    "Side Register": "Side Register",
+    "Boxed Register": "Boxed Register",
+    "Forgot Password": "Forgot Password",
+    "Side Forgot Password": "Side Forgot Password",
+    "Boxed Forgot Password": "Boxed Forgot Password",
+    "Two Steps": "Two Steps",
+    "Side Two Steps": "Side Two Steps",
+    "Boxed Two Steps": "Boxed Two Steps",
+    "Error": "Error",
+    "Maintenance": "Maintenance",
+    "Menu Level": "Menu Level",
+    "Menu 1": "Menu 1",
+    "Menu 2": "Menu 2",
+    "Disabled": "Disabled"
+  }
+}

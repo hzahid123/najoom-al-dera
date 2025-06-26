@@ -1,0 +1,52 @@
+<!-- Add a container div to prevent layout overflow -->
+<div class="services-page-container">
+  <!-- Hero Section - Removed row wrapper here -->
+  <div class="hero-section">
+    <div class="hero-image-container-services">
+      <div class="hero-content">
+        <mat-card class="shadow-none card-transparent bg-light-primary">
+          <mat-card-content class="p-32 p-b-0">
+            <div class="row justify-content-center">
+              <div class="col-sm-12 text-center">
+                <mat-card-title class="f-s-24 m-t-16 text-primary lh-24 m-b-24">
+                  <h1>Our Services</h1>
+                </mat-card-title>
+                <mat-card-subtitle class="text-white">
+                  <h4 class="service-title-dis">Professional solutions tailored to your business needs</h4>
+                </mat-card-subtitle>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Grid - Wrapped in proper container -->
+  <div class="container">
+    <div class="row g-4"> <!-- Added gutter spacing -->
+      @for(service of services; track service.id) {
+        <div class="col-sm-6 col-lg-4">
+          <mat-card class="cardWithShadow position-relative card-hover cursor-pointer h-100" 
+                   (click)="viewServiceDetails(service.id)">
+            <div class="image-container rounded">
+              <img mat-card-image
+                  src="{{ service.imgSrc }}"
+                  alt="{{ service.title }}"
+                  class="uniform-image w-100" /> <!-- Added w-100 -->
+            </div>
+            <mat-card-content>
+              <mat-card-title class="mat-headline-6 m-t-10 fw-bold">
+                {{ service.title }}
+              </mat-card-title>
+              <p class="f-s-14 m-t-8">{{ service.description }}</p>
+              <button mat-button class="b-1 border-secondary text-secondary m-t-16">
+                Learn More
+              </button>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<mat-card class="cardWithShadow">
+  <!-- Hero Image Section -->
+  <div class="image-container">
+    <img mat-card-image [src]="blogDetail()?.imgSrc" alt="Blog post image" class="responsive-image">
+  </div>
+
+  <!-- Title Section -->
+  <mat-card-content class="p-24 b-b-1">
+    <mat-card class="shadow-none bg-light-primary overflow-hidden">
+      <mat-card-content class="p-32 p-b-0">
+        <div class="row justify-content-between">
+          <div class="col-sm-6">
+            <h2 class="text-primary">{{ blogDetail()?.heading }} </h2>
+            <mat-card-title class="m-t-16 m-b-24 blog-title" style="font-size: x-large;">
+              {{ blogDetail()?.title }}
+            </mat-card-title>  
+                        <h5>{{ blogDetail()?.time }} </h5>
+        
+          </div>
+          <div  class="col-sm-5  ">
+            <img src="assets/images/backgrounds/welcome-bg2.png" alt="welcome" width="300" class="d-none d-lg-flex welcome-img" >
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+
+  <!-- Full Width Sections (col-12) -->
+@if (blogDetail()?.content?.fullWidthSections) {
+  @for (section of blogDetail()?.content?.fullWidthSections; track $index) {
+    <mat-card-content class="p-24">
+      <div class="full-width-section">
+        <h2 class="full-width-title  text-primary">{{ section.title }}</h2>
+        @for (paragraph of section.paragraphs; track $index) {
+          <p class="full-width-paragraph">{{ paragraph }}</p>
+        }
+        @if (section.image) {
+          <div class="full-width-image-container">
+            <img [src]="section.image" 
+                 alt="{{ section.title }}" 
+                 class="full-width-content-image">
+          </div>
+        }
+      </div>
+    </mat-card-content>
+  }
+}
+
+<!-- Special Two Column Section (col-6) -->
+@if (blogDetail()?.content?.featureSection) {
+  <mat-card-content class="p-24">
+    <div class="row align-items-center feature-section">
+      <!-- Text Content -->
+      <div class="col-md-6">
+        <h2 class="feature-title">{{ blogDetail()?.content?.featureSection.title }}</h2>
+        @for (paragraph of blogDetail()?.content?.featureSection.paragraphs; track $index) {
+          <p class="feature-paragraph">{{ paragraph }}</p>
+        }
+      </div>
+      
+      <!-- Image Content -->
+      <div class="col-md-6">
+        <div class="feature-image-container">
+          <img [src]="blogDetail()?.content?.featureSection.image" 
+               alt="{{ blogDetail()?.content?.featureSection.title }}" 
+               class="feature-image">
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+}
+
+
+  <!-- Full Width Feature Image -->
+  @if (blogDetail()?.content?.featuresImage) {
+    <div class="final-full-width-image">
+      <div class="final-image-container">
+        <img [src]="blogDetail()?.content?.featuresImage" 
+             alt="Featured content" 
+             class="final-feature-image">
+      </div>
+    </div>
+  }
+</mat-card>

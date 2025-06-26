@@ -1,0 +1,853 @@
+@use "../variables" as *;
+@import 'swiper/swiper-bundle.css';
+
+
+
+.textdesign {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Arial Black', Gadget, sans-serif; // Arial Black with fallbacks
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+
+  // Mobile responsiveness
+  @media (max-width: 768px) {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+}
+
+
+.demos-dd {
+  max-width: $boxedWidth !important;
+}
+.uniform-image {
+  width: 100%;
+  height: 100%;
+  // object-fit: cover; /* This will crop images to fit */
+  object-position: center; /* Center the image in the container */
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Slower, smoother zoom */
+
+}
+
+
+.container{
+ max-width: max-content;  
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS Styles */
+.services-section, .demos-section {
+  padding: 40px 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  
+}
+
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  gap: 20px;
+  padding: 0 20px;
+  justify-content: center;
+}
+
+.service-card, .demo-card {
+  display: block;
+  width: 300px;
+  height: 280px; /* Reduced from 300px for better proportions */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  position: relative; /* For better hover layering */
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+// .card-image {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Slower, smoother zoom */
+// }
+
+/* Enhanced hover effect */
+.service-card:hover, 
+.demo-card:hover {
+  transform: translateY(-8px); /* More pronounced lift */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover .card-image, 
+.demo-card:hover .card-image {
+  transform: scale(1.1); /* Subtler zoom */
+}
+
+/* Title with improved hover state */
+.card-title {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .card-title,
+.demo-card:hover .card-title {
+  transform: translateY(-5px); /* Title lifts with card */
+}
+
+.title-text {
+  background-color: #0000001a ;               backdrop-filter: blur(10px);
+  color: white;
+  padding: 8px 16px; /* Slightly more horizontal padding */
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .title-text,
+.demo-card:hover .title-text {
+  background-color: #a02864; /* Slightly lighter on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 50px; /* Fully rounded edges */
+  background-color: #8681811a ;               backdrop-filter: blur(10px);
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 220px; /* Ensures consistent width */
+  
+  &:hover {
+    background-color: #a02864; /* Slightly lighter on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-icon {
+  margin-left: 8px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  transition: transform 0.3s ease;
+}
+
+.view-more-btn:hover .btn-icon {
+  transform: translateY(2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1399px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 300px);
+  }
+}
+
+@media (max-width: 1099px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+@media (max-width: 767px) {
+  .cards-grid {
+    grid-template-columns: 300px;
+  }
+  
+  .service-card, .demo-card {
+    height: 260px; /* Slightly shorter on mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------
+// banner
+// ----------------------------------------------------------
+// ----------------------------------------------------------
+// Video Banner
+// ----------------------------------------------------------
+.video-banner-section {
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.video-background-wrapper {
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  z-index: 0;
+  
+  
+  // This ensures full coverage including redline space
+  &:before {
+    content: '';
+    position: absolute;
+    left: -100vw;
+    right: -100vw;
+    top: 0;
+    bottom: 0;
+    background-color: #000; // Fallback color
+    z-index: -1;
+  }
+}
+
+.video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+.video-banner-content {
+  color: white;
+  padding: 40px 0;
+  
+  .subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  h1 {
+    font-size: 54px;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+    font-weight: 700;
+    
+    span {
+      font-weight: 700;
+    }
+  }
+  
+  .description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 90%;
+  }
+}
+
+// Responsive styles
+@media (max-width: 1200px) {
+  .video-banner-content h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  .video-banner-section {
+    min-height: 400px;
+    height: auto;
+    padding: 80px 0;
+  }
+  
+  .video-banner-content {
+    padding: 20px 0;
+    
+    h1 {
+      font-size: 32px;
+    }
+    
+    .description {
+      font-size: 16px;
+    }
+  }
+}
+
+
+//  if u want to appply slide than use this  below
+
+// .banner-title {
+//   font-size: 36px;
+//   line-height: 44px;
+// }
+
+// .banner-subtitle {
+//   line-height: 25px;
+// }
+
+// .btn-custom {
+//   height: 56px !important;
+//   padding: 0 52px !important;
+//   font-size: 16px;
+
+//   &.sm {
+//     padding: 0 34px !important;
+//   }
+// }
+
+
+
+
+
+
+
+
+// end slider column 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// sections
+
+.spacer {
+  padding: 40px 0 50px;
+}
+
+.section-title {
+  font-size: 28px;
+  line-height: 32px;
+
+}
+.section-titledis {
+  font-size: 17px;
+  line-height: 32px;
+  margin-bottom: 45px;
+
+}
+
+@media (min-width: 991px) {
+  .section-title {
+    font-size: 36px;
+    line-height: 43px;
+  }
+}
+
+
+
+
+
+
+
+
+// demo slider
+.dual-slider-section {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff; // Optional if images have white bg
+  padding: 0;
+  margin: 0;
+  
+}
+
+.slider-row {
+  display: flex;
+  width: max-content;
+  height: 50%;
+  position: relative;
+
+  img {
+    height: 100%;
+    width: 100vw;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+}
+
+.top-slider {
+  animation: slide-left 16s linear infinite;
+}
+
+.bottom-slider {
+  animation: slide-right 16s linear infinite;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.lh-base {
+  line-height: 1.75;
+}
+
+// call to action
+
+.shape-card {
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.spacer-sm {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.spacer-bottom {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.section-title2 {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+.c2a-card {
+  margin-top: -70px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.border-white {
+  border: 1px solid $white !important;
+}
+
+.border-accent {
+  border: 1px solid $accent !important;
+}
+
+.border-primary {
+  border: 1px solid $primary !important;
+}
+
+.hstack {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media (max-width: 767px) {
+  .hstack {
+    flex-direction: column;
+  }
+
+  .bg-size-cover {
+    background-size: cover;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Features Section Styles */
+.features-section {
+  padding: 60px 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.feature-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .feature-card {
+    padding: 25px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ////////////////////////// testominal swiping
+
+
+
+.testimonials-section {
+  padding: 60px 0;
+
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .testimonial-card {
+    height: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .user-info {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .user-details {
+        flex: 1;
+
+        h6 {
+          font-size: 15px;
+          font-weight: 600;
+          margin: 0;
+        }
+
+        span {
+          font-size: 13px;
+          color: #666;
+          display: block;
+        }
+
+        .rating-stars {
+          display: flex;
+          margin-top: 6px;
+
+          i-tabler {
+            width: 16px;
+            height: 16px;
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+  }
+
+  .testimonials-grid {
+    display: block;
+  }
+
+  .swiper {
+    display: none;
+    padding-bottom: 40px;
+
+    &-wrapper {
+      padding: 10px 0;
+    }
+
+    &-slide {
+      width: 90%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    &-pagination {
+      margin-top: 20px;
+      text-align: center;
+
+      &-bullet {
+        background: #8e2157;
+        opacity: 0.5;
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+
+        &-active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 0;
+
+    .testimonials-grid {
+      display: none;
+    }
+
+    .swiper {
+      display: block;
+    }
+
+    .testimonial-card {
+      margin: 0 auto;
+      max-width: 300px;
+      padding: 16px;
+    }
+
+    .testimonial-text {
+      font-size: 13px;
+    }
+  }
+}
+
+.mobile-only {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.desktop-only {
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rtl-style {
+  text-align: right;
+  margin-left: 40px; // adjust as needed
+}
+
+body.rtl {
+  .hstack {
+    justify-content: flex-end;
+  }
+
+  i-tabler {
+    margin-right: 0;
+    margin-left: 8px;
+  }
+}

@@ -1,0 +1,136 @@
+<div  class="values-section">
+<div class="global-presence-section   spacer" [dir]="isRTL ? 'rtl' : 'ltr'">
+  <!-- Header Section -->
+  <div class="header-card values-header text-center">
+    <h2 class="section-title text-primary textdesign">{{ 'GEO.TITLE' | translate }}</h2>
+    <h3 class="section-subtitle">
+      {{ 'GEO.SUBTITLE' | translate }}
+    </h3>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="content-card  ">
+    <mat-card-content>
+      <div class="row align-items-center gx-5">
+        <!-- Video Column -->
+          <!-- Video Column -->
+    <div class="col-md-6 d-flex justify-content-center video-column">
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="350"
+         [src]="safeVideoUrl"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+        <!-- Content Column -->
+        <div class="col-md-6 content-column">
+          <div class="content-wrapper">
+            <h1 class="service-main-title mat-display-1">
+              <span class="first-letter">{{ getTranslatedTitle('GEO.LAHTITLE').firstPart }}</span>
+              <span class="text-primary">&nbsp;{{ getTranslatedTitle('GEO.LAHTITLE').rest }}</span>
+            </h1>
+
+            <div class="overview-paragraphs">
+              @for(paragraph of service.content.paragraphs; track $index) {
+                <p class="mat-body-1">{{ paragraph }}</p>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content style="margin-top: 50px;">
+      <div class="row align-items-center gx-5">
+        <!-- Content Column -->
+        <div class="col-md-6 content-column">
+          <div class="content-wrapper">
+            <h1 class="service-main-title mat-display-1">
+              <span class="first-letter">{{ getTranslatedTitle('GEO.KWTITLE').firstPart }}</span>
+              <span class="text-primary">&nbsp;{{ getTranslatedTitle('GEO.KWTITLE').rest }}</span>
+            </h1>
+
+         <div class="overview-paragraphs ">
+  @for(paragraph of service.content.paragraphss; track $index) {
+    <p class="mat-body-1" *ngIf="$index === 0">{{ paragraph }}</p>
+    <p class="mat-body-1" *ngIf="$index === 1">{{ 'GEO.KUWAIT_ADDRESS.CENTER_NAME' | translate }}</p>
+    <p class="mat-body-1" *ngIf="$index === 2">{{ 'GEO.KUWAIT_ADDRESS.SERVICE' | translate }}</p>
+    <p class="mat-body-1" *ngIf="$index === 3">{{ 'GEO.KUWAIT_ADDRESS.TYPES' | translate }}</p>
+    <p class="mat-body-1" *ngIf="$index === 4">{{ 'GEO.KUWAIT_ADDRESS.PHONE' | translate }}</p>
+    <p class="mat-body-1" *ngIf="$index === 5">{{ 'GEO.KUWAIT_ADDRESS.ADDRESS' | translate }}</p>
+  }
+</div>
+          </div>
+        </div>
+
+        <!-- Image Column -->
+        <div class="col-md-6 d-flex justify-content-center">
+          <img
+            [src]="service.imgoverview"
+            [alt]="'GEO.IMG_ALT' | translate"
+            class="mobileres img-fluid welcome-imgs"
+          />
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content style="margin-top: 100px;">
+      <!-- Leadership Section -->
+      <div class="leadership-section">
+        <h1 class="section-heading textdesign text-primary">
+          <span>{{ 'LEADERSHIP.OUR' | translate }}</span>
+          {{ 'LEADERSHIP.TITLE' | translate }}
+        </h1>
+
+        <div class="leadership-container">
+          <!-- Desktop Grid View -->
+          <div class="leadership-grid desktop-only">
+            @for(leader of leaders; track $index) {
+              <mat-card class="leader-card">
+                <div class="leader-image-container">
+                  <img [src]="leader.img" [alt]="leader.name | translate" class="leader-image" />
+                  <a [href]="leader.linkedin" target="_blank" class="linkedin-icon">
+                    <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+                  </a>
+                </div>
+                <mat-card-content>
+                  <h3  class="text-primary">{{ leader.name | translate }}</h3>
+                  <p class="leader-title ">{{ leader.title | translate }}</p>
+                </mat-card-content>
+              </mat-card>
+            }
+          </div>
+
+          <!-- Mobile Swiper -->
+          <div class="swiper leadershipSwiper mobile-only">
+            <div class="swiper-wrapper">
+              @for(leader of leaders; track $index) {
+                <div class="swiper-slide">
+                  <mat-card class="leader-card">
+                    <div class="leader-image-container">
+                      <img [src]="leader.img" [alt]="leader.name | translate" class="leader-image text-primary" />
+                      <a [href]="leader.linkedin" target="_blank" class="linkedin-icon">
+                        <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
+                      </a>
+                    </div>
+                    <mat-card-content>
+                      <h3>{{ leader.name | translate }}</h3>
+                      <p class="leader-title">{{ leader.title | translate }}</p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+              }
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </div>
+</div>
+</div>

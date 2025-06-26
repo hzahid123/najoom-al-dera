@@ -1,0 +1,171 @@
+<!--so scss is there >>>> _container.scss -->
+<span [dir]="options.dir!">
+  <mat-sidenav-container class="mainWrapper" autosize autoFocus>
+
+    <!-- <div class="customizerBtn">
+          <button
+            mat-fab
+            class="bg-primary text-white"
+            (click)="customizerRight.toggle()"
+          >
+            <mat-icon>settings</mat-icon>
+          </button>
+        </div> -->
+    <!-- ============================================================== -->
+    <!-- Main Content -->
+    <!-- ============================================================== -->
+    <mat-sidenav-content class="contentWrapper" #content>
+      <!-- ============================================================== -->
+      <!-- VerticalHeader -->
+      <!-- ============================================================== -->
+      @if (!options.horizontal) {
+      <app-header [showToggle]="!isOver" (toggleCollapsed)="toggleCollapsed()" (toggleMobileNav)="sidenav.toggle()"
+        (optionsChange)="receiveOptions($event)"></app-header>
+      }
+      <main class="pageWrapper" [ngClass]="{
+          maxWidth: options.boxed
+        }" style="padding: 0; margin: 0;">
+        <!-- <app-breadcrumb></app-breadcrumb> -->
+
+        <!-- ============================================================== -->
+        <!-- Outlet -->
+        <!-- ============================================================== -->
+
+        <router-outlet></router-outlet>
+
+        <!-- Floating Contact Button -->
+        <div class="contact-us-button  bg-primary" (click)="openContactUsdia()">
+          Let's Talk Business
+        </div>
+
+        <!-- <div class="customizerBtn">
+          <button
+            mat-fab
+            class="bg-primary text-white"
+            (click)="customizerRight.toggle()"
+          >
+            <mat-icon>settings</mat-icon>
+          </button>
+        </div> -->
+
+
+        <div class="whatsappBtn">
+          <a href="https://wa.me/03336449414" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <button mat-fab color="primary">
+              <mat-icon svgIcon="whatsapp"></mat-icon>
+            </button>
+          </a>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- Geographies Section -->
+        @if (!isGeographiesRoute) {
+        <div id="geographies-section">
+          <app-geographies></app-geographies>
+        </div>
+        }
+
+
+
+        <!-- ============================================================== -->
+        <!-- Faqs  -->
+        <div id="faq-section" class="col-lg-12">
+
+          <app-faq></app-faq>
+        </div>
+
+
+        <!-- ============================================================== -->
+        <!-- contact us  -->
+        <div id="contact-section" style="margin-top: 40px;" class="col-lg-12">
+          <app-contactus></app-contactus>
+        </div>
+
+        <!-- ============================================================== -->
+
+
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <app-footer></app-footer>
+        <!-- ============================================================== -->
+
+      </main>
+    </mat-sidenav-content>
+
+    <mat-sidenav #customizerRight mode="over" position="end">
+      <div class="p-x-16 p-y-20 d-flex align-items-center justify-content-between">
+        <h3 class="f-s-21 f-w-600">Settings</h3>
+        <button class="d-lg-none" mat-button (click)="customizerRight.toggle()">
+          Close
+        </button>
+      </div>
+      <mat-divider></mat-divider>
+
+      <app-customizer (optionsChange)="receiveOptions($event)"></app-customizer>
+    </mat-sidenav>
+  </mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</span>

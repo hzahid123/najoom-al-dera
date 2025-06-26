@@ -1,0 +1,311 @@
+// common for all where i wana put blur color shadow on my any component it which is present in top  of blog.scss ok
+.values-section {
+  // padding: 40px 20px;
+  overflow:visible;
+  background: radial-gradient(
+    circle at center,
+    rgba(142, 33, 87, 0.2) 50%,
+    rgba(142, 33, 87, 0) 100%
+  );
+  // filter: blur(40px);
+  z-index: 0;  
+
+}
+
+
+card-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 225px;
+}
+ 
+.user-category {
+  margin-top: -45px;
+  z-index: 1;
+  position: relative;
+}
+ 
+.featured-card {
+  height: 400px;
+  &:before {
+    content: "";
+    position: absolute;
+    background: rgba(33, 33, 33, 0.6);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .featured-overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+ 
+.detail-card-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 440px;
+}
+ 
+@media (min-width: 1200px) {
+  .blog-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/////////
+///
+.hero-section {
+  width: 100%;
+  margin-bottom: 30px;
+}
+ 
+.hero-image-container {
+  overflow-x: hidden;
+  position: relative; 
+  width: 100%;
+  height: 650px;
+  background-image: url('/assets/images/blog/blogm.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+// .hero-image-container-services {
+//   position: relative;
+//   width: 100vw;
+//   height: 650px;
+//     left: calc(-70vw + 70%);
+
+//   background-image: url('/assets/images/blog/servicesmain.jpg'); /* Add your hero image */
+//   background-size: cover;
+//   background-position: center;
+  
+// }
+ .card-transparent{
+  background-color: #8681811a ;               backdrop-filter: blur(5px);
+}
+// .hero-image-container-aboutus {
+//   position: relative;
+//   width: 100vw;
+//   height: 650px;
+//   left: calc(-70vw + 70%);
+  
+//   background-image: url('/assets/images/aboutus/dd.jpg');
+//   background-size: cover;
+//   background-position: center;
+//   overflow: hidden;
+// }
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px;
+
+  @media (max-width: 768px) {
+    padding: 16px; // reduce padding for smaller screens
+  }
+}
+
+
+ 
+.hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+  .service-title-dis {
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+ .service-paragraphheader {
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  max-width: 600px;
+}
+mat-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.blog-wrapper .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* If using global styles.css */
+.image-container {
+  overflow: hidden; /* Ensures no overflow */
+  position: relative;
+}
+
+.responsive-image {
+  width: 100%;       /* Takes full width of container */
+  height: auto;      /* Maintains aspect ratio */
+  display: block;    /* Removes extra space below image */
+  
+  /* Optional: Add max-height for very large screens */
+  max-height: 640px; /* Your original height */
+  object-fit: cover;  /* Ensures image covers area without distortion */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .responsive-image {
+    max-height: 400px; /* Slightly smaller on mobile */
+  }
+}
+
+//services scss
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Full Width Sections */
+.full-width-section {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.full-width-title {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+  color: #0d6efd; /* Primary blue */
+  margin-bottom: 1.2rem;
+}
+
+.full-width-paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.full-width-image-container {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.full-width-content-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  object-fit: contain;
+}
+
+/* Feature Section (col-6) */
+.feature-section {
+  margin: 3rem 0;
+}
+
+.feature-title {
+  font-size: 2rem;
+    line-height: 2.4rem;
+
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.feature-paragraph {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.feature-image-container {
+  width: 100%;
+}
+
+.feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  object-fit: contain;
+  max-height: 400px;
+}
+
+/* Final Full Width Image (Optional Additional Styling) */
+.final-full-width-image {
+  padding: 0 24px 24px;
+}
+
+.final-feature-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  object-fit: cover;
+  max-height: 500px;
+}
+/* Enhanced Light Primary Background */
+.bg-light-primary {
+  background-color: rgba(227, 242, 253, 0.85) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid rgba(144, 202, 249, 0.3);
+  
+  @media (max-width: 768px) {
+    backdrop-filter: blur(5px);
+  }
+}
