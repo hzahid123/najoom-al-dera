@@ -1,11 +1,11 @@
-<mat-sidenav-container  >
-  <mat-sidenav-content >
+<mat-sidenav-container>
+  <mat-sidenav-content>
     
 <div class="video-banner-section position-relative overflow-hidden">
   <!-- Video Background -->
     <div class="video-background-wrapper">
         <video autoplay muted loop playsinline class="video-background">
-          <source src="assets/images/landingpage/1.webm" type="video/webm">
+         <!-- <source src="assets/images/landingpage/1.webm" type="video/webm"> -->
           <source src="assets/images/landingpage/1.mp4" type="video/mp4">
         </video>
       </div>
@@ -29,7 +29,7 @@
           <p class="f-s-18 p-y-24 m-t-12 m-0 banner-subtitle">
             {{
             "LANDING.BANNER.DESCRIPTION"
-            | translate : { company: "Dry Run" }
+            | translate : { company: "Najum Al-Deera" }
             }}
           </p>
           <div class="m-t-24 hstack">
@@ -100,13 +100,6 @@
       </div>
     </div> -->
 
-
-
-
-
-
-
-
     <!-- ------------------------------------------------------------------
     End Banner
     ------------------------------------------------------------------ -->
@@ -116,27 +109,39 @@
     ------------------------------------------------------------------ -->
     <div class="spacer values-section " id="demos">
       <div class="container">
-        <!-- <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <div class="d-sm-flex align-items-center justify-content-center">
-              <div class="d-flex align-items-center justify-content-center social-chips">
-                <img src="/assets/images/profile/sd.jpg" width="30" alt="social" class="rounded-circle" />
-                <img src="/assets/images/profile/rr.jpg" width="30" alt="social" class="rounded-circle" />
-                <img src="/assets/images/profile/ee.jpg" width="30" alt="social" class="rounded-circle" />
-              </div>
-              <span class="f-s-16 f-w-500 m-l-10">
-                <span class="f-w-600">{{
-                  "LANDING.TRUSTED_BY" | translate
-                  }}</span>
-                {{ "LANDING.COMPANIES" | translate }}
-              </span>
-            </div>
-            <h2 class="section-title">
-              {{ "LANDING.SECTION_TITLE" | translate }}
-            </h2>
-          </div>
-        </div> -->
 
+<div class="demos-section m-t-24  ">
+  <div class="text-center m-t-30 m-b-32">
+    <span class="bg-primary textdesign p-8 rounded-pill text-white f-w-600 p-x-10">
+      {{ "LANDING.DEMOS_BLOGS" | translate }}
+    </span>
+        <h2 class="m-t-16">      {{ "LANDING.DEMOS_BLOGSpara" | translate }} </h2>
+
+  </div>
+  
+  <!-- Gallery Icons Grid -->
+<div class="gallery-icons-grid">
+  @for(app of translatedAppDemos.slice(0, visibleDemoCount); track app.id) {
+    <a [routerLink]="[app.link]" [queryParams]="{category: app.category}" class="gallery-icon-item">
+      <div class="icon-container">
+        <div class="gallery-icon-wrapper" [class]="'icon-style-' + app.id">
+          <i-tabler name="photo" class="gallery-icon-svg"></i-tabler>
+        </div>
+      </div>
+      <h3 class="gallery-title">{{ app.translatedName }}</h3>
+    </a>
+  }
+</div>
+  
+  @if (translatedAppDemos.length > initialDemoCount) {
+  <div class="text-center m-t-16">
+    <button class="view-more-btn" (click)="toggleDemos()">
+      {{ showAllDemos ? ('LANDING.VIEW_LESS_DEMOS' | translate) : ('LANDING.VIEW_MORE_DEMOS' | translate) }}
+      <mat-icon class="btn-icon">{{ showAllDemos ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+    </button>
+  </div>
+  }
+</div>
 
 <div class="services-section ">
   <div class="text-center m-t-30 m-b-32">
@@ -171,54 +176,11 @@
   }
 </div>
 
-
-
-<div class="demos-section m-t-24  ">
-  <div class="text-center m-t-30 m-b-32">
-    <span class="bg-primary textdesign p-8 rounded-pill text-white f-w-600 p-x-10">
-      {{ "LANDING.DEMOS_BLOGS" | translate }}
-    </span>
-        <h2 class="m-t-16">      {{ "LANDING.DEMOS_BLOGSpara" | translate }} </h2>
-
-  </div>
-  
-  <!-- Demos/Blogs -->
-  <div class="cards-grid ">
-    @for(app of translatedAppDemos.slice(0, visibleDemoCount); track app.id) {
-    <a [href]="app.link" class="demo-card">
-      <div class="img-container">
-        <img [src]="app.imgSrc" alt="apps" class="uniform-image" />
-        <div class="card-title">
-          <span class="title-text">{{ app.translatedName }}</span>
-        </div>
-      </div>
-    </a>
-    }
-  </div>
-  
-  @if (translatedAppDemos.length > initialDemoCount) {
-   <div class="text-center m-t-16">
-  <!-- Remove mat-button and use class for full control -->
-  <button class="view-more-btn" (click)="toggleDemos()">
-  {{ showAllDemos ? ('LANDING.VIEW_LESS_DEMOS' | translate) : ('LANDING.VIEW_MORE_DEMOS' | translate) }}
-    <mat-icon class="btn-icon">{{ showAllServices ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
-  </button>
-</div>
-  }
-</div>
-
-
-
-
-
-
-      
-      </div>
+    </div>
     </div>
     <!-- ------------------------------------------------------------------
     End Template
     ------------------------------------------------------------------ -->
-
 
     <!-- ------------------------------------------------------------------
     Testimonial
@@ -387,7 +349,6 @@
 </div>
 
     </div>
-
     <!-- ------------------------------------------------------------------
     End Demo slider
     ------------------------------------------------------------------ -->

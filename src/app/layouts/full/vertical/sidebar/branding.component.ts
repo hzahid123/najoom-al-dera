@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   template: `
     <a href="/" class="logo-container" dir="ltr">
       <span class="logo-text">
-        <span class="logo-initial">D</span>
-        <span class="logo-full">ryRun</span>
+        <span class="logo-initial">Najum</span>
+        <span class="logo-full">Al-Deera</span>
       </span>
     </a>
   `,
@@ -29,11 +29,11 @@ import { Component } from '@angular/core';
       font-family: 'Segoe UI', sans-serif;
       font-size: 30px;
       font-weight: 700;
-      color: #8e2157;
+      color: #0074BA;
     }
 
     .logo-initial {
-      background-color: #8e2157;
+      background-color: #0074BA;
       color: white;
       padding: 4px 10px;
       border-radius: 8px;

@@ -54,30 +54,20 @@ export class GeographiesComponent implements OnInit, AfterViewInit {
   leaders = [
 
     {
-      name: 'LEADERSHIP.HASSAN_NAME',
-      img: '/assets/images/aboutus/img3.jpeg',
-      linkedin: 'https://www.linkedin.com/in/hassan-nisar-109996247',
-      title: 'LEADERSHIP.CEO_TITLE'
+      name: 'LEADERSHIP.ABBAS_NAME',
+      img: '/assets/images/aboutus/abbas.png',
+      title: 'LEADERSHIP.MANAGER1'
     },
         {
-      name: 'LEADERSHIP.ATTA_NAME',
-      img: '/assets/images/aboutus/img111.jpeg',
-      linkedin: 'https://www.linkedin.com/in/atta-ul-mohamin-0245b7215',
-      title: 'LEADERSHIP.COFOUNDER'
-      
+      name: 'LEADERSHIP.ZAHID_NAME',
+      img: '/assets/images/aboutus/zahid.png',
+      title: 'LEADERSHIP.FOUNDER'
     },
     {
-      name: 'LEADERSHIP.HASEEB_NAME',
-      img: '/assets/images/aboutus/img2.jpeg',
-      linkedin: 'https://www.linkedin.com/in/haseeb-zahid-428829289',
-      title: 'LEADERSHIP.COFOUNDER'
+      name: 'LEADERSHIP.TARIQ_NAME',
+      img: '/assets/images/aboutus/tariq.png',
+      title: 'LEADERSHIP.MANAGER2'
     },
-    {
-      name: 'LEADERSHIP.ALEENA_NAME',
-      img: '/assets/images/aboutus/img4.jpeg',
-      linkedin: 'https://www.linkedin.com/in/aleena-ahmed-6464931a0',
-      title: 'LEADERSHIP.HR_TITLE'
-    }
   ];
 
   constructor(private sanitizer: DomSanitizer, private translate: TranslateService) {

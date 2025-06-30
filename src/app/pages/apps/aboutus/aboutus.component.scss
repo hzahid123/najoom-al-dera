@@ -1,45 +1,41 @@
 /* Add this to your styles.scss */
 @import 'swiper/swiper-bundle.css';
-.card-transparent{
-  background-color: #8681811a ;               backdrop-filter: blur(10px);
-  
+
+.card-transparent {
+  background-color: #8681811a;
+  backdrop-filter: blur(10px);
 }
+
 .hero-image-container-aboutus {
   position: relative;
   width: 100%;
   height: 630px;
   left: calc(-70vw + 70%);
   
-  background-image: url('/assets/images/aboutus/dd.jpg');
+  // Use an upholstery-related background image
+  background-image: url('/assets/images/aboutus/upholstery-workshop.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden;
 }
+
 .hero-content {
   position: absolute;
   bottom: 0;
-  left: 1%; //it giving margin from left side
+  left: 1%;
   right: 0;
   padding: 60px;
-  
-   @media (max-width: 768px) {
+
+  @media (max-width: 768px) {
     margin-top: 20px;
     padding: 20px;
-
   }
 }
 
- 
 .hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 16px;
 }
- 
-
-
-
-
-
 
 .floating-card-content {
   max-width: 100%;
@@ -82,7 +78,7 @@
 
 .margins {
   margin: 30px;
-  
+
   @media (max-width: 768px) {
     margin: 15px;
   }
@@ -92,22 +88,22 @@
 .mission-section {
   margin: 60px 0;
   position: relative;
-  
+
   @media (max-width: 768px) {
     margin: 40px 0;
   }
 }
+
 .mission-container {
   position: relative;
   max-width: auto;
-  }
-
+}
 
 .mission-heading {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
   margin-bottom: 40px;
-  
+
   @media (max-width: 768px) {
     margin-bottom: 20px;
   }
@@ -121,14 +117,13 @@
   overflow: visible;
   margin-top: 20px;
   border: none;
-  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
   @media (max-width: 768px) {
     padding: 30px 20px;
     border-radius: 20px;
   }
 }
-
-
 
 .mission-text {
   font-size: clamp(1rem, 2vw, 1.2rem);
@@ -137,43 +132,80 @@
   position: relative;
   z-index: 2;
   margin: 0;
-    text-align: start; // 👈 This line aligns text
-
+  text-align: start;
 }
 
+/* Services Section */
+.services-section {
+  margin: 60px 0;
+  
+  .services-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  
+  .service-category-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(142, 33, 87, 0.2);
+    }
+    
+    @media (max-width: 768px) {
+      padding: 25px 20px;
+    }
+  }
+  
+  .category-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #8e2157;
+  }
+  
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      padding: 8px 0;
+      font-size: 1rem;
+      color: #555;
+      border-bottom: 1px solid #f0f0f0;
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      &:before {
+        content: '✓';
+        color: #8e2157;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+    }
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Values Section with Swiper  we will import swiper to work ok hahahahahaahahahahah*/
+/* Values Section with Swiper */
 @import 'swiper/swiper-bundle.css';
 
 .values-section {
@@ -184,68 +216,91 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
+
   .values-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
+    text-align: center;
+    margin-bottom: 60px;
+  }
 
   .section-title {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 16px;
-}
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
 
-.section-subtitle {
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 400;
-  color: #555;
-  margin: 0;
-}
-
+  .section-subtitle {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 400;
+    color: #555;
+    margin: 0;
+  }
 
   .swiper {
     display: none;
     width: 100%;
     height: 100%;
     padding-bottom: 40px;
-    
+
     &-wrapper {
       width: 100%;
       height: 100%;
     }
-    
+
     &-slide {
       width: 85%;
       height: auto;
     }
   }
 
-
   .value-card {
-    background: #0000004D;
-    border-radius: 16px;
+    background: linear-gradient(135deg, #8e2157 0%, #a12968 100%);
+    border-radius: 20px;
     padding: 30px;
     height: 100%;
     transition: all 0.3s ease;
     text-align: center;
-    
+    color: white;
+
     &:hover {
-      transform: translateY(-5px);
-      background-color: #8e2157;
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(142, 33, 87, 0.3);
+    }
+    
+    .value-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .value-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    .value-description {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
     }
   }
 
   .swiper-pagination {
     position: relative;
     margin-top: 20px;
-    
+
     &-bullet {
       background: #8e2157;
       opacity: 0.5;
-      
+
       &-active {
         opacity: 1;
       }
@@ -254,41 +309,103 @@
 
   @media (max-width: 768px) {
     padding: 40px 15px;
-    
+
     .values-grid {
       display: none;
     }
-    
+
     .swiper {
       display: block;
       overflow: hidden;
     }
-    
+
     .value-card {
       padding: 25px 20px;
       margin: 0 10px;
     }
   }
-  @media (max-width: 768px) {
-    .swiper {
-      display: block;
-      
-      &-slide {
-        padding: 0 5px;
-        box-sizing: border-box;
-      }
+}
+
+/* Contact Section */
+.contact-section {
+  margin: 60px 0;
+  
+  .contact-card {
+    background: white;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    @media (max-width: 768px) {
+      padding: 30px 20px;
+      border-radius: 20px;
+    }
+  }
+  
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+    .contact-icon {
+      font-size: 2rem;
+      color: #8e2157;
     }
     
-    .value-card {
-      width: 100%;
-      margin: 0;
+    .contact-details {
+      h4 {
+        margin: 0 0 5px 0;
+        font-weight: 600;
+        color: #333;
+      }
+      
+      p {
+        margin: 0;
+        color: #555;
+      }
+    }
+  }
+  
+  .contact-cta {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #f0f0f0;
+    
+    .cta-text {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 25px;
+    }
+    
+    .cta-button {
+      background-color: #8e2157;
+      color: white;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      
+      &:hover {
+        background-color: #a12968;
+      }
     }
   }
 }
 
 .mobile-only {
   display: none;
-  
+
   @media (max-width: 768px) {
     display: block;
   }
@@ -296,208 +413,30 @@
 
 .desktop-only {
   display: block;
-  
+
   @media (max-width: 768px) {
     display: none;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Leadership Section */
-// .leadership-section {
-//   padding: 60px 20px;
-//   .section-heading {
-//   font-size: clamp(1.8rem, 3vw, 2.5rem);
-//   text-align: center;
-//   margin-bottom: 60px;
-//   font-weight: 700;
-// }
-
-
-//   .leadership-grid {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-//     gap: 20px;
-//   }
-
-//   .swiper {
-//     display: none;
-//     width: 100%;
-//     height: 100%;
-//     padding-bottom: 40px;
-    
-//     &-wrapper {
-//       width: 100%;
-//       height: 100%;
-//     }
-    
-//     &-slide {
-//       width: 85%;
-//       height: auto;
-//       padding: 0 5px;
-//       box-sizing: border-box;
-//     }
-//   }
-
-//   .leader-card {
-//     border-radius: 12px;
-//     overflow: hidden;
-//     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-//     transition: transform 0.3s ease;
-//     border: none;
-//     height: 100%;
-    
-//     &:hover {
-//       transform: translateY(-5px);
-//     }
-//   }
-
-//   .leader-image-container {
-//     position: relative;
-//     height: 300px;
-//     overflow: hidden;
-//   }
-
-//   .leader-image {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     object-position: top;
-//   }
-
-//   .linkedin-icon {
-//     position: absolute;
-//     bottom: 15px;
-//     right: 15px;
-//     background: #0077b5;
-//     width: 36px;
-//     height: 36px;
-//     border-radius: 50%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     color: white;
-//     text-decoration: none;
-//     transition: all 0.3s ease;
-    
-//     &:hover {
-//       background: #005582;
-//       transform: scale(1.1);
-//     }
-//   }
-
-//   .swiper-pagination {
-//     position: relative;
-//     margin-top: 20px;
-    
-//     &-bullet {
-//       background: #8e2157;
-//       opacity: 0.5;
-      
-//       &-active {
-//         opacity: 1;
-//       }
-//     }
-//   }
-
-//   @media (max-width: 768px) {
-//     padding: 40px 15px;
-    
-//     .leadership-grid {
-//       display: none;
-//     }
-    
-//     .swiper {
-//       display: block;
-//       overflow: hidden;
-//     }
-    
-//     .leader-image-container {
-//       height: 250px;
-//     }
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Video Section */
 .video-container {
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
-    @media (max-width: 768px) {
-      iframe {
-              height: 250px;
-
-      }
-      
+  @media (max-width: 768px) {
+    iframe {
+      height: 250px;
+    }
   }
 }
-
 
 .content-column {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-    text-align: justify; // 👈 This line aligns text
-
+  text-align: justify;
 }

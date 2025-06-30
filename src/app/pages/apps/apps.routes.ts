@@ -9,6 +9,7 @@ import { ServicesListComponent } from './services-list/services-list.component';
 import { ServiceDetailsComponent } from './services-list/service-details/service-details.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { GeographiesComponent } from './geographies/geographies.component';
+import { GalleryComponent } from './gallery/gallery.component';
 export const AppsRoutes: Routes = [
   {
     path: '',
@@ -39,6 +40,17 @@ export const AppsRoutes: Routes = [
         },
       },
 
+           {
+        path: 'gallery',
+        component: GalleryComponent,
+        data: {
+          title: 'gallery',
+          urls: [
+            { title: 'Dashboard', url: '/dashboards/dashboard1' },
+            { title: 'gallery' },
+          ],
+        },
+      },
           {
         path: 'contactus',
         component: ContactusComponent,

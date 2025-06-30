@@ -1,5 +1,4 @@
 {
-  
   "HEADER": {
     "WHAT_WE_DO": "What We Do",
     "HOW_WE_DELIVER": "How We Deliver",
@@ -10,13 +9,11 @@
     "CHECK": "Check"
   },
   "SERVICES": {
-    "TITLE": "Services",
-    "WEB_DEV": "Web Development",
-    "MOBILE_DEV": "Mobile App Development",
-    "UI_UX": "UX/UI Design",
-    "ECOMMERCE": "E-commerce Solutions",
-    "CUSTOM_SOFTWARE": "Custom Software Development",
-    "QA": "Quality Assurance"
+    "TITLE": "Our Services",
+    "SHIP_UPHOLSTERY": "Ship Upholstery",
+    "CAR_UPHOLSTERY": "Car Upholstery",
+    "FURNITURE_UPHOLSTERY": "Furniture Upholstery",
+    "GENERAL_UPHOLSTERY": "General Upholstery"
   },
   "APPS": {
     "BLOGS": "Blogs",
@@ -24,10 +21,8 @@
   },
   "ABOUT": {
     "ABOUT_US": "About Us",
-    "GEOGRAPHIES": "Geographies"
+    "GEOGRAPHY": "Geography"
   },
-
-
   "CONTACT": {
     "CONTACT_US": "Contact Us",
     "LETS_TALK": "Let's Talk Business",
@@ -60,44 +55,33 @@
     "GAMING": "Gaming",
     "CYBER_SECURITY": "Cyber Security",
     "OTHER": "Other IT Services"
-  }
-
-
-
-
-
-
-
-
-
-  ,"FAQ": {
-    "TITLE": "Frequently asked questions",
-    "SUBTITLE": "Get to know more about ready-to-use our products",
+  },
+  "FAQ": {
+    "TITLE": "Frequently Asked Questions",
+    "SUBTITLE": "Learn more about our upholstery services for ships, cars, and furniture",
     "QUESTIONS": {
       "Q1": {
-        "TITLE": "What Services Do DryRun Offer?",
-        "CONTENT": "We offer a wide range of digital solutions, such as custom software development, cloud services and integration, Next-Gen technologies, staff augmentation, digital marketing, QA & support, creative designing, and many more."
+        "TITLE": "What Upholstery Services Do You Offer?",
+        "CONTENT": "We offer professional upholstery services for ships, cars, and all types of furniture. Whether it's marine-grade cushioning, car seat repairs, or sofa restorations, we provide high-quality, durable, and custom solutions."
       },
       "Q2": {
-        "TITLE": "How Do You Process At DryRun?",
-        "CONTENT": "Our process is comprehensive and structured. We start with a thorough analysis of your requirements. It goes through multiple steps, including strategic planning, design, testing, and deployment."
+        "TITLE": "Do You Provide On-Site Upholstery Services?",
+        "CONTENT": "Yes, we offer on-site upholstery services where needed, especially for large furniture items or installations in ships and commercial areas. We aim for maximum convenience and professional delivery."
       },
       "Q3": {
-        "TITLE": "Do You Offer Free Consultation?",
-        "CONTENT": "Yes, we offer free consultation for web development services. We welcome our clients and listen to their ideas. We discuss their goals and ensure a successful collaboration."
+        "TITLE": "Can You Customize Designs and Materials?",
+        "CONTENT": "Absolutely. We offer a wide range of fabrics, foams, and leather materials. Based on your preference and space (marine, car, or home), we help you choose the most suitable and durable options."
       },
       "Q4": {
-        "TITLE": "How Does DryRun Ensure Quality Standards?",
-        "CONTENT": "Our experts ensure we meet all the requirements of our customers using the latest technology and deliver error-free projects to our clients."
+        "TITLE": "How Long Does an Upholstery Project Take?",
+        "CONTENT": "Project timelines depend on the size and complexity of the work. Simple repairs may take 1-2 days, while full reupholstery of boats or multiple seats can take a few days to a week. We always give clear estimates before starting."
       },
       "Q5": {
-        "TITLE": "Does DryRun Provide Customer Support After Project Delivery?",
-        "CONTENT": "Yes, we offer ongoing support and maintenance to keep the digital solution secure & optimized for performance. Our team also considers customer feedback analysis to provide post-launch customer support."
+        "TITLE": "Do You Offer Repair and Maintenance Services?",
+        "CONTENT": "Yes, we repair torn fabrics, fix sagging foam, restore roof linings, and replace damaged panels. We also offer regular maintenance for marine and auto interiors to extend their life and comfort."
       }
     }
   },
-
-
   "FOOTER": {
     "COMPANY_NAME": "Dry Run",
     "ADDRESS": {
@@ -139,217 +123,110 @@
     "UI_UX": "UX/UI Design",
     "ECOMMERCE": "E-commerce Solutions",
     "AUTOMATION": "Automation & Apps"
-  }
-,
-
-
-
-
-
-
-
-
-
+  },
   "LANDING": {
     "BANNER": {
-      "SUBTITLE": "Build smarter. Launch faster. Succeed with",
-      "TITLE_PART1": "Future-ready",
-      "TITLE_PART2": ".Net Core Angular & AI",
-      "TITLE_PART3": "Solutions",
-      "DESCRIPTION": "At {{company}}, we transform your ideas into powerful digital products using cutting-edge technologies, scalable boilerplates, and intelligent automation.",
-      "BUTTON": "Get In Touch"
+      "SUBTITLE": "Crafted with precision. Built to last. Trusted by professionals.",
+      "TITLE_PART1": "Premium",
+      "TITLE_PART2": "Marine Upholstery",
+      "TITLE_PART3": "Services",
+      "DESCRIPTION": "At {{company}}, we specialize in high-quality marine upholstery for ships, yachts, and luxury boats, delivering durable and elegant solutions with expert craftsmanship and premium marine-grade materials resistant to water and salt.",
+      "BUTTON": "Contact Us"
     },
     "TRUSTED_BY": "Trusted by",
-    "COMPANIES": "75+ startups & enterprises worldwide",
-    "SECTION_TITLE": "Production-Ready, AI-Driven & Angular + .NET Core by Dry Run",
-    "SERVICES": "Digital Solutions & Services",
-        "SERVICESpara": "We design, develop, and deliver solutions tailored to your business needs.",
-"VIEW_MORE_SERVICES": "View More Services",
-  "VIEW_LESS_SERVICES": "View Less Services",
-    
-    "DEMOS_BLOGS": "Tech Insights & Blogs ",
-        "DEMOS_BLOGSpara": "Stay updated with expert articles, tech trends, and practical solutions",
-         "VIEW_MORE_DEMOS": "View More Demos",
-  "VIEW_LESS_DEMOS": "View Less Demos",
-"VIEW_MORE_feature": "View More Feature",
-"VIEW_LESS_feature": "View Less Feature",
-
-
-    
-    "LIVE_PREVIEW": "Live preview",
-    "DEMO_SLIDER": "   Our Tech Stack",
-    "DEMO_SLIDERdis": "  Equipped with the latest tools, our teams deliver impactful solutions designed to grow your business",
-
-            
-
-    "TESTIMONIALS_TITLE": "Don't just take our words for it, See what Clients like you are saying",
-    "FEATURES_SUBTITLE": "ALMOST COVERED EVERYTHING",
-    "FEATURES_TITLE": "Other Amazing Features & Flexibility Provided",
+    "COMPANIES": "50+ shipping companies & yacht owners across Kuwait & Gulf",
+    "SECTION_TITLE": "Complete Marine Upholstery Solutions with Over 15 Years of Experience in Kuwait",
+    "SERVICES": "Specialized Upholstery Services",
+    "SERVICESpara": "We design, craft, and install custom upholstery solutions tailored to your vessel's specific needs.",
+    "VIEW_MORE_SERVICES": "View More Services",
+    "VIEW_LESS_SERVICES": "View Less Services",
+    "DEMOS_BLOGS": "Portfolio & Project Gallery",
+    "DEMOS_BLOGSpara": "Explore our outstanding work in ship, yacht, and boat upholstery projects",
+    "VIEW_MORE_DEMOS": "View More Projects",
+    "VIEW_LESS_DEMOS": "View Less Projects",
+    "VIEW_MORE_feature": "View More Features",
+    "VIEW_LESS_feature": "View Less Features",
+    "LIVE_PREVIEW": "Work Preview",
+    "DEMO_SLIDER": "Expertise & Craftsmanship",
+    "DEMO_SLIDERdis": "Equipped with the finest materials and tools, we deliver high-quality upholstery solutions designed to withstand harsh marine environments",
+    "TESTIMONIALS_TITLE": "Don't just take our word for it - See what ship and yacht owners are saying",
+    "FEATURES_SUBTITLE": "COMPREHENSIVE & INTEGRATED SERVICES",
+    "FEATURES_TITLE": "Additional Features & Services We Provide to Our Clients",
     "DEMOS": {
-      "WEBSITE_DEV": "Website Development",
-      "MOBILE_DEV": "Mobile Development",
-      "UI_UX": "UI/UX Design",
-      "ECOMMERCE": "E-commerce Solutions",
-      "CUSTOM_SOFTWARE": "Custom Software Development",
-      "QA": "Quality Assurance"
+      "SHIP_UPHOLSTERY": "Ship Upholstery",
+      "CAR_UPHOLSTERY": "Car Upholstery",
+      "FURNITURE_UPHOLSTERY": "Furniture Upholstery",
+      "GENERAL_UPHOLSTERY": "General Upholstery"
     },
     "APP_DEMOS": {
-      "WEB_APPS": "Dynamic Web Applications",
-      "MOBILE_APPS": "Mobile Gamificationt",
-      "AI": "Generative AI",
-      "PATIENT_MONITORING": "Custom Web App",
-      "WEB_DEV": "Effective System Integrations",
-      "WEB_DEV_2": "Cross Platform Web App"
+      "SHIP_UPHOLSTERY": "Ship Upholstery",
+      "CAR_UPHOLSTERY": "Car Upholstery",
+      "FURNITURE_UPHOLSTERY": "Furniture Upholstery",
+      "GENERAL_UPHOLSTERY": "General Upholstery"
     },
     "TESTIMONIALS": {
-      "MOBILE_APP_DEV": "Mobile App Development",
-      "DOTNET_ANGULAR": ".NET & Angular Web Solution",
-      "AI_INTEGRATION": "AI Integration & Backend",
-      "TESTIMONIAL_1": "Their mobile app team was incredible. Smooth delivery and great UI/UX — exactly what we needed for our ecommerce app in Kuwait.",
-"TESTIMONIAL_2": "We received a secure, scalable, and high-performing system built using .NET Core and Angular. The results truly exceeded our expectations and boosted our operational efficiency.",
-      "TESTIMONIAL_3": "Their AI integration saved our customer support hours per week. The backend is reliable, and the support team is very responsive."
+      "YACHT_OWNER": "Private Yacht Owner",
+      "SHIPPING_COMPANY": "Kuwaiti Shipping Company",
+      "MARINA_MANAGER": "Marina Manager",
+      "TESTIMONIAL_1": "The work was exceptional! The quality of upholstery and finishes exceeded my expectations. The materials used are high-quality and resistant to salt water.",
+      "TESTIMONIAL_2": "The entire fleet was renovated with excellent quality and on time. The team is professional and the after-sales service is outstanding.",
+      "TESTIMONIAL_3": "High expertise and craftsmanship in dealing with luxury yachts. Attention to detail and quality is unmatched in Kuwait."
     },
-    
-  "FEATURES": {
-  "CUSTOM_PORTALS": "Custom Web Portals",
-  "CUSTOM_PORTALS_DESC": "Tailored dashboards and admin panels built with Angular & .NET.",
-  "MOBILE_APP_DEV": "Mobile App Development",
-  "MOBILE_APP_DEV_DESC": "We deliver scalable mobile apps for iOS and Android using modern frameworks.",
-  "AI_INTEGRATION": "AI Integration",
-  "AI_INTEGRATION_DESC": "From chatbots to automation, we implement AI to improve your workflows.",
-  "REUSABLE_BOILERPLATES": "Reusable Boilerplates",
-  "REUSABLE_BOILERPLATES_DESC": "Prebuilt Angular/.NET solutions for faster development cycles.",
-  "SECURE_ARCHITECTURE": "Secure Architecture",
-  "SECURE_ARCHITECTURE_DESC": "We follow best practices to build secure APIs and data handling layers.",
-  "DATA_ANALYTICS": "Data Analytics",
-  "DATA_ANALYTICS_DESC": "Track KPIs with real-time dashboards powered by your data.",
-  "MULTILINGUAL_SUPPORT": "Multilingual Support",
-  "MULTILINGUAL_SUPPORT_DESC": "We provide i18n-ready apps with RTL and Arabic localization.",
-  "EASY_MAINTENANCE": "Easy Maintenance",
-  "EASY_MAINTENANCE_DESC": "Our solutions are clean-coded and easy to maintain or scale.",
-  "API_DEVELOPMENT": "API Development",
-  "API_DEVELOPMENT_DESC": "We build scalable RESTful and GraphQL APIs for any platform.",
-  "PAYMENT_INTEGRATION": "Payment Integration",
-  "PAYMENT_INTEGRATION_DESC": "Integrate local and global payment gateways like KNET, Stripe, etc.",
-  "ONGOING_SUPPORT": "Ongoing Support",
-  "ONGOING_SUPPORT_DESC": "We provide long-term support and updates post-deployment.",
-  "DEVELOPER_DOCS": "Developer Docs",
-  "DEVELOPER_DOCS_DESC": "Clean developer documentation for easier onboarding and use.",
-  "PROJECT_SCHEDULING": "Project Scheduling",
-  "PROJECT_SCHEDULING_DESC": "We stick to realistic timelines and communicate at every phase.",
-  "CLIENT_COMMUNICATION": "Client-first Communication",
-  "CLIENT_COMMUNICATION_DESC": "Our team is always available on WhatsApp, Teams, and Zoom."
-}
+    "FEATURES": {
+      "WATERPROOF_MATERIALS": "Waterproof Materials",
+      "WATERPROOF_MATERIALS_DESC": "We use high-quality materials resistant to water, salt, and UV rays.",
+      "CUSTOM_DESIGN": "Custom Design",
+      "CUSTOM_DESIGN_DESC": "We design and manufacture custom upholstery pieces according to client specifications and preferences.",
+      "MARINE_EXPERTISE": "Specialized Marine Expertise",
+      "MARINE_EXPERTISE_DESC": "Over 15 years of experience in upholstering all types of ships, boats, and yachts.",
+      "QUALITY_GUARANTEE": "Quality Guarantee",
+      "QUALITY_GUARANTEE_DESC": "We provide comprehensive warranty on all upholstery work and materials used.",
+      "UV_RESISTANT": "UV Resistant",
+      "UV_RESISTANT_DESC": "Materials resistant to scorching sun rays and harsh weather conditions.",
+      "QUICK_DELIVERY": "Quick Delivery",
+      "QUICK_DELIVERY_DESC": "We adhere to specified delivery dates while maintaining the highest quality standards.",
+      "ON_SITE_SERVICE": "On-Site Service",
+      "ON_SITE_SERVICE_DESC": "We provide measurement and installation services at the marina or vessel location.",
+      "MAINTENANCE_SUPPORT": "Maintenance Support",
+      "MAINTENANCE_SUPPORT_DESC": "Periodic maintenance services and immediate repairs to ensure upholstery longevity.",
+      "FIRE_RESISTANT": "Fire Resistant",
+      "FIRE_RESISTANT_DESC": "Fire-resistant materials that meet international marine safety standards.",
+      "COLOR_MATCHING": "Color Matching",
+      "COLOR_MATCHING_DESC": "Color and design matching services with the vessel's interior décor.",
+      "EMERGENCY_REPAIR": "Emergency Repair",
+      "EMERGENCY_REPAIR_DESC": "24/7 available emergency repair service for urgent situations.",
+      "COMPETITIVE_PRICING": "Competitive Pricing",
+      "COMPETITIVE_PRICING_DESC": "Best prices in the Kuwaiti market with special offers for regular customers.",
+      "CONSULTATION_SERVICE": "Specialized Consultation",
+      "CONSULTATION_SERVICE_DESC": "Free consultation to choose the best materials and suitable designs.",
+      "INSTALLATION_SERVICE": "Installation Service",
+      "INSTALLATION_SERVICE_DESC": "Specialized team for professional and safe upholstery installation."
+    }
   },
-
-   "GEO": {
-    "TITLE": "Our Global Presence",
-    "SUBTITLE": "We support clients in 23+ countries and drive continued growth through innovation and transformation.",
+  "GEO": {
+    "TITLE": "Our Presence in Kuwait",
+    "SUBTITLE": "We proudly offer professional upholstery services across Kuwait, delivering quality and craftsmanship to every customer.",
     "LAHTITLE": "Lahore | Head Office",
     "KWTITLE": "Kuwait | Office",
     "IMG_ALT": "Service overview",
     "KUWAIT_ADDRESS": {
-    "CENTER_NAME": "Najum Al-Deera Center",
-    "SERVICE": "Car Seat Upholstery",
-    "TYPES": "Private - Express - Trien",
-    "PHONE": "Phone: 96686771 - 911119771",
-    "ADDRESS": "Kuwait - Shuwaikh - International Street - Opp. Beirut Restaurant"
-  }
+      "CENTER_NAME": "Najum Al-Deera Center",
+      "SERVICE": "Car Seat Upholstery",
+      "TYPES": "Private - Express - Trien",
+      "PHONE": "Phone: 96686771 - 911119771",
+      "ADDRESS": "Kuwait - Shuwaikh - International Street - Opp. Beirut Restaurant"
+    }
   },
   "LEADERSHIP": {
     "OUR": "Our",
     "TITLE": "Leadership",
-    "ATTA_NAME": "Atta Ul Mohamin",
-    "HASSAN_NAME": "Hassan Nissar",
-    "HASEEB_NAME": "Haseeb Zahid",
-    "ALEENA_NAME": "Aleena Ahmed",
-    "CEO_TITLE": "Founder, CEO",
-    "COFOUNDER": " Co-Founder",
-    "HR_TITLE": "HR Director"
-  }
-,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    "ABBAS_NAME": "Muhammad Abbas",
+    "ZAHID_NAME": "Hafiz Zahid Nazir",
+    "TARIQ_NAME": "Tariq Butt",
+    "FOUNDER": "Founder",
+    "MANAGER1": "Manager",
+    "MANAGER2": "Manager"
+  },
   "EXTRAS": {
     "Analytical": "Analytical",
     "eCommerce": "eCommerce",

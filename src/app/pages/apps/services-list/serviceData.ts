@@ -36,400 +36,214 @@ export interface Service {
 }
 
 export const services: Service[] = [
- {
-  id: 1,
-  title: 'Web Development',
-  btndiscription: 'Build Scalable Web Applications',
-  description: 'We create modern, high-performing, and secure web applications tailored to meet your business goals.',
-  imgSrc: '/assets/images/services/websites.jpg',
-    imgoverview: '/assets/images/services/weba.jpg',
-  icon: 'layout',
-  category: 'Development',
-  featured: false,
-  link: '/apps/services/detail/1',
-  content: {
-    title: 'Professional Web Development Services',
-    paragraphs: [
-      'Our web development services are focused on delivering robust, scalable, and visually appealing web applications that enhance user experience. From static websites to dynamic enterprise-level platforms, we deliver performance-driven web solutions.',
-      'We utilize the latest technologies and frameworks to ensure your site remains ahead of the curve. Whether you need e-commerce platforms, CMS, or custom portals, we deliver with precision and innovation.'
-    ],
-    headingpoint: '',
-    datapoint: [],
-    heading: 'Powerful & Future-Ready Web Solutions',
-    data: [
-      'We provide tailored web development solutions from design to deployment using HTML5, CSS3, JavaScript, Angular, React, and more. We ensure mobile responsiveness, SEO-friendly structure, and high scalability.'
-    ],
-    services: [
-      {
-        title: 'Responsive Website Design',
-        description: 'We create responsive and engaging websites that adapt to all devices for better user experience and retention.',
-        icon: 'devices'
-      },
-      {
-        title: 'Custom Web Applications',
-        description: 'Our team delivers secure and dynamic web apps tailored to your exact business needs.',
-        icon: 'settings'
-      },
-      {
-        title: 'CMS Development',
-        description: 'From WordPress to custom CMS, we build platforms that let you manage content with ease.',
-        icon: 'edit'
-      },
-      {
-        title: 'Frontend & Backend Integration',
-        description: 'We specialize in creating seamless interactions between user-facing interfaces and backend logic.',
-        icon: 'git-branch'
-      }
-    ],
-    cta: {
-      text: 'Start Your Web Project',
-      link: '/contact'
-    },
-    sdlcImages: {
-      desktop1: '/assets/images/services/ww-2.png',
-      mobile: '/assets/images/services/mobile-w-2.PNG',
-    }
-  }
-}
-,
-
-
-
-
-{
-  id: 2,
-  title: 'Mobile App Development',
-  btndiscription: 'Launch Feature-Rich Mobile Apps',
-  description: 'We develop native and cross-platform mobile apps that are scalable, engaging, and user-friendly.',
-     imgSrc: '/assets/images/services/app.jpg',
-    imgoverview: '/assets/images/services/mobile.jpg',
-  icon: 'device-mobile-code',
-  category: 'Development',
-  featured: false,
-  link: '/apps/services/detail/2',
-  content: {
-    title: 'Innovative Mobile App Development Services',
-    paragraphs: [
-      'We specialize in building high-performing mobile applications for iOS and Android that are fast, secure, and deliver seamless user experiences.',
-      'Our developers follow agile methodologies, use powerful frameworks, and focus on user-centric design to ensure your app stands out in the competitive app market.'
-    ],
-    headingpoint: '',
-    datapoint: [],
-    heading: 'Native & Cross-Platform Mobile Apps',
-    data: [
-      'Our team builds fully functional mobile apps tailored to your business goals using Swift, Kotlin, Flutter, and React Native. We ensure reliability, scalability, and intuitive design in every mobile product.'
-    ],
-    services: [
-      {
-        title: 'Android App Development',
-        description: 'We develop robust Android applications using the latest tools and follow material design guidelines.',
-        icon: 'brand-android'
-      },
-      {
-        title: 'iOS App Development',
-        description: 'Our team crafts elegant and fast iOS apps using Swift and Objective-C for a smooth Apple experience.',
-        icon: 'brand-apple'
-      },
-      {
-        title: 'Cross-Platform Apps',
-        description: 'Using frameworks like Flutter and React Native, we deliver apps that work seamlessly across platforms.',
-        icon: 'layers-intersect'
-      },
-      {
-        title: 'App Maintenance & Support',
-        description: 'We provide ongoing updates, performance monitoring, and support to keep your app running at its best.',
-        icon: 'refresh'
-      }
-    ],
-    cta: {
-      text: 'Get a Custom App',
-      link: '/contact'
-    },
-    sdlcImages: {
-      desktop1: '/assets/images/services/mm-1.png',
-      desktop2: '/assets/images/services/mm-2.png',
-      mobile: '/assets/images/services/mobile-m-1.png'
-    }
-  }
-}
-,
-
-
- {
-  id: 3,
-  title: 'UX/UI Design',
-  btndiscription: 'Design User-Centric Interfaces',
-  description: 'We craft intuitive and engaging UI/UX designs that enhance usability and drive user satisfaction.',
-   imgSrc: '/assets/images/services/ui.jpg',
-    imgoverview: '/assets/images/services/uix.jpg',
-  icon: 'palette',
-  category: 'Design',
-  featured: false,
-  link: '/apps/services/detail/3',
-  content: {
-    title: 'Creative UX/UI Design Services',
-    paragraphs: [
-      'We believe great design enhances user engagement. Our designers blend creativity with functionality to craft beautiful and easy-to-use interfaces.',
-      'From wireframes to clickable prototypes, we bring your digital ideas to life with pixel-perfect precision and design thinking approaches.'
-    ],
-    headingpoint: '',
-    datapoint: [],
-    heading: 'Elevate User Experiences with Stunning Design',
-    data: [
-      'Our design team focuses on building intuitive interfaces, seamless interactions, and accessibility. We make sure the user’s journey is smooth, aesthetic, and goal-oriented.'
-    ],
-    services: [
-      {
-        title: 'Wireframing & Prototyping',
-        description: 'We map out user flows and build prototypes to test usability before development.',
-        icon: 'layout-dashboard'
-      },
-      {
-        title: 'Visual Design',
-        description: 'Our team crafts visually compelling designs that align with your brand and goals.',
-        icon: 'brush'
-      },
-      {
-        title: 'UX Research',
-        description: 'We perform detailed user research to understand behavior and inform design decisions.',
-        icon: 'search'
-      },
-      {
-        title: 'Interaction Design',
-        description: 'We design fluid and intuitive interactions that improve user satisfaction and app retention.',
-        icon: 'cursor-click'
-      }
-    ],
-    cta: {
-      text: 'Improve Your UX',
-      link: '/contact'
-    },
-    sdlcImages: {
-      desktop1: '/assets/images/services/uiui-1.png',
-      desktop2: '/assets/images/services/uiui-2.png',
-      mobile: '/assets/images/services/mobile-ui-1.png'
-    }
-  }
-}
-,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{
-  id: 4,
-  title: 'E-commerce Solutions',
-  btndiscription: 'Build Powerful Online Stores',
-  description: 'We deliver complete e-commerce platforms with robust features to help you grow your online business.',
- imgSrc: '/assets/images/services/ecvv.jpg',
-    imgoverview: '/assets/images/services/ecom.jpg',
-  icon: 'shopping-cart',
-  category: 'E-commerce',
-  featured: false,
-  link: '/apps/services/detail/4',
-  content: {
-    title: 'All-in-One E-commerce Development Services',
-    paragraphs: [
-      'We specialize in building feature-rich e-commerce websites and applications that drive sales and improve user experience. Our solutions are scalable and tailored for both B2C and B2B models.',
-      'We integrate powerful tools for inventory, payments, marketing, and shipping, enabling seamless operations and customer engagement.'
-    ],
-    headingpoint: '',
-    datapoint: [],
-    heading: 'Grow Your Business with Custom E-commerce Platforms',
-    data: [
-      'Our e-commerce platforms are optimized for speed, mobile responsiveness, SEO, and easy management, using platforms like Magento, Shopify, WooCommerce, or custom-built solutions.'
-    ],
-    services: [
-      {
-        title: 'Custom E-commerce Website',
-        description: 'Tailored online stores with user-friendly interfaces and admin dashboards.',
-        icon: 'shopping-bag'
-      },
-      {
-        title: 'Payment Gateway Integration',
-        description: 'We integrate secure and fast payment solutions like Stripe, PayPal, Razorpay, and more.',
-        icon: 'credit-card'
-      },
-      {
-        title: 'Inventory & Order Management',
-        description: 'Automate inventory tracking, order processing, and delivery updates.',
-        icon: 'package'
-      },
-      {
-        title: 'Mobile Commerce',
-        description: 'We build m-commerce apps that enhance the shopping experience on mobile devices.',
-        icon: 'device-mobile'
-      }
-    ],
-    cta: {
-      text: 'Launch Your Online Store',
-      link: '/contact'
-    },
-    sdlcImages: {
-      desktop1: '/assets/images/services/ee-1.png',
-      desktop2: '/assets/images/services/ee-2.png',
-      mobile: '/assets/images/services/mobile-q-1.png'
-    }
-  }
-}
-,
-
   {
-    id: 5,
-    title: 'Custom Software Development',
-    btndiscription: '    Build High-Performance Website',
-
-    description: 'We build dynamic & secure Software Solutions designed to evolve your business and maximize efficiencys',
-    imgSrc: '/assets/images/services/custom.jpg',
-    imgoverview: '/assets/images/services/cus.jpg',
-    icon: 'code',
-    category: 'Development',
-    featured: false,
-    link: '/apps/services/detail/5',
+    id: 1,
+    title: 'Ship Upholstery',
+    btndiscription: 'Premium Marine Upholstery Services',
+    description: 'We specialize in custom marine upholstery for ships, yachts, and boats, ensuring durability, elegance, and comfort even in harsh marine conditions.',
+    imgSrc: '/assets/images/Service/ship_overview.jpg',
+    imgoverview: '/assets/images/Service/ship_overview.jpg',
+    icon: 'anchor',
+    category: 'Marine Upholstery',
+    featured: true,
+    link: '/apps/services/detail/1',
     content: {
-      title: 'A Trusted Custom Software Development Company',
-
-
+      title: 'Professional Ship & Yacht Upholstery',
       paragraphs: [
-        'Our custom software development company offers innovative solutions to deliver exceptional user experiences that can help you lead the industry. We focus on building secure, high-quality, and scalable solutions that drive efficiency. Our dedicated team designs roadmaps to develop software solutions that tackle every challenge and deliver a unique product that evolves with technology trends.',
-        'To help you grow, we provide full-stack development services and optimize every step from frontends to backends to ensure the system is responsive and runs efficiently. Our services are suitable for every company size, from small to large-scale enterprises across all industries.'
+        'Our ship upholstery services are designed to withstand moisture, sun exposure, and heavy use while maintaining a luxurious look. From captain’s chairs to deck cushions and cabin interiors, we deliver flawless craftsmanship.',
+        'We use marine-grade materials, waterproof stitching, and UV-resistant fabrics to ensure long-lasting and stylish upholstery for all types of vessels.'
       ],
-         headingpoint: '',
-      datapoint: [
-
-      ],
-
-
-      heading: 'Deliver Full-cycle Software Development Services to Ensure Long-term Success',
-
+      heading: 'Marine-Grade Craftsmanship for Every Vessel',
       data: [
-        'Our company leads the industry as we have a proven track record of delivering custom technology solutions tailored to industry and business needs. We offer end-to-end software development services to support your business infrastructure using full-stack technology.',
-
+        'Durable marine vinyl, anti-mold foam, UV protection coatings, and custom designs for seating, bedding, and wall panels.'
       ],
-
-
-
+      headingpoint: '',
+      datapoint: [],
       services: [
         {
-          title: 'Web App Development',
-          description: 'Our experts focus on designing a secure web app that ensures your future growth in the industry. We streamline the development process to develop a seamless cross-device experience and use the latest technologies to optimize performance, such as Flutter, ASP.Net, Python, React Native, etc.',
-          icon: 'web'
+          title: 'Cabin & Deck Upholstery',
+          description: 'Custom foam and fabric work for interior lounges, beds, and deck cushions.',
+          icon: 'sofa'
         },
         {
-          title: 'Web Development',
-          description: 'We aim to exceed our customers expectations with our custom web development services, responsive designs, and scalable architectures to increase user engagement. Using our full-stack development services, we build dynamic web products to ensure excellence in every project',
-          icon: 'code'
+          title: 'Captain Seat Re-upholstery',
+          description: 'High-density foam and luxury finish for captain and crew seating.',
+          icon: 'user-check'
         },
         {
-          title: 'Mobile App Development',
-          description: 'We bring efficiency to your project using the latest technology and tools resulting in exceptional user experience. Our team follows an effective workflow that eliminates complexity and delivers performance-optimized solutions that drive user retention.',
-          icon: 'mobile-device'
+          title: 'Marine Cushions & Covers',
+          description: 'Tailored waterproof covers and foam-based seating solutions.',
+          icon: 'droplet'
         },
-      
-
-
+        {
+          title: 'Wall & Ceiling Panels',
+          description: 'Fabric-covered paneling solutions for premium marine interiors.',
+          icon: 'layout'
+        }
       ],
       cta: {
-        text: 'Get Started Today',
+        text: 'Book Marine Upholstery Service',
         link: '/contact'
       },
       sdlcImages: {
-        desktop1: '/assets/images/services/cc-1.png',
-        desktop2: '/assets/images/services/cc-2.png',
-        mobile: '/assets/images/services/mobile-c-1.png'
+        desktop1: '/assets/images/services/ship-desktop.jpg',
+        mobile: '/assets/images/services/ship-mobile.jpg'
       }
     }
   },
-
-
-
-
-{
-  id: 6,
-  title: 'Quality Assurance',
-  btndiscription: 'Ensure Seamless Software Quality',
-
-  description: 'We offer comprehensive Quality Assurance services to deliver reliable, secure, and high-performing software solutions.',
-imgSrc: '/assets/images/services/quality.jpg',
-    imgoverview: '/assets/images/services/qu.jpg',
-  icon: 'shield-check',
-  category: 'Development',
-  featured: false,
-  link: '/apps/services/detail/6',
-  content: {
-    title: 'Reliable Quality Assurance & Testing Services',
-
-    paragraphs: [
-      'Our dedicated QA team ensures that your software meets the highest standards of performance, usability, and security. We use both automated and manual testing techniques to eliminate bugs and deliver a flawless product experience.',
-      'Whether its functional, performance, security, or usability testing, we help companies reduce risk and gain user trust by identifying vulnerabilities before deployment. We work closely with your development team to ensure continuous delivery of quality software.'
-    ],
-
-    headingpoint: '',
-
-    datapoint: [],
-
-    heading: 'End-to-End Quality Assurance for Unmatched Reliability',
-
-    data: [
-      'With our robust QA methodologies, we ensure your application performs as expected under all scenarios. From agile testing frameworks to regression and UAT, our goal is to help you reduce time-to-market and increase product reliability.'
-    ],
-
-    services: [
-      {
-        title: 'Manual Testing',
-        description: 'Our QA engineers follow detailed test cases to validate functionality, design, and performance of your software, ensuring every edge case is handled before launch.',
-        icon: 'clipboard-list'
+  {
+    id: 2,
+    title: 'Car Upholstery',
+    btndiscription: 'Restore or Customize Your Car Interior',
+    description: 'We offer top-quality car upholstery services including seat repair, roof lining, dashboards, and complete interior restoration.',
+    imgSrc: '/assets/images/services/car-upholstery.jpg',
+    imgoverview: '/assets/images/services/car-overview.jpg',
+    icon: 'car',
+    category: 'Auto Upholstery',
+    featured: true,
+    link: '/apps/services/detail/2',
+    content: {
+      title: 'Expert Car Upholstery & Interior Restoration',
+      paragraphs: [
+        'Whether you want to restore a worn-out interior or completely revamp your car’s look, we provide custom car upholstery solutions tailored to your needs.',
+        'From leather to fabric, our craftsmanship ensures every stitch enhances both comfort and aesthetics.'
+      ],
+      heading: 'Comfort Meets Craftsmanship in Every Ride',
+      data: [
+        'Reupholstery for car seats, roof linings, carpets, dashboards, and door panels using premium fabrics and leather.'
+      ],
+      headingpoint: '',
+      datapoint: [],
+      services: [
+        {
+          title: 'Seat Repair & Replacement',
+          description: 'Fix torn or sagging seats with fresh padding and upholstery.',
+          icon: 'settings'
+        },
+        {
+          title: 'Roof Lining Restoration',
+          description: 'Fix sagging car ceilings with heat-resistant, sag-proof materials.',
+          icon: 'arrow-up-circle'
+        },
+        {
+          title: 'Leather Seat Customization',
+          description: 'Upgrade to premium stitched leather or sports styling.',
+          icon: 'shield'
+        },
+        {
+          title: 'Interior Detailing',
+          description: 'Complete replacement for carpets, dashboards, and door panels.',
+          icon: 'box'
+        }
+      ],
+      cta: {
+        text: 'Get Car Interior Work Done',
+        link: '/contact'
       },
-      {
-        title: 'Automation Testing',
-        description: 'Using tools like Selenium, Cypress, and TestComplete, we automate repetitive tests to improve accuracy and save valuable development time.',
-        icon: 'zap'
-      },
-      {
-        title: 'Performance Testing',
-        description: 'We analyze how your app behaves under stress to ensure optimal performance, even during peak traffic loads, using tools like JMeter and LoadRunner.',
-        icon: 'activity'
-      },
-      {
-        title: 'Security Testing',
-        description: 'Our team performs vulnerability assessments and penetration tests to secure your application against potential threats and unauthorized access.',
-        icon: 'shield'
+      sdlcImages: {
+        desktop1: '/assets/images/services/car-desktop.jpg',
+        mobile: '/assets/images/services/car-mobile.jpg'
       }
-    ],
-    
-    cta: {
-      text: 'Request a QA Consultation',
-      link: '/contact'
-    },
-
-    sdlcImages: {
-      desktop1: '/assets/images/services/ee-1.png',
-      desktop2: '/assets/images/services/ee-2.png',
-      mobile: '/assets/images/services/mobile-q-1.png'
+    }
+  },
+  {
+    id: 3,
+    title: 'Custom Furniture Upholstery',
+    btndiscription: 'Restore Sofas, Chairs & More',
+    description: 'We bring new life to old furniture with expert reupholstery, padding, and fabric replacement services.',
+    imgSrc: '/assets/images/services/furniture.jpg',
+    imgoverview: '/assets/images/services/furniture-overview.jpg',
+    icon: 'home',
+    category: 'Furniture Upholstery',
+    featured: false,
+    link: '/apps/services/detail/3',
+    content: {
+      title: 'Furniture Upholstery & Restoration',
+      paragraphs: [
+        'From antique pieces to modern furniture, we repair and reupholster sofas, chairs, and lounges with the finest craftsmanship.',
+        'Choose from a variety of fabrics, foams, and padding options for both comfort and style.'
+      ],
+      heading: 'Bring New Life to Your Favorite Furniture',
+      data: [
+        'Custom upholstery for sofas, dining chairs, office furniture, and ottomans with high-quality foams and finishes.'
+      ],
+      headingpoint: '',
+      datapoint: [],
+      services: [
+        {
+          title: 'Sofa & Chair Reupholstery',
+          description: 'Replace damaged fabric, foam, and springs with a fresh new look.',
+          icon: 'couch'
+        },
+        {
+          title: 'Antique Restoration',
+          description: 'Preserve heritage furniture with precise fabric and padding replacement.',
+          icon: 'clock'
+        },
+        {
+          title: 'Custom Foam & Fabric Work',
+          description: 'Tailored solutions for custom-sized furniture or décor items.',
+          icon: 'ruler'
+        }
+      ],
+      cta: {
+        text: 'Restore Your Furniture',
+        link: '/contact'
+      },
+      sdlcImages: {
+        desktop1: '/assets/images/services/furniture-desktop.jpg',
+        mobile: '/assets/images/services/furniture-mobile.jpg'
+      }
+    }
+  },
+  {
+    id: 4,
+    title: 'General Upholstery Services',
+    btndiscription: 'Expert Upholstery for Any Surface',
+    description: 'We provide upholstery solutions wherever needed — home, office, commercial, or outdoor spaces.',
+    imgSrc: '/assets/images/services/general-upholstery.jpg',
+    imgoverview: '/assets/images/services/general-overview.jpg',
+    icon: 'layers',
+    category: 'General',
+    featured: false,
+    link: '/apps/services/detail/4',
+    content: {
+      title: 'Reliable & Versatile Upholstery Services',
+      paragraphs: [
+        'Whether it’s a sofa in your home, a bench in your store, or cushions for your terrace, we provide high-quality, on-demand upholstery work wherever needed.',
+        'We travel to client sites when necessary and ensure every job is handled with professionalism and detail.'
+      ],
+      heading: 'Flexible Upholstery Work for Every Setting',
+      data: [
+        'Indoor and outdoor fabric upholstery, cushion replacement, padding fixes, and site visits available on request.'
+      ],
+      headingpoint: '',
+      datapoint: [],
+      services: [
+        {
+          title: 'On-site Upholstery',
+          description: 'We come to your location and complete the work as needed.',
+          icon: 'map-pin'
+        },
+        {
+          title: 'Outdoor Cushions',
+          description: 'Weatherproof fabric and foam for garden furniture and patios.',
+          icon: 'sun'
+        },
+        {
+          title: 'Office & Commercial Upholstery',
+          description: 'Reupholster waiting areas, chairs, or business lounges.',
+          icon: 'briefcase'
+        }
+      ],
+      cta: {
+        text: 'Request Upholstery Service',
+        link: '/contact'
+      },
+      sdlcImages: {
+        desktop1: '/assets/images/services/general-desktop.jpg',
+        mobile: '/assets/images/services/general-mobile.jpg'
+      }
     }
   }
-}
-,
 ];

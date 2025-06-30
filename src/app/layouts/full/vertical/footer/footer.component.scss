@@ -35,7 +35,7 @@
             transition: color 0.3s ease;
 
             &:hover {
-              color: #8e2157;
+              color: #0074BA; // Updated to theme color
             }
           }
         }
@@ -58,11 +58,11 @@
 
       a {
         font-size: 20px;
-          color: #8e2157;
+        color: #0074BA; // Updated base color
         transition: color 0.3s;
 
         &:hover {
-          color: #5b595a;
+          color: #005a94; // Slightly darker for hover effect
         }
       }
     }

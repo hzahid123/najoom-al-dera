@@ -192,39 +192,29 @@ goToGeographies() {
     }
   ];
 
-  services: any[] = [
-    {
-      id: 1,
-      titleKey: 'WEB_DEV',
-      link: '/apps/services/detail/1',
-      
-    },
-    {
-      id: 2,
-      titleKey: 'MOBILE_DEV',
-      link: '/apps/services/detail/2',
-    },
-    {
-      id: 3,
-      titleKey: 'UI_UX',
-      link: '/apps/services/detail/3',
-    },
-    {
-      id: 4,
-      titleKey: 'ECOMMERCE',
-      link: '/apps/services/detail/4',
-    },
-    {
-      id: 5,
-      titleKey: 'CUSTOM_SOFTWARE',
-      link: '/apps/services/detail/5',
-    },
-    {
-      id: 6,
-      titleKey: 'QA',
-      link: '/apps/services/detail/6',
-    }
-  ];
+services: any[] = [
+  {
+    id: 1,
+    titleKey: 'SHIP_UPHOLSTERY',
+    link: '/apps/services/detail/1',
+  },
+  {
+    id: 2,
+    titleKey: 'CAR_UPHOLSTERY',
+    link: '/apps/services/detail/2',
+  },
+  {
+    id: 3,
+    titleKey: 'FURNITURE_UPHOLSTERY',
+    link: '/apps/services/detail/3',
+  },
+  {
+    id: 4,
+    titleKey: 'GENERAL_UPHOLSTERY',
+    link: '/apps/services/detail/4',
+  }
+];
+
 
   aboutus: any[] = [
     {
@@ -234,7 +224,7 @@ goToGeographies() {
     },
     {
       id: 2,
-      titleKey: 'GEOGRAPHIES',
+      titleKey: 'GEOGRAPHY',
       link: '/apps/geographies',
     }
   ];

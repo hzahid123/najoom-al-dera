@@ -10,40 +10,6 @@
 
   <!-- Main Content Section -->
   <div class="content-card  ">
-    <mat-card-content>
-      <div class="row align-items-center gx-5">
-        <!-- Video Column -->
-          <!-- Video Column -->
-    <div class="col-md-6 d-flex justify-content-center video-column">
-      <div class="video-container">
-        <iframe
-          width="100%"
-          height="350"
-         [src]="safeVideoUrl"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-
-        <!-- Content Column -->
-        <div class="col-md-6 content-column">
-          <div class="content-wrapper">
-            <h1 class="service-main-title mat-display-1">
-              <span class="first-letter">{{ getTranslatedTitle('GEO.LAHTITLE').firstPart }}</span>
-              <span class="text-primary">&nbsp;{{ getTranslatedTitle('GEO.LAHTITLE').rest }}</span>
-            </h1>
-
-            <div class="overview-paragraphs">
-              @for(paragraph of service.content.paragraphs; track $index) {
-                <p class="mat-body-1">{{ paragraph }}</p>
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </mat-card-content>
 
     <mat-card-content style="margin-top: 50px;">
       <div class="row align-items-center gx-5">
@@ -94,9 +60,6 @@
               <mat-card class="leader-card">
                 <div class="leader-image-container">
                   <img [src]="leader.img" [alt]="leader.name | translate" class="leader-image" />
-                  <a [href]="leader.linkedin" target="_blank" class="linkedin-icon">
-                    <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
-                  </a>
                 </div>
                 <mat-card-content>
                   <h3  class="text-primary">{{ leader.name | translate }}</h3>
@@ -114,9 +77,6 @@
                   <mat-card class="leader-card">
                     <div class="leader-image-container">
                       <img [src]="leader.img" [alt]="leader.name | translate" class="leader-image text-primary" />
-                      <a [href]="leader.linkedin" target="_blank" class="linkedin-icon">
-                        <i-tabler name="brand-linkedin" class="tabler-icon"></i-tabler>
-                      </a>
                     </div>
                     <mat-card-content>
                       <h3>{{ leader.name | translate }}</h3>
