@@ -86,6 +86,9 @@ export class AboutusComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+     import('aos').then((AOS) => {
+    AOS.init();
+  });
     if (this.isBrowser) {
       // Initialize AOS only in browser environment
       AOS.init({

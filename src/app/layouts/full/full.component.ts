@@ -58,10 +58,9 @@ interface aboutus {
     // AppBreadcrumbComponent,
     CustomizerComponent,
     // AppLandingpageComponent
-    ContactusComponent,
     FooterComponent,
     AppFaqComponent,
-    GeographiesComponent
+  GeographiesComponent
 ],
     templateUrl: './full.component.html',
     styleUrls: [],
