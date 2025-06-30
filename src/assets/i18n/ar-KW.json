@@ -83,38 +83,32 @@
     }
   },
   "FOOTER": {
-    "COMPANY_NAME": "دراي ران",
+    "COMPANY_NAME": "نجوم الديرة",
     "ADDRESS": {
-      "LINE1": "40-B1 شارع محمد علام، بلوك B1 بلوك C 1",
-      "LINE2": "جولبرج الثالث، لاهور، البنجاب 54680"
+      "LINE1": "مركز نجوم الديرة",
+      "LINE2": "الكويت - الشويخ - شارع الدولية - مقابل مطعم بيروت"
     },
-    "EMAIL": "contact@dryrunsolutions.com",
-    "PHONE": "+92 3126449414",
+    "PHONE1": "هاتف: 96686771",
+    "PHONE2": "هاتف: 911119771",
     "SERVICES": {
-      "TITLE": "الخدمات"
+      "TITLE": "الخدمات",
+      "SHIP_UPHOLSTERY": "تنجيد السفن",
+      "CAR_UPHOLSTERY": "تنجيد السيارات",
+      "FURNITURE_UPHOLSTERY": "تنجيد الأثاث",
+      "GENERAL_UPHOLSTERY": "تنجيد عام"
     },
     "COMPANY": {
       "TITLE": "الشركة",
       "PRODUCT": "المنتج",
       "GEOGRAPHIES": "المناطق الجغرافية",
       "ABOUT_US": "من نحن",
-      "CONTACT": "اتصل بنا",
-      "BLOGS": "المدونات"
+      "GALLERY": "معرض الصور"
     },
     "LOCATION": {
       "TITLE": "الموقع",
-      "USA": "الولايات المتحدة (أمريكا)",
-      "KUWAIT": "الكويت",
-      "UAE": "الإمارات العربية المتحدة",
-      "KSA": "المملكة العربية السعودية",
-      "PAKISTAN": "باكستان"
+      "KUWAIT": "الكويت"
     },
-    "SUBSCRIBE": {
-      "TITLE": "اشترك",
-      "DESCRIPTION": "احصل على رؤى حصرية وموارد مختارة وإرشادات من الخبراء.",
-      "EMAIL_PLACEHOLDER": "أدخل بريدك الإلكتروني"
-    },
-    "COPYRIGHT": "دراي ران 1.0 | جميع الحقوق محفوظة"
+    "COPYRIGHT": "نجوم الديرة | جميع الحقوق محفوظة"
   },
   "SERVICES_footer": {
     "WEB_DEV": "تطوير الويب",

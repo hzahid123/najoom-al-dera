@@ -15,8 +15,8 @@
           {{ "FOOTER.ADDRESS.LINE1" | translate }}<br />
           {{ "FOOTER.ADDRESS.LINE2" | translate }}
         </p>
-        <p class="email">{{ "FOOTER.EMAIL" | translate }}</p>
-        <p class="phone">{{ "FOOTER.PHONE" | translate }}</p>
+        <p class="phone">{{ "FOOTER.PHONE1" | translate }}</p>
+        <p class="phone">{{ "FOOTER.PHONE2" | translate }}</p>
         <!-- Social Icons -->
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/dryrun1/" target="_blank"
@@ -41,24 +41,10 @@
       <div class="footer-section services  hide-on-mobile">
         <h3>{{ "FOOTER.SERVICES.TITLE" | translate }}</h3>
         <ul>
-          <li [routerLink]="['/apps/services/detail', 1]">
-            {{ "SERVICES_footer.WEB_DEV" | translate }}
-          </li>
-          <li [routerLink]="['/apps/services/detail', 2]">
-            {{ "SERVICES_footer.MOBILE_APP" | translate }}
-          </li>
-          <li [routerLink]="['/apps/services/detail', 3]">
-            {{ "SERVICES_footer.CUSTOM_SOFTWARE" | translate }}
-          </li>
-          <li [routerLink]="['/apps/services/detail', 4]">
-            {{ "SERVICES_footer.UI_UX" | translate }}
-          </li>
-          <li [routerLink]="['/apps/services/detail', 5]">
-            {{ "SERVICES_footer.ECOMMERCE" | translate }}
-          </li>
-          <li [routerLink]="['/apps/services/detail', 6]">
-            {{ "SERVICES_footer.AUTOMATION" | translate }}
-          </li>
+          <li>{{ "FOOTER.SERVICES.SHIP_UPHOLSTERY" | translate }}</li>
+          <li>{{ "FOOTER.SERVICES.CAR_UPHOLSTERY" | translate }}</li>
+          <li>{{ "FOOTER.SERVICES.FURNITURE_UPHOLSTERY" | translate }}</li>
+          <li>{{ "FOOTER.SERVICES.GENERAL_UPHOLSTERY" | translate }}</li>
         </ul>
       </div>
 
@@ -73,11 +59,8 @@
           <li [routerLink]="['/apps/aboutus']">
             {{ "FOOTER.COMPANY.ABOUT_US" | translate }}
           </li>
-          <li [routerLink]="['/apps/contactus']">
-            {{ "FOOTER.COMPANY.CONTACT" | translate }}
-          </li>
-          <li [routerLink]="['/apps/blog/post']">
-            {{ "FOOTER.COMPANY.BLOGS" | translate }}
+          <li [routerLink]="['/apps/gallery']">
+            {{ "FOOTER.COMPANY.GALLERY" | translate }}
           </li>
         </ul>
       </div>
@@ -86,29 +69,8 @@
       <div class="footer-section location hide-on-mobile">
         <h3>{{ "FOOTER.LOCATION.TITLE" | translate }}</h3>
         <ul>
-          <li>{{ "FOOTER.LOCATION.USA" | translate }}</li>
           <li>{{ "FOOTER.LOCATION.KUWAIT" | translate }}</li>
-          <li>{{ "FOOTER.LOCATION.UAE" | translate }}</li>
-          <li>{{ "FOOTER.LOCATION.KSA" | translate }}</li>
-          <li>{{ "FOOTER.LOCATION.PAKISTAN" | translate }}</li>
         </ul>
-      </div>
-
-      <!-- Subscribe -->
-      <div class="footer-section subscribe hide-on-mobile">
-        <h3>{{ "FOOTER.SUBSCRIBE.TITLE" | translate }}</h3>
-        <p>{{ "FOOTER.SUBSCRIBE.DESCRIPTION" | translate }}</p>
-        <form class="subscribe-form">
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>{{
-              "FOOTER.SUBSCRIBE.EMAIL_PLACEHOLDER" | translate
-            }}</mat-label>
-            <input matInput />
-            <button matSuffix mat-icon-button type="submit">
-              <mat-icon>send</mat-icon>
-            </button>
-          </mat-form-field>
-        </form>
       </div>
     </div>
 

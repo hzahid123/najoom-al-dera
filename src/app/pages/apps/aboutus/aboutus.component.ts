@@ -1,15 +1,59 @@
-// src/app/pages/apps/services/aboutus.component.ts
 import { MaterialModule } from 'src/app/material.module';
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import Swiper from 'swiper';
 import { SwiperOptions } from 'swiper/types';
+import { Pagination, Autoplay } from 'swiper/modules';
 import { register } from 'swiper/element/bundle';
 
 import AOS from 'aos';
 import { TablerIconsModule } from 'angular-tabler-icons';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
+// Register Swiper web components
 register();
+
+// Configure Swiper modules
+Swiper.use([Pagination, Autoplay]);
+
+interface ServiceCategory {
+  category: string;
+  items: string[];
+}
+
+interface Value {
+  icon: string;
+  iconClass?: string;
+  title: string;
+  description: string;
+}
+
+interface ContentSection {
+  title: string;
+  paragraphs: string[];
+}
+
+interface Mission {
+  title: string;
+  description: string;
+}
+
+interface ServiceData {
+  headingdata: string;
+  description: string;
+  btndiscription: string;
+  content: ContentSection;
+  mission: Mission;
+  vision: Mission;
+  services: ServiceCategory[];
+  values: Value[];
+  title: string;
+  imgSrc: string;
+  imgoverview: string;
+  icon: string;
+  category: string;
+}
 
 @Component({
   selector: 'app-aboutus',
@@ -20,75 +64,126 @@ register();
     MaterialModule
   ],
   templateUrl: './aboutus.component.html',
-  styleUrl: './aboutus.component.scss',
+  styleUrls: ['./aboutus.component.scss'], // Fixed: should be styleUrls (plural)
 })
-export class AboutusComponent implements OnInit, AfterViewInit {
+export class AboutusComponent implements OnInit, AfterViewInit, OnDestroy {
   private valuesSwiper: Swiper | undefined;
   private leadershipSwiper: Swiper | undefined;
+  private isBrowser: boolean;
+  
   videoId = 'your-upholstery-showcase-video-id'; // Replace with actual video ID
   safeVideoUrl: SafeResourceUrl;
 
-  constructor(private sanitizer: DomSanitizer) { }
-
-  ngOnInit() {
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-
-    const videoUrl = 'https://www.youtube.com/embed/' + this.videoId + '?autoplay=1&mute=1';
+  constructor(
+    private sanitizer: DomSanitizer,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+    
+    // Initialize safeVideoUrl in constructor to avoid undefined issues
+    const videoUrl = `https://www.youtube.com/embed/${this.videoId}?autoplay=1&mute=1`;
     this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
-    this.initSwipers();
   }
 
-  ngAfterViewInit() {
-    this.initSwipers();
-  }
-
-  initSwipers() {
-    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-      // Values Swiper
-      this.valuesSwiper = new Swiper('.valuesSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.valuesSwiper .swiper-pagination',
-          clickable: true,
-        },
+  ngOnInit(): void {
+    if (this.isBrowser) {
+      // Initialize AOS only in browser environment
+      AOS.init({
+        duration: 800,
+        once: true
       });
 
-      // Leadership Swiper
-      this.leadershipSwiper = new Swiper('.leadershipSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.leadershipSwiper .swiper-pagination',
-          clickable: true,
-        },
-      });
+      // Update video URL if needed
+      const videoUrl = `https://www.youtube.com/embed/${this.videoId}?autoplay=1&mute=1`;
+      this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
     }
   }
 
-  service = {
-    title: 'Premium Upholstery Services',
-    description: 'Based in Kuwait, we specialize in premium upholstery services for marine vessels, luxury vehicles, and custom furniture. With decades of expertise in craftsmanship and attention to detail, we transform interiors with quality materials and precision workmanship that stands the test of time.',
-    imgSrc: '/assets/images/services/upholstery-hero.jpg',
-    headingdata: 'Crafting Excellence, One Stitch at a Time',
-    imgoverview: '/assets/images/services/workshop-overview.jpg',
-    icon: 'tools',
-    btndiscription: 'Request Quote',
-    category: 'Upholstery Services',
+  ngAfterViewInit(): void {
+    if (this.isBrowser) {
+      // Add a small delay to ensure DOM is fully rendered
+      setTimeout(() => {
+        this.initSwipers();
+      }, 100);
+    }
+  }
 
+  ngOnDestroy(): void {
+    // Clean up Swiper instances
+    if (this.valuesSwiper) {
+      this.valuesSwiper.destroy(true, true);
+    }
+    if (this.leadershipSwiper) {
+      this.leadershipSwiper.destroy(true, true);
+    }
+  }
+
+  private initSwipers(): void {
+    if (!this.isBrowser) return;
+
+    try {
+      if (window.innerWidth <= 768) {
+        // Values Swiper
+        const valuesSwiperEl = document.querySelector('.valuesSwiper');
+        if (valuesSwiperEl && !this.valuesSwiper) {
+          this.valuesSwiper = new Swiper('.valuesSwiper', {
+            modules: [Pagination, Autoplay],
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: '.valuesSwiper .swiper-pagination',
+              clickable: true,
+            },
+            on: {
+              init: () => {
+                console.log('Values Swiper initialized');
+              }
+            }
+          });
+        }
+
+        // Leadership Swiper
+        const leadershipSwiperEl = document.querySelector('.leadershipSwiper');
+        if (leadershipSwiperEl && !this.leadershipSwiper) {
+          this.leadershipSwiper = new Swiper('.leadershipSwiper', {
+            modules: [Pagination, Autoplay],
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: '.leadershipSwiper .swiper-pagination',
+              clickable: true,
+            },
+            on: {
+              init: () => {
+                console.log('Leadership Swiper initialized');
+              }
+            }
+          });
+        }
+      }
+    } catch (error) {
+      console.error('Error initializing Swipers:', error);
+    }
+  }
+
+  // Service data with proper typing
+  service: ServiceData = {
+    // Hero section properties
+    headingdata: 'Crafting Excellence, One Stitch at a Time',
+    description: 'Based in Kuwait, we specialize in premium upholstery services for marine vessels, luxury vehicles, and custom furniture. With decades of expertise in craftsmanship and attention to detail, we transform interiors with quality materials and precision workmanship that stands the test of time.',
+    btndiscription: 'Request Quote',
+
+    // Content section properties
     content: {
       title: 'Our Craftsmanship',
       paragraphs: [
@@ -108,30 +203,6 @@ export class AboutusComponent implements OnInit, AfterViewInit {
       description: 'To be Kuwait\'s premier upholstery specialist, recognized for transforming spaces through superior craftsmanship, innovative design solutions, and unwavering commitment to quality in marine, automotive, and furniture upholstery.'
     },
 
-    // Core Values
-    values: [
-      {
-        icon: 'diamond',
-        title: 'Premium Quality',
-        description: 'We use only the finest materials and employ time-tested techniques to ensure every piece meets the highest standards of quality and durability.'
-      },
-      {
-        icon: 'palette',
-        title: 'Custom Design',
-        description: 'Every project is unique. We work closely with clients to create personalized designs that reflect their style and functional requirements.'
-      },
-      {
-        icon: 'clock',
-        title: 'Timely Delivery',
-        description: 'We respect our clients\' schedules and consistently deliver projects on time without compromising on quality or attention to detail.'
-      },
-      {
-        icon: 'heart_handshake',
-        title: 'Client Satisfaction',
-        description: 'Building lasting relationships through exceptional service, clear communication, and ensuring complete satisfaction with every project.'
-      }
-    ],
-
     // Services offered
     services: [
       {
@@ -146,6 +217,53 @@ export class AboutusComponent implements OnInit, AfterViewInit {
         category: 'Furniture & Custom Work',
         items: ['Antique Furniture Restoration', 'Custom Furniture Design', 'Commercial Seating', 'Residential Upholstery']
       }
-    ]
+    ],
+
+    // Core Values with iconClass for CSS styling
+    values: [
+      {
+        icon: 'diamond',
+        iconClass: 'quality',
+        title: 'Premium Quality',
+        description: 'We use only the finest materials and employ time-tested techniques to ensure every piece meets the highest standards of quality and durability.'
+      },
+      {
+        icon: 'palette',
+        iconClass: 'design',
+        title: 'Custom Design',
+        description: 'Every project is unique. We work closely with clients to create personalized designs that reflect their style and functional requirements.'
+      },
+      {
+        icon: 'clock',
+        iconClass: 'time',
+        title: 'Timely Delivery',
+        description: 'We respect our clients\' schedules and consistently deliver projects on time without compromising on quality or attention to detail.'
+      },
+      {
+        icon: 'heart_handshake',
+        iconClass: 'satisfaction',
+        title: 'Client Satisfaction',
+        description: 'Building lasting relationships through exceptional service, clear communication, and ensuring complete satisfaction with every project.'
+      }
+    ],
+
+    // Additional properties
+    title: 'Premium Upholstery Services',
+    imgSrc: '/assets/images/services/upholstery-hero.jpg',
+    imgoverview: '/assets/images/services/workshop-overview.jpg',
+    icon: 'tools',
+    category: 'Upholstery Services'
   };
+
+  // Method to handle CTA button click
+  onCtaClick(): void {
+    // Add your CTA logic here
+    console.log('CTA button clicked');
+  }
+
+  // Method to handle contact button click
+  onContactClick(): void {
+    // Add your contact logic here
+    console.log('Contact button clicked');
+  }
 }

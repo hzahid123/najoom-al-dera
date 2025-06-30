@@ -83,39 +83,34 @@
     }
   },
   "FOOTER": {
-    "COMPANY_NAME": "Dry Run",
+    "COMPANY_NAME": "Najum Al-Deera",
     "ADDRESS": {
-      "LINE1": "40-B1 MM Alam Rd, Block B1 Block C 1",
-      "LINE2": "Gulberg III, Lahore, Punjab 54680"
+      "LINE1": "Najum Al-Deera Center",
+      "LINE2": "Kuwait - Shuwaikh - International Street - Opp. Beirut Restaurant"
     },
-    "EMAIL": "contact@dryrunsolutions.com",
-    "PHONE": "+92 3126449414",
+    "PHONE1": "Phone: 96686771",
+    "PHONE2": "Phone: 911119771",
     "SERVICES": {
-      "TITLE": "Services"
+      "TITLE": "Services",
+      "SHIP_UPHOLSTERY": "Ship Upholstery",
+      "CAR_UPHOLSTERY": "Car Upholstery",
+      "FURNITURE_UPHOLSTERY": "Furniture Upholstery",
+      "GENERAL_UPHOLSTERY": "General Upholstery"
     },
     "COMPANY": {
       "TITLE": "Company",
       "PRODUCT": "Product",
       "GEOGRAPHIES": "Geographies",
       "ABOUT_US": "About Us",
-      "CONTACT": "Contact Us",
-      "BLOGS": "Blogs"
+      "GALLERY": "Gallery"
     },
     "LOCATION": {
       "TITLE": "Location",
-      "USA": "United States (USA)",
-      "KUWAIT": "Kuwait",
-      "UAE": "United Arab Emirates (UAE)",
-      "KSA": "Saudi Arabia (KSA)",
-      "PAKISTAN": "Pakistan"
+      "KUWAIT": "Kuwait"
     },
-    "SUBSCRIBE": {
-      "TITLE": "Subscribe",
-      "DESCRIPTION": "Get exclusive insights, curated resources and expert guidance.",
-      "EMAIL_PLACEHOLDER": "Enter your email"
-    },
-    "COPYRIGHT": "DRY RUN 1.0 | All Rights Reserved"
+    "COPYRIGHT": "Najum Al-Deera | All Rights Reserved"
   },
+  
   "SERVICES_footer": {
     "WEB_DEV": "Web Development",
     "MOBILE_APP": "Mobile App Development",

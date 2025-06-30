@@ -1,27 +1,20 @@
 <mat-card class="cardWithShadow">
+  <!-- Hero Section - Completely Redesigned -->
   <div class="hero-section">
     <div class="hero-image-container-aboutus">
       <div class="hero-content">
-        <!-- Transparent card for hero content -->
-        <mat-card class="card-transparent overflow-hidden" style="margin-top: 30px;">
-          <mat-card-content class="p-32 p-b-0">
-            <div class="row justify-content-between">
-              <div class="col-sm-12">
-                <mat-card-title class="f-s-24 m-t-16 lh-24 m-b-24">About Us</mat-card-title>
-                <mat-card-subtitle class="f-s-16 m-t-16 lh-24 m-b-24" style="color: white">
-                  <div class="floating-card-content">
-                    <h1 class="service-title-dis" style="color: rgb(248, 248, 247); font-size: clamp(1.5rem, 3vw, 3rem); line-height: 1.3; margin: 0.5em 0;">
-                      {{ service.headingdata }}
-                    </h1>
-                    <h4 class="service-title" style="color: rgb(248, 248, 247)">
-                      {{ service.description }}
-                    </h4>
-                    <button mat-flat-button style="margin-top: 20px; background-color: #8e2157; color: white;">
-                      {{ service.btndiscription }}
-                    </button>
-                  </div>
-                </mat-card-subtitle>
-              </div>
+        <mat-card class="card-transparent">
+          <mat-card-content>
+            <div class="floating-card-content">
+              <h1 class="service-title-dis">
+                {{ service.headingdata }}
+              </h1>
+              <p class="service-title">
+                {{ service.description }}
+              </p>
+              <button mat-flat-button class="hero-cta-button floating-animation">
+                {{ service.btndiscription }}
+              </button>
             </div>
           </mat-card-content>
         </mat-card>
@@ -29,171 +22,161 @@
     </div>
   </div>
 
-  <div class="row align-items-start margins">
-    <!-- Video Column -->
-    <div class="col-md-6 d-flex justify-content-center video-column">
-      <div class="video-container">
-        <iframe
-          width="100%"
-          height="350"
-          [src]="safeVideoUrl"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+  <!-- Main Content Section -->
+  <div class="content-section">
+    <div class="margins">
+      <!-- Content Row (without video) -->
+      <div class="content-row">
+        <!-- Content Column -->
+        <div class="content-column">
+          <h1 class="service-main-title">
+            <span class="first-letter">{{ service.content.title.substring(0, 3) }}</span>
+            <span class="text-primary">{{ service.content.title.substring(3) }}</span>
+          </h1>
+          <div class="overview-paragraphs">
+            <p>{{ service.content.paragraphs[0] }}</p>
+            <p>{{ service.content.paragraphs[1] }}</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Content Column -->
-    <div class="col-md-6 content-column">
-      <h1 class="service-main-title">
-        <span class="first-letter">{{ service.content.title.substring(0, 3) }}</span>
-        <span class="text-primary">&nbsp;{{ ' ' + service.content.title.substring(3) }}</span>
-      </h1>
-      <div class="overview-paragraphs">
-        <p>{{ service.content.paragraphs[0] }}</p>
-        <p>{{ service.content.paragraphs[1] }}</p>
-      </div>
+      @if(service) {
+        <!-- Mission Section -->
+        <div class="mission-section">
+          <div class="mission-container">
+            <h1 class="mission-heading">
+              <span>Our </span>
+              <span class="text-primary">Mission</span>
+            </h1>
+            <mat-card class="mission-card">
+              <mat-card-content>
+                <p class="mission-text">
+                  {{ service.mission.description }}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
+        <!-- Vision Section -->
+        <div class="mission-section">
+          <div class="mission-container">
+            <h1 class="mission-heading">
+              <span>Our </span>
+              <span class="text-primary">Vision</span>
+            </h1>
+            <mat-card class="mission-card">
+              <mat-card-content>
+                <p class="mission-text">
+                  {{ service.vision.description }}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section">
+          <div class="services-header">
+            <h2 class="section-title">OUR SERVICES</h2>
+            <h3 class="section-subtitle">Specialized Upholstery Solutions</h3>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-category" *ngFor="let serviceCategory of service.services">
+              <mat-card class="service-category-card">
+                <mat-card-content>
+                  <h4 class="category-title">{{ serviceCategory.category }}</h4>
+                  <ul class="service-list">
+                    <li *ngFor="let item of serviceCategory.items">{{ item }}</li>
+                  </ul>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+
+        <!-- Values Section -->
+        <div class="values-section">
+          <div class="values-header">
+            <h2 class="section-title">OUR VALUES</h2>
+            <h3 class="section-subtitle">What Sets Us Apart</h3>
+          </div>
+
+          <div class="values-container">
+            <!-- Desktop Grid View -->
+            <div class="values-grid desktop-only">
+              <mat-card class="value-card" *ngFor="let value of service.values">
+                <mat-card-content>
+                  <div class="value-icon" [ngClass]="value.iconClass"></div>
+                  <h4 class="value-title">{{ value.title }}</h4>
+                  <p class="value-description">{{ value.description }}</p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+            <!-- Mobile Swiper -->
+            <div class="swiper valuesSwiper mobile-only">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let value of service.values">
+                  <mat-card class="value-card">
+                    <mat-card-content>
+                      <div class="value-icon" [ngClass]="value.iconClass"></div>
+                      <h4 class="value-title">{{ value.title }}</h4>
+                      <p class="value-description">{{ value.description }}</p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+          <div class="contact-container">
+            <h1 class="mission-heading">
+              <span>Get In </span>
+              <span class="text-primary">Touch</span>
+            </h1>
+            <mat-card class="contact-card">
+              <mat-card-content>
+                <div class="contact-info">
+                  <div class="contact-item">
+                    <div class="contact-icon location"></div>
+                    <div class="contact-details">
+                      <h4>Location</h4>
+                      <p>Kuwait</p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <div class="contact-icon phone"></div>
+                    <div class="contact-details">
+                      <h4>Phone</h4>
+                      <p>+965 XXXX XXXX</p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <div class="contact-icon email"></div>
+                    <div class="contact-details">
+                      <h4>Email</h4>
+                      <p>info&#64;upholsteryexpert.com</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="contact-cta">
+                  <p class="cta-text">Ready to transform your space with premium upholstery?</p>
+                  <button mat-flat-button class="cta-button">
+                    Contact Us Today
+                  </button>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      }
     </div>
   </div>
-
-  @if(service) {
-  <mat-card class="cardWithShadow margins">
-    <mat-card-content class="p-24">
-      <!-- Mission Section -->
-      <div class="mission-section">
-        <div class="mission-container">
-          <h1 class="mission-heading text-primary">
-            <span style="color: black">Our </span>Mission
-          </h1>
-          <mat-card class="mission-card">
-            <mat-card-content>
-              <p class="mission-text">
-                {{ service.mission.description }}
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </div>
-
-      <!-- Vision Section -->
-      <div class="mission-section">
-        <div class="mission-container">
-          <h1 class="mission-heading text-primary">
-            <span style="color: black">Our </span>Vision
-          </h1>
-          <mat-card class="mission-card">
-            <div class="card-boundary"></div>
-            <mat-card-content>
-              <p class="mission-text">
-                {{ service.vision.description }}
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </div>
-
-      <!-- Services Section -->
-      <div class="services-section">
-        <div class="services-header">
-          <h2 class="section-title text-primary">OUR SERVICES</h2>
-          <h3 class="section-subtitle">Specialized Upholstery Solutions</h3>
-        </div>
-
-        <div class="services-grid">
-          <div class="service-category" *ngFor="let serviceCategory of service.services">
-            <mat-card class="service-category-card">
-              <mat-card-content>
-                <h4 class="category-title text-primary">{{ serviceCategory.category }}</h4>
-                <ul class="service-list">
-                  <li *ngFor="let item of serviceCategory.items">{{ item }}</li>
-                </ul>
-              </mat-card-content>
-            </mat-card>
-          </div>
-        </div>
-      </div>
-
-      <!-- Values Section with Swiper -->
-      <div class="values-section">
-        <div class="values-header">
-          <h2 class="section-title text-primary">OUR VALUES</h2>
-          <h3 class="section-subtitle">What Sets Us Apart</h3>
-        </div>
-
-        <div class="values-container">
-          <!-- Desktop Grid View -->
-          <div class="values-grid desktop-only">
-            <!-- Dynamic Values -->
-            <mat-card class="value-card" *ngFor="let value of service.values">
-              <mat-card-content>
-                <mat-icon class="value-icon text-primary">{{ value.icon }}</mat-icon>
-                <h4 class="value-title">{{ value.title }}</h4>
-                <p class="value-description">{{ value.description }}</p>
-              </mat-card-content>
-            </mat-card>
-          </div>
-
-          <!-- Mobile Swiper -->
-          <div class="swiper valuesSwiper mobile-only" style="width: 100%; height: 100%;">
-            <div class="swiper-wrapper">
-              <!-- Dynamic Values for Mobile -->
-              <div class="swiper-slide" *ngFor="let value of service.values">
-                <mat-card class="value-card">
-                  <mat-card-content>
-                    <mat-icon class="value-icon text-primary">{{ value.icon }}</mat-icon>
-                    <h4 class="value-title">{{ value.title }}</h4>
-                    <p class="value-description">{{ value.description }}</p>
-                  </mat-card-content>
-                </mat-card>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Section -->
-      <div class="contact-section">
-        <div class="contact-container">
-          <h1 class="mission-heading text-primary">
-            <span style="color: black">Get In </span>Touch
-          </h1>
-          <mat-card class="contact-card">
-            <mat-card-content>
-              <div class="contact-info">
-                <div class="contact-item">
-                  <mat-icon class="contact-icon text-primary">location_on</mat-icon>
-                  <div class="contact-details">
-                    <h4>Location</h4>
-                    <p>Kuwait</p>
-                  </div>
-                </div>
-                <div class="contact-item">
-                  <mat-icon class="contact-icon text-primary">phone</mat-icon>
-                  <div class="contact-details">
-                    <h4>Phone</h4>
-                    <p>+965 XXXX XXXX</p>
-                  </div>
-                </div>
-                <div class="contact-item">
-                  <mat-icon class="contact-icon text-primary">email</mat-icon>
-                  <div class="contact-details">
-                    <h4>Email</h4>
-                    <p>info&#64;upholsteryexpert.com</p>
-                  </div>
-                </div>
-              </div>
-              <div class="contact-cta">
-                <p class="cta-text">Ready to transform your space? Contact us for a free consultation and quote.</p>
-                <button mat-raised-button class="cta-button text-primary">Schedule Consultation</button>
-              </div>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </div>
-
-    </mat-card-content>
-  </mat-card>
-  }
 </mat-card>
