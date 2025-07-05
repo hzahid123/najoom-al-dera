@@ -1,18 +1,25 @@
 // Gallery Icons Styles - Mobile Responsive
 .gallery-icons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  // Large screens (1025px+) - all 4 items in one row
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 40px;
   
-  // Tablet view
-  @media (max-width: 1024px) and (min-width: 769px) {
+  // Extra large screens - can accommodate more items in one row
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  
+  // Tablet view (768px to 1024px) - 2 items per row
+  @media (max-width: 1024px) and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
   
-  // Mobile view - 2 items per row
-  @media (max-width: 768px) {
+  // Mobile view (up to 767px) - 2 items per row
+  @media (max-width: 767px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-bottom: 30px;
@@ -240,6 +247,36 @@
   
   @media (max-width: 768px) {
     box-shadow: 0 6px 20px rgba(67, 233, 123, 0.3);
+  }
+}
+
+// Alternative: If you want to support more than 4 items dynamically
+.gallery-icons-grid-dynamic {
+  display: grid;
+  // For dynamic number of items - this will fit all items in one row
+  grid-template-columns: repeat(var(--items-count, 4), 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+  
+  @media (min-width: 1200px) {
+    gap: 40px;
+  }
+  
+  @media (max-width: 1024px) and (min-width: 769px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
   }
 }
 

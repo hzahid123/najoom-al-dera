@@ -23,17 +23,6 @@ interface demos {
   category?: string;
 }
 
-interface testimonials {
-  id: number;
-  imgSrc: string;
-  name: string;
-  subtext?: string;
-  subtextKey?: string;
-  message?: string;
-  messageKey?: string;
-  translatedSubtext?: string;
-  translatedMessage?: string;
-}
 
 interface features {
   id: number;
@@ -81,7 +70,6 @@ export class AppLandingpageComponent implements OnInit, AfterViewInit  {
     this.translate.onLangChange.subscribe(() => {
       this.translateAll();
     });
-    this.initTestimonialsSwiper();
   }
 
   goToContact() {
@@ -90,7 +78,6 @@ export class AppLandingpageComponent implements OnInit, AfterViewInit  {
 
   ngAfterViewInit() {
     this.forceVideoPlay();
-    this.initTestimonialsSwiper();
   }
   
   forceVideoPlay() {
@@ -108,59 +95,36 @@ export class AppLandingpageComponent implements OnInit, AfterViewInit  {
     }
   }
 
-  private initTestimonialsSwiper() {
-    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-      setTimeout(() => {
-        const slideCount = this.translatedTestimonials.length;
-        const enableLoop = slideCount >= 4;
-        
-        this.testimonialsSwiper = new Swiper('.testimonialsSwiper', {
-          slidesPerView: 1,
-          spaceBetween: 20,
-          centeredSlides: enableLoop,
-          loop: enableLoop,
-          autoplay: enableLoop ? {
-            delay: 3000,
-            disableOnInteraction: false,
-          } : false,
-          pagination: {
-            el: '.testimonialsSwiper .swiper-pagination',
-            clickable: true,
-          },
-          breakpoints: {
-            480: {
-              slidesPerView: enableLoop ? 1.2 : 1
-            }
-          }
-        });
-      }, 100);
-    }
-  }
 
   gotoDemos() {
     this.scroller.scrollToAnchor('demos');
   }
 
-  get visibleServiceCount() {
-    if (window.innerWidth <= 767.98) {
-      return this.showAllServices ? this.translatedDemos.length : 1;
-    }
-    return this.showAllServices ? this.translatedDemos.length : this.initialServiceCount;
-  }
-  
   get visibleDemoCount() {
-    if (window.innerWidth <= 767.98) {
-      return this.showAllDemos ? this.translatedAppDemos.length : 1;
-    }
-    return this.showAllDemos ? this.translatedAppDemos.length : this.initialDemoCount;
-  }
+  // Always show all demos or based on showAllDemos flag
+  // Remove the mobile restriction that was showing only 1 item
+  return this.showAllDemos ? this.translatedAppDemos.length : this.initialDemoCount;
+}
 
-  get visibleFeatureCount() {
-    if (window.innerWidth <= 767) {
-      return this.showAllFeatures ? this.translatedFeatures.length : 1;
-    }
-    return this.showAllFeatures ? this.translatedFeatures.length : this.initialFeatureCount;
+get visibleServiceCount() {
+  // Always show all services or based on showAllServices flag  
+  return this.showAllServices ? this.translatedDemos.length : this.initialServiceCount;
+}
+
+get visibleFeatureCount() {
+  // Always show all features or based on showAllFeatures flag
+  return this.showAllFeatures ? this.translatedFeatures.length : this.initialFeatureCount;
+}
+
+// Alternative approach if you want different behavior on mobile
+get visibleDemoCountWithMobile() {
+  // On very small screens (< 480px), show fewer items initially
+  if (window.innerWidth < 480) {
+    return this.showAllDemos ? this.translatedAppDemos.length : 2; // Show 2 items (1 row)
   }
+  // On all other screens, show the normal initial count
+  return this.showAllDemos ? this.translatedAppDemos.length : this.initialDemoCount;
+}
 
   toggleFeatures() {
     this.showAllFeatures = !this.showAllFeatures;
@@ -176,25 +140,15 @@ export class AppLandingpageComponent implements OnInit, AfterViewInit  {
 
   translatedDemos: demos[] = [];
   translatedAppDemos: demos[] = [];
-  translatedTestimonials: testimonials[] = [];
   translatedFeatures: features[] = [];
 
   private translateAll() {
-    this.translatedDemos = this.demos.map(demo => ({
-      ...demo,
-      translatedName: this.translate.instant('LANDING.DEMOS.' + demo.nameKey)
-    }));
 
     this.translatedAppDemos = this.appdemos.map(app => ({
       ...app,
       translatedName: this.translate.instant('LANDING.APP_DEMOS.' + app.nameKey)
     }));
 
-    this.translatedTestimonials = this.testimonials.map(testimonial => ({
-      ...testimonial,
-      translatedSubtext: this.translate.instant('LANDING.TESTIMONIALS.' + testimonial.subtextKey),
-      translatedMessage: this.translate.instant('LANDING.TESTIMONIALS.' + testimonial.messageKey)
-    }));
 
     this.translatedFeatures = this.features.map(feature => ({
       ...feature,
@@ -203,33 +157,6 @@ export class AppLandingpageComponent implements OnInit, AfterViewInit  {
     }));
   }
 
-  // Marine Upholstery Services
-  demos: demos[] = [
-    {
-      id: 1,
-      imgSrc: '/assets/images/services/ship-upholstery.jpg',
-      nameKey: 'SHIP_UPHOLSTERY',
-      link: '/apps/services/detail/1',
-    },
-    {
-      id: 2,
-      imgSrc: '/assets/images/services/yacht-interior.jpg',
-      nameKey: 'CAR_UPHOLSTERY',
-      link: '/apps/services/detail/2',
-    },
-    {
-      id: 3,
-      imgSrc: '/assets/images/services/boat-seats.jpg',
-      nameKey: 'FURNITURE_UPHOLSTERY',
-      link: '/apps/services/detail/3',
-    },
-    {
-      id: 4,
-      imgSrc: '/assets/images/services/marine-cushions.jpg',
-      nameKey: 'GENERAL_UPHOLSTERY',
-      link: '/apps/services/detail/4',
-    },
-  ];
 
   // Portfolio Projects
 appdemos: demos[] = [
@@ -263,30 +190,6 @@ appdemos: demos[] = [
   },
 ];
 
-  // Client Testimonials
-  testimonials: testimonials[] = [
-    {
-      id: 1,
-      imgSrc: '/assets/images/profile/user-1.jpg',
-      name: 'Captain Ahmed Al-Rashid',
-      subtextKey: 'YACHT_OWNER',
-      messageKey: 'TESTIMONIAL_1'
-    },
-    {
-      id: 2,
-      imgSrc: '/assets/images/profile/user-4.jpg',
-      name: 'Mohammed Al-Sabah',
-      subtextKey: 'SHIPPING_COMPANY',
-      messageKey: 'TESTIMONIAL_2'
-    },
-    {
-      id: 3,
-      imgSrc: '/assets/images/profile/user-5.jpg',
-      name: 'Khalid Al-Mutairi',
-      subtextKey: 'MARINA_MANAGER',
-      messageKey: 'TESTIMONIAL_3'
-    }
-  ];
 
   // Features and Services
   features: features[] = [
