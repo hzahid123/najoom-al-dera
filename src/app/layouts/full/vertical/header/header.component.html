@@ -1,44 +1,60 @@
-<mat-toolbar class="topbar  " [class.rtl-header]="selectedLanguage.code === 'ar-KW'">
+<mat-toolbar class="topbar" 
+    [class.scrolled]="isScrolled" 
+    [class.rtl-header]="selectedLanguage.code === 'ar-KW'"
+    [@fadeInOut]>
   <!-- Branding - Hidden on mobile -->
   <div class="d-flex branding align-items-center">
     <app-branding></app-branding>
   </div>
 
   <!-- Desktop Navigation - Hidden on mobile -->
-
-  <div class="d-none d-lg-flex desktop-nav ">
-    <a mat-button [routerLink]="['/apps/gallery']">
+  <div class="d-none d-lg-flex desktop-nav">
+    <a mat-button [routerLink]="['/apps/gallery']" class="nav-link" 
+       [@buttonHover]="hoverState"
+       (mouseenter)="hoverState = 'hover'"
+       (mouseleave)="hoverState = 'default'">
       {{ 'ABOUT.GALLERY' | translate }}
     </a>
 
-    <a mat-button [routerLink]="['/apps/geographies']">
+    <a mat-button [routerLink]="['/apps/geographies']" class="nav-link"
+       [@buttonHover]="hoverState"
+       (mouseenter)="hoverState = 'hover'"
+       (mouseleave)="hoverState = 'default'">
       {{ 'ABOUT.GEOGRAPHY' | translate }}
     </a>
-    <a mat-button [routerLink]="['/apps/aboutus']">
+    
+    <a mat-button [routerLink]="['/apps/aboutus']" class="nav-link"
+       [@buttonHover]="hoverState"
+       (mouseenter)="hoverState = 'hover'"
+       (mouseleave)="hoverState = 'default'">
       {{ 'ABOUT.ABOUT_US' | translate }}
     </a>
-
   </div>
 
   <!-- Spacer -->
   <span class="flex-1-auto"></span>
 
   <!-- Right Side Actions -->
-
-  <!-- home -->
-  <!-- Right Side Actions - Always visible even on mobile -->
   <div class="actions-container">
-    <div class="d-flex gap-8 align-items-center ">
+    <div class="d-flex gap-8 align-items-center">
       <!-- Home Button - Always visible -->
-      <a mat-button [routerLink]="['/']" class="home-button hide-on-mobile">
+      <a mat-button [routerLink]="['/']" class="home-button hide-on-mobile"
+         [@buttonHover]="hoverState"
+         (mouseenter)="hoverState = 'hover'"
+         (mouseleave)="hoverState = 'default'">
         {{ 'HEADER.HOME' | translate }}
       </a>
-      <button [matMenuTriggerFor]="flags" mat-icon-button class="m-r-5">
+      
+      <button [matMenuTriggerFor]="flags" mat-icon-button class="m-r-5 flag-button"
+              [@buttonHover]="hoverState"
+              (mouseenter)="hoverState = 'hover'"
+              (mouseleave)="hoverState = 'default'">
         <img [src]="selectedLanguage.icon" class="rounded-circle object-cover icon-20" />
       </button>
-      <mat-menu #flags="matMenu" class="cardWithShadow">
+      
+      <mat-menu #flags="matMenu" class="cardWithShadow flag-menu">
         @for(lang of languages; track lang.icon) {
-        <button mat-menu-item (click)="changeLanguage(lang)">
+        <button mat-menu-item (click)="changeLanguage(lang)" class="flag-menu-item">
           <div class="d-flex align-items-center">
             <img [src]="lang.icon" class="rounded-circle object-cover m-r-8 icon-20" />
             <span class="f-s-14">{{ lang.language }}</span>
@@ -48,55 +64,56 @@
       </mat-menu>
 
       <!-- Mobile Menu Toggle - Only visible on mobile -->
-      <button mat-icon-button (click)="toggleMobileMenu()" class="d-flex d-lg-none mobile-menu-button">
+      <button mat-icon-button 
+              (click)="toggleMobileMenu()" 
+              class="d-flex d-lg-none mobile-menu-button"
+              [@buttonHover]="hoverState"
+              (mouseenter)="hoverState = 'hover'"
+              (mouseleave)="hoverState = 'default'">
         <i-tabler [name]="isMobileMenuOpen ? 'x' : 'menu-2'" class="icon-20 d-flex"></i-tabler>
       </button>
     </div>
   </div>
 </mat-toolbar>
 
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" 
+     [class.active]="isMobileMenuOpen" 
+     (click)="onOverlayClick()">
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Mobile Menu -->
-<div class="mobile-menu-container" [class.open]="isMobileMenuOpen" [class.rtl-menu]="selectedLanguage.code === 'ar-KW'">
+<!-- Mobile Menu Container -->
+<div class="mobile-menu-container" 
+     [class.open]="isMobileMenuOpen"
+     [class.rtl-menu]="selectedLanguage.code === 'ar-KW'">
   <div class="mobile-menu-content">
-    <!-- <a mat-button [routerLink]="['/']" (click)="toggleMobileMenu()">
-      {{ 'HEADER.HOME' | translate }}
-    </a>
+    <div class="mobile-submenu">
+      <a mat-button 
+         [routerLink]="['/apps/gallery']" 
+         (click)="onMobileNavClick()" 
+         class="mobile-nav-link">
+        {{ 'ABOUT.GALLERY' | translate }}
+      </a>
+    </div>
+    <hr class="mobile-divider">
     
-    <button mat-button (click)="toggleMobileMenu()" [routerLink]="['/apps/contactus']">
-      {{ 'HEADER.LETS_TALK' | translate }}
-    </button> -->
-
-      <div class="mobile-submenu">
-        <a mat-button [routerLink]="['/apps/gallery']">
-          {{ 'ABOUT.GALLERY' | translate }}
-        </a>
-      </div>
-      <hr>
-      <div class="mobile-submenu">
-
-        <a mat-button [routerLink]="['/apps/geographies']">
-          {{ 'ABOUT.GEOGRAPHY' | translate }}
-        </a>
-      </div>
-      <hr>
-      <div class="mobile-submenu">
-        <a mat-button [routerLink]="['/apps/aboutus']">
-          {{ 'ABOUT.ABOUT_US' | translate }}
-        </a>
-      </div>
+    <div class="mobile-submenu">
+      <a mat-button 
+         [routerLink]="['/apps/geographies']" 
+         (click)="onMobileNavClick()" 
+         class="mobile-nav-link">
+        {{ 'ABOUT.GEOGRAPHY' | translate }}
+      </a>
+    </div>
+    <hr class="mobile-divider">
+    
+    <div class="mobile-submenu">
+      <a mat-button 
+         [routerLink]="['/apps/aboutus']" 
+         (click)="onMobileNavClick()" 
+         class="mobile-nav-link">
+        {{ 'ABOUT.ABOUT_US' | translate }}
+      </a>
+    </div>
   </div>
 </div>

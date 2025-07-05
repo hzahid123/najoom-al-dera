@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ViewEncapsulation, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { CoreService } from 'src/app/services/core.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,9 +12,7 @@ import { BrandingComponent } from '../../vertical/sidebar/branding.component';
 import { ChangeDetectorRef } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ScrollService } from 'src/app/services/scroll.service';
-import { Location } from '@angular/common';
-
-import { Router } from '@angular/router';
+import { trigger, transition, style, animate, state } from '@angular/animations';
 
 @Component({
   selector: 'app-header',
@@ -28,9 +26,32 @@ import { Router } from '@angular/router';
     TranslateModule,
   ],
   templateUrl: './header.component.html',
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./header.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.2s ease-in', style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('0.15s ease-out', style({ opacity: 0 }))
+      ])
+    ]),
+    trigger('buttonHover', [
+      state('default', style({
+        transform: 'scale(1)',
+        boxShadow: 'none'
+      })),
+      state('hover', style({
+        transform: 'scale(1.05)',
+        boxShadow: '0 4px 8px rgba(0, 116, 186, 0.3)'
+      })),
+      transition('default <=> hover', animate('0.2s ease-in-out'))
+    ])
+  ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   @Input() showToggle = true;
   @Input() toggleChecked = false;
   @Output() toggleMobileNav = new EventEmitter<void>();
@@ -41,6 +62,8 @@ export class HeaderComponent implements OnInit {
   translatedServices: any[] = [];
   translatedAboutUs: any[] = [];
   translatedApps: any[] = [];
+  isScrolled = false;
+  hoverState = 'default';
   
   showFiller = false;
 
@@ -73,12 +96,28 @@ export class HeaderComponent implements OnInit {
     private scrollService: ScrollService,
     private translate: TranslateService,
     private cdRef: ChangeDetectorRef,
-  //     private location: Location,
-
-  // private router: Router,
   ) {
     translate.setDefaultLang('en');
     translate.use('en');
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 10;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    if (window.innerWidth > 959 && this.isMobileMenuOpen) {
+      this.closeMobileMenu();
+    }
+  }
+
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscapeKey(event: KeyboardEvent) {
+    if (this.isMobileMenuOpen) {
+      this.closeMobileMenu();
+    }
   }
 
   ngOnInit() {
@@ -88,29 +127,9 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  
-   goToContact() {
-    this.scrollService.scrollTo('contact-section');
+  ngOnDestroy() {
+    this.cleanupBodyStyles();
   }
-  goToFaq() {
-  this.scrollService.scrollTo('faq-section');
-}
-goToGeographies() {
-  this.scrollService.scrollTo('geographies-section');
-}
-// navigateFromHeader(link: string) {
-//   console.log('Before replaceState:', window.history.length, history.state);
-//   this.location.replaceState(this.location.path());
-//   console.log('After replaceState:', window.history.length, history.state);
-
-//   this.router.navigateByUrl(link).then(() => {
-//     console.log('After navigateByUrl:', window.history.length, history.state);
-//   });
-// }
-
-
-
-
 
   private translateAll() {
     this.translatedServices = this.services.map(service => ({
@@ -129,42 +148,66 @@ goToGeographies() {
     }));
   }
 
-
-    changeLanguage(lang: any): void {
+  changeLanguage(lang: any): void {
     this.translate.use(lang.code);
     this.selectedLanguage = lang;
     document.documentElement.dir = lang.code === 'ar-KW' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang.code;
     this.cdRef.detectChanges();
   }
-  // so below methode  is to applied all changes on project to do RTL(right to left  )direction of all project grids and components
-
-// changeLanguage(lang: any): void {
-//   this.translate.use(lang.code);
-//   this.selectedLanguage = lang;
-  
-//   // Set document direction and lang attribute
-//   document.documentElement.dir = lang.code === 'ar-KW' ? 'rtl' : 'ltr';
-//   document.documentElement.lang = lang.code;
-  
-//   // Add these classes to body
-//   if (lang.code === 'ar-KW') {
-//     document.body.classList.add('rtl');
-//     document.body.classList.remove('ltr');
-//   } else {
-//     document.body.classList.add('ltr');
-//     document.body.classList.remove('rtl');
-//   }
-  
-  // this.cdRef.detectChanges();
-
-  // }
 
   toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-    this.toggleMobileFilterNav.emit();
+    console.log('Toggle mobile menu clicked, current state:', this.isMobileMenuOpen);
+    
+    if (this.isMobileMenuOpen) {
+      this.closeMobileMenu();
+    } else {
+      this.openMobileMenu();
+    }
   }
-    options = this.settings.getOptions();
+
+  private openMobileMenu() {
+    console.log('Opening mobile menu');
+    this.isMobileMenuOpen = true;
+    document.body.classList.add('menu-open');
+    this.cdRef.detectChanges();
+  }
+
+  private closeMobileMenu() {
+    console.log('Closing mobile menu');
+    this.isMobileMenuOpen = false;
+    this.cleanupBodyStyles();
+    this.cdRef.detectChanges();
+  }
+
+  private cleanupBodyStyles() {
+    document.body.classList.remove('menu-open');
+  }
+
+  onOverlayClick() {
+    this.closeMobileMenu();
+  }
+
+  onMobileNavClick() {
+    this.closeMobileMenu();
+  }
+
+  goToContact() {
+    this.scrollService.scrollTo('contact-section');
+    this.closeMobileMenu();
+  }
+
+  goToFaq() {
+    this.scrollService.scrollTo('faq-section');
+    this.closeMobileMenu();
+  }
+
+  goToGeographies() {
+    this.scrollService.scrollTo('geographies-section');
+    this.closeMobileMenu();
+  }
+
+  options = this.settings.getOptions();
 
   private emitOptions() {
     this.optionsChange.emit(this.options);
@@ -175,10 +218,7 @@ goToGeographies() {
     this.emitOptions();
   }
 
-
-
-  // ... rest of your existing methods (setlightDark, emitOptions)
-
+  // Navigation items
   apps: any[] = [
     {
       id: 1,
@@ -192,29 +232,28 @@ goToGeographies() {
     }
   ];
 
-services: any[] = [
-  {
-    id: 1,
-    titleKey: 'SHIP_UPHOLSTERY',
-    link: '/apps/services/detail/1',
-  },
-  {
-    id: 2,
-    titleKey: 'CAR_UPHOLSTERY',
-    link: '/apps/services/detail/2',
-  },
-  {
-    id: 3,
-    titleKey: 'FURNITURE_UPHOLSTERY',
-    link: '/apps/services/detail/3',
-  },
-  {
-    id: 4,
-    titleKey: 'GENERAL_UPHOLSTERY',
-    link: '/apps/services/detail/4',
-  }
-];
-
+  services: any[] = [
+    {
+      id: 1,
+      titleKey: 'SHIP_UPHOLSTERY',
+      link: '/apps/services/detail/1',
+    },
+    {
+      id: 2,
+      titleKey: 'CAR_UPHOLSTERY',
+      link: '/apps/services/detail/2',
+    },
+    {
+      id: 3,
+      titleKey: 'FURNITURE_UPHOLSTERY',
+      link: '/apps/services/detail/3',
+    },
+    {
+      id: 4,
+      titleKey: 'GENERAL_UPHOLSTERY',
+      link: '/apps/services/detail/4',
+    }
+  ];
 
   aboutus: any[] = [
     {

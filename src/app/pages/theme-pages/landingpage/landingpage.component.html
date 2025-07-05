@@ -111,13 +111,6 @@
       <div class="container">
 
 <div class="demos-section m-t-24  ">
-  <div class="text-center m-t-30 m-b-32">
-    <span class="bg-primary textdesign p-8 rounded-pill text-white f-w-600 p-x-10">
-      {{ "LANDING.DEMOS_BLOGS" | translate }}
-    </span>
-        <h2 class="m-t-16">      {{ "LANDING.DEMOS_BLOGSpara" | translate }} </h2>
-
-  </div>
   
   <!-- Gallery Icons Grid -->
 <div class="gallery-icons-grid">
@@ -143,132 +136,11 @@
   }
 </div>
 
-<div class="services-section ">
-  <div class="text-center m-t-30 m-b-32">
-    <span class="bg-primary textdesign p-8 rounded-pill text-white f-w-600 p-x-10">
-      {{ "LANDING.SERVICES" | translate }}
-    </span>
-    <h2 class="m-t-16">      {{ "LANDING.SERVICESpara" | translate }} </h2>
-  </div>
-  
-  <!-- Services -->
-  <div class="cards-grid ">
-    @for(demo of translatedDemos.slice(0, visibleServiceCount); track demo.id) {
-    <a [href]="demo.link" class="service-card ">
-      <div class="img-container">
-        <img [src]="demo.imgSrc" alt="demos" class="uniform-image" />
-        <div class="card-title">
-          <span class="title-text ">{{ demo.translatedName }}</span>
-        </div>
-      </div>
-    </a>
-    }
-  </div>
-  
-  @if (translatedDemos.length > initialServiceCount) {
-<div class="text-center m-t-16">
-  <!-- Remove mat-button and use class for full control -->
-  <button class="view-more-btn" (click)="toggleServices()">
-  {{ showAllServices ? ('LANDING.VIEW_LESS_SERVICES' | translate) : ('LANDING.VIEW_MORE_SERVICES' | translate) }}
-    <mat-icon class="btn-icon">{{ showAllServices ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
-  </button>
-</div>
-  }
-</div>
 
     </div>
     </div>
     <!-- ------------------------------------------------------------------
     End Template
-    ------------------------------------------------------------------ -->
-
-    <!-- ------------------------------------------------------------------
-    Testimonial
-    ------------------------------------------------------------------ -->
-   <div class="testimonials-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-sm-11">
-        <h2 class="section-title text-center">
-          {{ "LANDING.TESTIMONIALS_TITLE" | translate }}
-        </h2>
-      </div>
-    </div>
-    
-    <!-- Desktop Grid View -->
-    <div class="testimonials-grid desktop-only">
-      <div class="row m-t-24">
-        @for(testimonial of translatedTestimonials; track testimonial.id) {
-        <div class="col-lg-4 col-sm-6">
-          <mat-card class="cardWithShadow testimonial-card">
-            <mat-card-content>
-              <div class="d-flex align-items-center">
-                <img [src]="testimonial.imgSrc" alt="profile" class="rounded-circle" width="40" />
-                <div class="m-l-12">
-                  <h6 class="f-s-16 f-w-600">
-                    {{ testimonial.name }}
-                  </h6>
-                  <span>{{ testimonial.subtextKey }}</span>
-                              <!-- ⭐ Rating under name -->
-        <div class="rating-stars m-t-6">
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-        </div>
-                </div>
-             
-              </div>
-              <p class="m-t-24 f-s-14 m-b-0">
-                {{ testimonial.translatedMessage }}
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        }
-      </div>
-    </div>
-    
-    <!-- Mobile Swiper -->
-    <div class="swiper testimonialsSwiper mobile-only">
-      <div class="swiper-wrapper">
-        @for(testimonial of translatedTestimonials; track testimonial.id) {
-        <div class="swiper-slide">
-          <mat-card class="cardWithShadow testimonial-card">
-            <mat-card-content>
-              <div class="d-flex align-items-center">
-                <img [src]="testimonial.imgSrc" alt="profile" class="rounded-circle" width="40" />
-                <div class="m-l-12">
-                  <h6 class="f-s-16 f-w-600">
-                    {{ testimonial.name }}
-                  </h6>
-                  <span>{{ testimonial.subtextKey }}</span>
-                              <!-- ⭐ Rating under name -->
-        <div class="rating-stars m-t-6">
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-          <i-tabler name="star-filled" class="fill-warning icon-18"></i-tabler>
-        </div>
-                </div>
-    
-              </div>
-              <p class="m-t-24 f-s-14 m-b-0">
-                {{ testimonial.translatedMessage }}
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        }
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</div>
-    <!-- ------------------------------------------------------------------
-    End Testimonial
     ------------------------------------------------------------------ -->
 
     <!-- ------------------------------------------------------------------
@@ -313,45 +185,6 @@
 
       </div>
     </div>
-
-        <!-- ------------------------------------------------------------------
-    Demo slider
-    ------------------------------------------------------------------ -->
-    <div class="bg-extra-light spacer">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-sm-11">
-            <h1 class="section-title text-primary textdesign text-center">
-              {{ "LANDING.DEMO_SLIDER" | translate }}
-            </h1>
-             <h2 class="section-titledis text-center">
-              {{ "LANDING.DEMO_SLIDERdis" | translate }}
-            </h2>
-          </div>
-        </div>
-      </div>
-     <div class="dual-slider-section">
-  <div class="slider-row top-slider">
-    <img src="assets/images/landingpage/background/slider-group0.png" alt="slider1" />
-    <img src="assets/images/landingpage/background/slider-group0.png" alt="slider1 duplicate" />
-        <img src="assets/images/landingpage/background/slider-group0.png" alt="slider1 duplicate" />
-    <img src="assets/images/landingpage/background/slider-group0.png" alt="slider1 duplicate" />
-  </div>
-
-  <div class="slider-row bottom-slider">
-    <img src="assets/images/landingpage/background/slider-group1.png" alt="slider2" />
-    <img src="assets/images/landingpage/background/slider-group1.png" alt="slider2 duplicate" />
-        <img src="assets/images/landingpage/background/slider-group1.png" alt="slider2 duplicate" />
-
-            <img src="assets/images/landingpage/background/slider-group1.png" alt="slider2 duplicate" />
-
-  </div>
-</div>
-
-    </div>
-    <!-- ------------------------------------------------------------------
-    End Demo slider
-    ------------------------------------------------------------------ -->
 
   </mat-sidenav-content>
 </mat-sidenav-container>
