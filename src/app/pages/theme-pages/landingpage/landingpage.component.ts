@@ -80,20 +80,21 @@ export class AppLandingpageComponent implements OnInit, AfterViewInit  {
     this.forceVideoPlay();
   }
   
-  forceVideoPlay() {
-    const video = document.querySelector('.video-background') as HTMLVideoElement;
-    if (video) {
-      video.play().catch(error => {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            video.muted = true;
-            video.play();
-          });
-        }
+ forceVideoPlay() {
+  const video = document.querySelector('.video-background') as HTMLVideoElement;
+  if (video) {
+    video.muted = true; // Ensure muted before attempting to play
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Already muted, so try again
+        video.play();
       });
     }
   }
+}
+
 
 
   gotoDemos() {
