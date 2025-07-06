@@ -131,5 +131,15 @@
         {{ 'ABOUT.CONTACT_US' | translate }}
       </a>
     </div>
+     <hr class="mobile-divider">
+    
+     <div class="mobile-submenu">
+      <a mat-button 
+         [routerLink]="['/']" 
+         (click)="onMobileNavClick()" 
+         class="mobile-nav-link">
+        {{ 'HEADER.HOME' | translate }}
+      </a>
+    </div>
   </div>
 </div>
