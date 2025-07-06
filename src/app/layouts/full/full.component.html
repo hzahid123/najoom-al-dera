@@ -59,7 +59,7 @@
 
         <!-- ============================================================== -->
         <!-- Geographies Section -->
-        @if (!isGeographiesRoute) {
+        @if (!isGeographiesRoute  && isHomeRoute) {
         <div id="geographies-section">
           <app-geographies></app-geographies>
         </div>
@@ -69,10 +69,12 @@
 
         <!-- ============================================================== -->
         <!-- Faqs  -->
+         @if (isHomeRoute) {
         <div id="faq-section" class="col-lg-12">
 
           <app-faq></app-faq>
         </div>
+      }
 
 
         <!-- ============================================================== -->

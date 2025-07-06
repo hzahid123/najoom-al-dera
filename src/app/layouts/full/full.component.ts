@@ -123,7 +123,7 @@ export class FullComponent implements OnInit ,OnDestroy {
 
 // Add this to your component class
 public isGeographiesRoute = false;
-
+public isHomeRoute = false;
 // Update your ngOnInit to include route checking
 ngOnInit() {
   this.checkCurrentRoute();
@@ -146,6 +146,7 @@ ngOnInit() {
 
 private checkCurrentRoute() {
   this.isGeographiesRoute = this.router.url.includes('geographies');
+  this.isHomeRoute = this.router.url.includes('landingpage') || this.router.url === '/';
 }
 
   ngOnDestroy() {
