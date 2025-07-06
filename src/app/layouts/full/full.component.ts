@@ -24,7 +24,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FooterComponent } from 'src/app/layouts/full/vertical/footer/footer.component';
 import { AppFaqComponent } from "../../pages/theme-pages/faq/faq.component";
 import { GeographiesComponent } from "../../pages/apps/geographies/geographies.component";
-
+import { AboutusComponent } from 'src/app/pages/apps/aboutus/aboutus.component';
 import { ScrollService } from 'src/app/services/scroll.service';
 
 // for mobile app sidebar
@@ -59,6 +59,7 @@ interface aboutus {
     CustomizerComponent,
     // AppLandingpageComponent
     FooterComponent,
+    AboutusComponent,
     AppFaqComponent,
   GeographiesComponent
 ],
@@ -124,6 +125,7 @@ export class FullComponent implements OnInit ,OnDestroy {
 // Add this to your component class
 public isGeographiesRoute = false;
 public isHomeRoute = false;
+public aboutUs = false;
 // Update your ngOnInit to include route checking
 ngOnInit() {
   this.checkCurrentRoute();
@@ -147,6 +149,8 @@ ngOnInit() {
 private checkCurrentRoute() {
   this.isGeographiesRoute = this.router.url.includes('geographies');
   this.isHomeRoute = this.router.url.includes('landingpage') || this.router.url === '/';
+   this.aboutUs = this.router.url.includes('aboutus');
+
 }
 
   ngOnDestroy() {
