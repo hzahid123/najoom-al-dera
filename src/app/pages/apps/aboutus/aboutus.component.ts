@@ -66,7 +66,7 @@ interface ServiceData {
   templateUrl: './aboutus.component.html',
   styleUrls: ['./aboutus.component.scss'], // Fixed: should be styleUrls (plural)
 })
-export class AboutusComponent implements OnInit, AfterViewInit, OnDestroy {
+export class AboutusComponent implements  AfterViewInit, OnDestroy {
   private valuesSwiper: Swiper | undefined;
   private leadershipSwiper: Swiper | undefined;
   private isBrowser: boolean;
@@ -85,22 +85,6 @@ export class AboutusComponent implements OnInit, AfterViewInit, OnDestroy {
     this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
   }
 
-  ngOnInit(): void {
-     import('aos').then((AOS) => {
-    AOS.init();
-  });
-    if (this.isBrowser) {
-      // Initialize AOS only in browser environment
-      AOS.init({
-        duration: 800,
-        once: true
-      });
-
-      // Update video URL if needed
-      const videoUrl = `https://www.youtube.com/embed/${this.videoId}?autoplay=1&mute=1`;
-      this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
-    }
-  }
 
   ngAfterViewInit(): void {
     if (this.isBrowser) {
