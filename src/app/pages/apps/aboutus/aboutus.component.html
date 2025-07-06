@@ -1,33 +1,86 @@
 <mat-card class="cardWithShadow">
   <!-- Hero Section - Completely Redesigned -->
-  <div class="hero-section">
-    <div class="hero-image-container-aboutus">
-      <div class="hero-content">
-        <mat-card class="card-transparent">
-          <mat-card-content>
-            <div class="floating-card-content">
-              <h1 class="service-title-dis">
-                {{ service.headingdata }}
-              </h1>
-              <p class="service-title">
-                {{ service.description }}
-              </p>
-              <button mat-flat-button class="hero-cta-button floating-animation">
-                {{ service.btndiscription }}
-              </button>
-            </div>
-          </mat-card-content>
-        </mat-card>
+ <!-- Enhanced Hero Section with 3 Decades Message and Animated Picture -->
+<!-- Enhanced Hero Section with Team Showcase -->
+<div class="hero-section">
+  <div class="hero-image-container-aboutus">
+    <div class="hero-content">
+      
+      <!-- Hero Title -->
+      <h1 class="hero-title">
+        Our Leadership Team
+      </h1>
+      
+      <!-- Hero Subtitle -->
+      <p class="hero-subtitle">
+        Leading with Excellence and Innovation
+      </p>
+      
+      <!-- Experience Badge -->
+      <div class="experience-badge">
+        More than 3 Decades of Excellence
       </div>
+
+      <!-- Team Showcase -->
+      <div class="team-showcase">
+        
+        <!-- Founder - Zahid -->
+        <div class="team-member founder">
+          <div class="hero-image-wrapper">
+            <img 
+              src="/assets/images/aboutus/zahid.png" 
+              alt="Zahid - Founder" 
+              class="hero-image"
+              loading="lazy"
+            >
+          </div>
+          <div class="member-role">Founder & CEO</div>
+        </div>
+
+        <!-- Manager 1 - Tariq -->
+        <div class="team-member manager">
+          <div class="hero-image-wrapper">
+            <img 
+              src="/assets/images/aboutus/tariq.png" 
+              alt="Tariq - Manager" 
+              class="hero-image"
+              loading="lazy"
+            >
+          </div>
+          <div class="member-role">Manager</div>
+        </div>
+
+        <!-- Manager 2 - Tariq -->
+        <div class="team-member manager">
+          <div class="hero-image-wrapper">
+            <img 
+              src="/assets/images/aboutus/abbas.png" 
+              alt="Tariq - Manager" 
+              class="hero-image"
+              loading="lazy"
+            >
+          </div>
+          <div class="member-role">Manager</div>
+        </div>
+
+      </div>
+
+      <!-- Call to Action -->
+      <div class="hero-cta-section">
+        <button mat-flat-button class="hero-cta-button floating-animation">
+          Meet Our Team
+        </button>
+      </div>
+
     </div>
   </div>
+</div>
 
   <!-- Main Content Section -->
   <div class="content-section">
     <div class="margins">
       <!-- Content Row (without video) -->
-      <div class="content-row">
-        <!-- Content Column -->
+      <!-- <div class="content-row">
         <div class="content-column">
           <h1 class="service-main-title">
             <span class="first-letter">{{ service.content.title.substring(0, 3) }}</span>
@@ -38,144 +91,62 @@
             <p>{{ service.content.paragraphs[1] }}</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       @if(service) {
-        <!-- Mission Section -->
-        <div class="mission-section">
-          <div class="mission-container">
-            <h1 class="mission-heading">
-              <span>Our </span>
-              <span class="text-primary">Mission</span>
-            </h1>
-            <mat-card class="mission-card">
+      <!-- <div class="mission-section">
+        <div class="mission-container">
+          <h1 class="mission-heading">
+            <span>Our </span>
+            <span class="text-primary">Mission</span>
+          </h1>
+          <mat-card class="mission-card">
+            <mat-card-content>
+              <p class="mission-text">
+                {{ service.mission.description }}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="mission-section">
+        <div class="mission-container">
+          <h1 class="mission-heading">
+            <span>Our </span>
+            <span class="text-primary">Vision</span>
+          </h1>
+          <mat-card class="mission-card">
+            <mat-card-content>
+              <p class="mission-text">
+                {{ service.vision.description }}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div> -->
+
+
+      <!-- Values Section - Updated without swiper -->
+      <div class="values-section">
+        <div class="values-header">
+          <h2 class="section-title">OUR VALUES</h2>
+          <h3 class="section-subtitle">What Sets Us Apart</h3>
+        </div>
+
+        <div class="values-container">
+          <!-- Grid View for both desktop and mobile -->
+          <div class="values-grid">
+            <mat-card class="value-card" *ngFor="let value of service.values">
               <mat-card-content>
-                <p class="mission-text">
-                  {{ service.mission.description }}
-                </p>
+                <div class="value-icon" [ngClass]="value.iconClass"></div>
+                <h4 class="value-title">{{ value.title }}</h4>
+                <p class="value-description">{{ value.description }}</p>
               </mat-card-content>
             </mat-card>
           </div>
         </div>
-
-        <!-- Vision Section -->
-        <div class="mission-section">
-          <div class="mission-container">
-            <h1 class="mission-heading">
-              <span>Our </span>
-              <span class="text-primary">Vision</span>
-            </h1>
-            <mat-card class="mission-card">
-              <mat-card-content>
-                <p class="mission-text">
-                  {{ service.vision.description }}
-                </p>
-              </mat-card-content>
-            </mat-card>
-          </div>
-        </div>
-
-        <!-- Services Section -->
-        <div class="services-section">
-          <div class="services-header">
-            <h2 class="section-title">OUR SERVICES</h2>
-            <h3 class="section-subtitle">Specialized Upholstery Solutions</h3>
-          </div>
-
-          <div class="services-grid">
-            <div class="service-category" *ngFor="let serviceCategory of service.services">
-              <mat-card class="service-category-card">
-                <mat-card-content>
-                  <h4 class="category-title">{{ serviceCategory.category }}</h4>
-                  <ul class="service-list">
-                    <li *ngFor="let item of serviceCategory.items">{{ item }}</li>
-                  </ul>
-                </mat-card-content>
-              </mat-card>
-            </div>
-          </div>
-        </div>
-
-        <!-- Values Section -->
-        <div class="values-section">
-          <div class="values-header">
-            <h2 class="section-title">OUR VALUES</h2>
-            <h3 class="section-subtitle">What Sets Us Apart</h3>
-          </div>
-
-          <div class="values-container">
-            <!-- Desktop Grid View -->
-            <div class="values-grid desktop-only">
-              <mat-card class="value-card" *ngFor="let value of service.values">
-                <mat-card-content>
-                  <div class="value-icon" [ngClass]="value.iconClass"></div>
-                  <h4 class="value-title">{{ value.title }}</h4>
-                  <p class="value-description">{{ value.description }}</p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-
-            <!-- Mobile Swiper -->
-            <div class="swiper valuesSwiper mobile-only">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide" *ngFor="let value of service.values">
-                  <mat-card class="value-card">
-                    <mat-card-content>
-                      <div class="value-icon" [ngClass]="value.iconClass"></div>
-                      <h4 class="value-title">{{ value.title }}</h4>
-                      <p class="value-description">{{ value.description }}</p>
-                    </mat-card-content>
-                  </mat-card>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="contact-section">
-          <div class="contact-container">
-            <h1 class="mission-heading">
-              <span>Get In </span>
-              <span class="text-primary">Touch</span>
-            </h1>
-            <mat-card class="contact-card">
-              <mat-card-content>
-                <div class="contact-info">
-                  <div class="contact-item">
-                    <div class="contact-icon location"></div>
-                    <div class="contact-details">
-                      <h4>Location</h4>
-                      <p>Kuwait</p>
-                    </div>
-                  </div>
-                  <div class="contact-item">
-                    <div class="contact-icon phone"></div>
-                    <div class="contact-details">
-                      <h4>Phone</h4>
-                      <p>+965 XXXX XXXX</p>
-                    </div>
-                  </div>
-                  <div class="contact-item">
-                    <div class="contact-icon email"></div>
-                    <div class="contact-details">
-                      <h4>Email</h4>
-                      <p>info&#64;upholsteryexpert.com</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="contact-cta">
-                  <p class="cta-text">Ready to transform your space with premium upholstery?</p>
-                  <button mat-flat-button class="cta-button">
-                    Contact Us Today
-                  </button>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-        </div>
+      </div>
       }
     </div>
   </div>

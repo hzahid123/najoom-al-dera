@@ -29,6 +29,12 @@
        (mouseleave)="hoverState = 'default'">
       {{ 'ABOUT.ABOUT_US' | translate }}
     </a>
+     <a mat-button [routerLink]="['/apps/contactus']" class="nav-link"
+       [@buttonHover]="hoverState"
+       (mouseenter)="hoverState = 'hover'"
+       (mouseleave)="hoverState = 'default'">
+      {{ 'ABOUT.CONTACT_US' | translate }}
+    </a>
   </div>
 
   <!-- Spacer -->
@@ -113,6 +119,16 @@
          (click)="onMobileNavClick()" 
          class="mobile-nav-link">
         {{ 'ABOUT.ABOUT_US' | translate }}
+      </a>
+    </div>
+    <hr class="mobile-divider">
+    
+     <div class="mobile-submenu">
+      <a mat-button 
+         [routerLink]="['/apps/contactus']" 
+         (click)="onMobileNavClick()" 
+         class="mobile-nav-link">
+        {{ 'ABOUT.CONTACT_US' | translate }}
       </a>
     </div>
   </div>

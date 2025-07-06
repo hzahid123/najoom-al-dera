@@ -22,7 +22,8 @@
   "ABOUT": {
     "ABOUT_US": "About Us",
     "GEOGRAPHY": "Geography",
-    "GALLERY": "Gallery"
+    "GALLERY": "Gallery",
+    "CONTACT_US": "Contact Us"
   },
   "CONTACT": {
     "CONTACT_US": "Contact Us",
@@ -111,7 +112,6 @@
     },
     "COPYRIGHT": "Najum Al-Deera | All Rights Reserved"
   },
-  
   "SERVICES_footer": {
     "WEB_DEV": "Web Development",
     "MOBILE_APP": "Mobile App Development",

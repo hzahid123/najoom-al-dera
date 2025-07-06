@@ -1,245 +1,134 @@
-// Dialog Header Styles
-.dialog-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 24px;
-  background: linear-gradient(135deg, #a02866 0%, #8e2157 50%, #7a1d4a 80%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(142, 33, 87, 0.3);
+/* Contact Section */
+.contact-section {
+  margin: 6rem 0;
   
-  .dialog-title {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  }
-  
-  .close-button {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    border-radius: 50%;
-    color: #ffffff;
-    
-    mat-icon {
-      font-size: 24px;
-      width: 24px;
-      height: 24px;
-      color: #ffffff;
-    }
-    
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.15);
-    }
-    
-    &:active {
-      background-color: rgba(255, 255, 255, 0.25);
-    }
-  }
-}
-
-// Dialog Content Container - Only scrollable when used as dialog
-.dialog-content-container {
-  // Only apply scrollable styles when used as dialog
-  &.is-dialog {
-    max-height: 80vh;
-    overflow-y: auto;
-    
-    // Custom scrollbar styling
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
-    
-    &::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 3px;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 3px;
+  .contact-container {
+    .mission-heading {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3rem;
       
-      &:hover {
-        background: #555;
-      }
-    }
-  }
-  
-  // When not a dialog, allow natural flow
-  &:not(.is-dialog) {
-    max-height: none;
-    overflow-y: visible;
-  }
-}
-
-/* RTL Content */
-.rtl-content {
-  direction: rtl;
-  text-align: right;
-  
-  .dialog-header {
-    direction: rtl;
-    
-    .dialog-title {
-      text-align: right;
-      color: #ffffff;
-    }
-  }
-}
-
-/* RTL Form */
-.rtl-form {
-  direction: rtl;
-  text-align: right;
-
-  .mat-form-field {
-    text-align: right;
-    
-    .mat-form-field-prefix {
-      margin-left: 8px;
-      margin-right: 0;
-    }
-    
-    .mat-input-element {
-      text-align: right;
-      direction: rtl;
-    }
-  }
-}
-
-/* Bullet Points */
-.bullet-point {
-  position: absolute;
-  left: -20px;
-}
-
-.formset {
-  position: relative;
-}
-
-.rtl-bullet {
-  left: auto;
-  right: -20px;
-}
-
-/* RTL Checkboxes */
-.rtl-checkboxes {
-  direction: rtl;
-  
-  .col-sm-6 {
-    float: right;
-    text-align: right;
-  }
-}
-
-.bannerss-title {
-  font-size: 36px;
-  line-height: 44px;
-}
-
-/* Optional adjustments in contactus.component.scss */
-iframe {
-  border-radius: 16px;
-  margin-top: 20px;
-  height: 400px;
-}
-
-@media (max-width: 768px) {
-  iframe {
-    height: 400px;
-  }
-}
-
-.force-light {
-  background-color: #ffffff !important;
-  color: #000 !important;
-
-  .mat-form-field-infix {
-    background-color: #F5F8FA !important;
-    color: #000 !important;
-  }
-
-  input,
-  textarea,
-  .mat-select-value {
-    background-color: #F5F8FA !important;
-    color: #000 !important;
-  }
-
-  .mat-form-field-label,
-  .mat-select-placeholder,
-  .mat-select-value-text {
-    color: #000 !important;
-  }
-
-  .mat-form-field-outline {
-    color: #ccc !important;
-  }
-
-  .mat-checkbox-label {
-    color: #000 !important;
-  }
-
-  .mat-icon {
-    color: #000 !important;
-  }
-}
-
-// Dark theme support
-.dark-theme {
-  .dialog-header {
-    background: linear-gradient(135deg, #b52d73 0%, #8e2157 50%, #6d1940 100%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 2px 8px rgba(142, 33, 87, 0.4);
-    
-    .dialog-title {
-      color: #ffffff;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    }
-    
-    .close-button {
-      color: #ffffff;
-      
-      mat-icon {
-        color: #ffffff;
+      span {
+        color: var(--text-dark);
       }
       
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-      
-      &:active {
-        background-color: rgba(255, 255, 255, 0.3);
+      .text-primary {
+        color: var(--primary-blue) !important;
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: unset !important;
+        background-clip: unset !important;
       }
     }
-  }
-}
+    
+    .contact-card {
+      background: var(--white) !important;
+      border-radius: 30px;
+      padding: 3rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: var(--gradient-primary);
+      }
+      
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+        
+        .contact-item {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1.5rem;
+          background: var(--light-gray);
+          border-radius: 15px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: rgba(0, 116, 186, 0.05);
+            transform: translateY(-5px);
+          }
+          
+          .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            
+            &.location::before {
+              content: '📍';
+            }
+            
+            &.phone::before {
+              content: '📞';
+            }
+            
+            &.email::before {
+              content: '✉️';
+            }
+          }
+          
+          .contact-details {
+            h4 {
+              font-size: 1.1rem;
+              font-weight: 600;
+              color: var(--text-dark) !important;
+              margin: 0 0 0.5rem 0;
+            }
+            
+            p {
+              font-size: 1rem;
+              color: var(--text-dark) !important;
+              margin: 0;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      
+      .contact-cta {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-light);
+        
+        .cta-text {
+          font-size: 1.2rem;
+          color: var(--text-dark) !important;
+          margin-bottom: 2rem;
+          font-weight: 500;
+        }
 
-// Mobile responsive adjustments
-@media (max-width: 768px) {
-  .dialog-header {
-    padding: 12px 16px;
-    
-    .dialog-title {
-      font-size: 1.25rem;
-      color: #ffffff;
-    }
-    
-    .close-button {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
-      color: #ffffff;
-      
-      mat-icon {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        color: #ffffff;
+        
+        
+        .cta-button {
+          background: var(--gradient-primary);
+          color: var(--white);
+          padding: 1rem 2.5rem;
+          font-size: 1.1rem;
+          font-weight: 600;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 8px 25px rgba(0, 116, 186, 0.3);
+          text-decoration: none;
+          
+          &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 116, 186, 0.4);
+            background: var(--gradient-dark);
+          }
+        }
       }
     }
   }

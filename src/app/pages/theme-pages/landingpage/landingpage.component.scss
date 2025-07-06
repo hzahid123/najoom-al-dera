@@ -365,3 +365,37 @@
     }
   }
 }
+
+/* Feature item animation */
+.feature-item {
+ // opacity: 0; /* Ensure it's hidden initially */
+  animation: slideUp 0.5s ease-out forwards;
+
+
+  /* Mobile support for fade-in */
+  @media (max-width: 768px) {
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+}
+/* Keyframe for slide-up animation */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); /* Offscreen initially */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Final position */
+  }
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

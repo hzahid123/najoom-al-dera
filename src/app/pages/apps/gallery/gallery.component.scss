@@ -4,22 +4,41 @@
     margin: 0 auto;
     padding: 2rem 1rem;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: visible; // Ensure content isn't clipped
 }
 
-// Header Section
+// Header Section - Fixed version
 .gallery-header {
     text-align: center;
     margin-bottom: 3rem;
+    padding: 1rem 0; // Add padding to prevent text cut-off
+    overflow: visible; // Ensure content isn't clipped
 
     .gallery-title {
         font-size: clamp(2rem, 5vw, 3.5rem);
         font-weight: 700;
         color: #1a365d;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem; // Increased margin
+        line-height: 1.2; // Ensure proper line height
+        padding: 0.5rem 0; // Add padding to prevent gradient text cut-off
+        
+        // Fixed gradient text implementation
         background: linear-gradient(135deg, #2c5282, #3182ce);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        
+        // Fallback for browsers that don't support background-clip
+        @supports not (background-clip: text) {
+            background: none;
+            color: #1a365d;
+        }
+        
+        // Alternative approach - use regular color if gradient causes issues
+        // Uncomment below lines if gradient still causes problems
+        // background: none !important;
+        // color: #1a365d !important;
+        // -webkit-text-fill-color: initial !important;
     }
 
     .gallery-subtitle {
@@ -27,6 +46,65 @@
         color: #4a5568;
         font-weight: 400;
         margin: 0;
+        line-height: 1.4;
+        padding: 0.25rem 0;
+    }
+}
+
+// Alternative header styles if gradient text continues to cause issues
+.gallery-header-alternative {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+
+    .gallery-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        color: #2c5282; // Solid color instead of gradient
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        padding: 0.5rem 0;
+        text-shadow: 0 2px 4px rgba(44, 82, 130, 0.1);
+    }
+
+    .gallery-subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        color: #4a5568;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1.4;
+    }
+}
+
+// Responsive fixes for mobile
+@media (max-width: 768px) {
+    .gallery-container {
+        padding: 1rem 0.5rem;
+        
+        .gallery-header {
+            margin-bottom: 2rem;
+            padding: 0.75rem 0;
+            
+            .gallery-title {
+                padding: 0.75rem 0;
+                margin-bottom: 0.75rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        padding: 1rem 0.25rem;
+        
+        .gallery-header {
+            padding: 0.5rem 0;
+            
+            .gallery-title {
+                padding: 0.5rem 0;
+                margin-bottom: 0.5rem;
+            }
+        }
     }
 }
 
@@ -345,6 +423,8 @@
         transform: scale(1);
     }
 }
+
+
 
 // Responsive Design
 @media (max-width: 768px) {

@@ -1,140 +1,43 @@
-<div class="dialog-content-container" [class.is-dialog]="dialogRef">
-  <!-- Dialog Header with Close Button - Only show when used as dialog -->
-  <div class="dialog-header" *ngIf="dialogRef">
-    <h2 class="dialog-title">{{ 'CONTACT.CONTACT_US' | translate }}</h2>
-    <button mat-icon-button class="close-button" (click)="closeDialog()">
-      <mat-icon>close</mat-icon>
-    </button>
-  </div>
-
-  <form class="container spacer-bottom" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-    <div class="row justify-content-center text-center spacer-bottom">
-      <h1 style="margin: 60px; line-height: 40px;" class="banner-title ">
-        <span class="text-primary ">{{ 'CONTACT.LETS_TALK' | translate }}</span>
-      </h1>
-    </div>
-
-    <div class="row ">
-      <!-- Left Side Text -->
-           <!-- so this below (code d-none d-lg-flex) colapse dive which we want not show on mobile screen-->
-      <div class="col-lg-6 d-flex align-items-top d-none d-lg-flex ">
-    <div [class.rtl-content]="isRTL">
-      <h1 class="bannerss-title m-0">
-        {{ 'CONTACT.HAVE_PROJECT' | translate }}
-        <span class="text-primary">{{ 'CONTACT.WE_ARE_READY' | translate }}</span>
-      </h1>
-      <ul class="f-s-18 m-b-32 text-muted list-unstyled">
-        <li class="p-y-12 m-t-12 banner-subtitle position-relative">
-          <span class="bullet-point" [class.rtl-bullet]="isRTL">•</span>
-          {{ 'CONTACT.COMMITMENT' | translate }}
-        </li>
-        <li class="p-y-12 m-t-12 banner-subtitle position-relative">
-          <span class="bullet-point" [class.rtl-bullet]="isRTL">•</span>
-          {{ 'CONTACT.CONNECTION_DETAILS' | translate }}
-        </li>
-      </ul>
-
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13613.730043546202!2d74.285372!3d31.529801!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDMxJzQ3LjMiTiA3NMKwMTcnMDcuMyJF!5e0!3m2!1sen!2s!4v1718552800102!5m2!1sen!2s"
-      width="100%"
-      height="250"
-      
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-    </div>
-
-  </div>
-
-      <!-- Right Side Form -->
-      <div class=" formset col-md-6 col-lg-6"  [class.rtl-form]="isRTL">
-        <!-- Name -->
-        <mat-label class="f-s-14 f-w-600 d-block m-b-16">{{ 'CONTACT.NAME' | translate }}</mat-label>
-        <mat-form-field appearance="outline" class="w-100">
-          <input matInput [placeholder]="'CONTACT.NAME_PLACEHOLDER' | translate" 
-                 name="name" [(ngModel)]="formData.name" required />
-          <mat-icon matPrefix class="op-5">
-            <i-tabler name="user" class="icon-20 d-flex"></i-tabler>
-          </mat-icon>
-        </mat-form-field>
-
-        <!-- Company -->
-        <mat-label class="f-s-14 f-w-600 d-block m-b-16">{{ 'CONTACT.COMPANY' | translate }}</mat-label>
-        <mat-form-field appearance="outline" class="w-100">
-          <input matInput [placeholder]="'CONTACT.COMPANY_PLACEHOLDER' | translate" 
-                 name="company" [(ngModel)]="formData.company" required />
-          <mat-icon matPrefix class="op-5">
-            <i-tabler name="building-arch" class="icon-20 d-flex"></i-tabler>
-          </mat-icon>
-        </mat-form-field>
-
-        <!-- Email -->
-        <mat-label class="f-s-14 f-w-600 d-block m-b-16">{{ 'CONTACT.EMAIL' | translate }}</mat-label>
-        <mat-form-field appearance="outline" class="w-100">
-          <input matInput type="email" [placeholder]="'CONTACT.EMAIL_PLACEHOLDER' | translate" 
-                 name="email" [(ngModel)]="formData.email" required />
-          <mat-icon matPrefix class="op-5">
-            <i-tabler name="mail" class="icon-20 d-flex"></i-tabler>
-          </mat-icon>
-        </mat-form-field>
-
-        <!-- Region -->
-        <mat-label class="f-s-14 f-w-600 d-block m-b-16">{{ 'CONTACT.REGION' | translate }}</mat-label>
-        <mat-form-field appearance="outline" class="w-100">
-          <mat-select name="region" [(ngModel)]="formData.region" required>
-            <mat-option *ngFor="let region of regions" [value]="region.id">
-              {{ region.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <!-- Phone -->
-        <mat-label class="f-s-14 f-w-600 d-block m-b-16">{{ 'CONTACT.PHONE' | translate }}</mat-label>
-        <mat-form-field appearance="outline" class="w-100">
-          <input matInput [placeholder]="'CONTACT.PHONE_PLACEHOLDER' | translate" 
-                 name="phone" [(ngModel)]="formData.phone" required />
-          <mat-icon matPrefix class="op-5">
-            <i-tabler name="phone" class="icon-20 d-flex"></i-tabler>
-          </mat-icon>
-        </mat-form-field>
-
-        <!-- Budget -->
-        <mat-label class="f-s-14 f-w-600 d-block m-b-16">{{ 'CONTACT.BUDGET' | translate }}</mat-label>
-        <mat-form-field appearance="outline" class="w-100">
-          <mat-select name="budget" [(ngModel)]="formData.budget">
-            <mat-option *ngFor="let budget of budgets" [value]="budget.id">
-              {{ budget.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <!-- Services -->
-        <mat-label class="f-s-14 f-w-600 d-block m-b-16">{{ 'CONTACT.SERVICES_NEEDED' | translate }}</mat-label>
-        <div class="row" [class.rtl-checkboxes]="isRTL">
-          <div class="col-sm-6" *ngFor="let key of getServiceKeys()">
-            <mat-checkbox [(ngModel)]="formData.services[key]" [ngModelOptions]="{standalone: true}">
-              {{ getServiceLabel(key) }}
-            </mat-checkbox>
+ <!-- Contact Section -->
+        <div class="contact-section">
+          <div class="contact-container">
+            <h1 class="mission-heading">
+              <span>Get In </span>
+              <span class="text-primary">Touch</span>
+            </h1>
+            <mat-card class="contact-card">
+              <mat-card-content>
+                <div class="contact-info">
+                  <div class="contact-item">
+                    <div class="contact-icon location"></div>
+                    <div class="contact-details">
+                      <h4>Location</h4>
+                      <p>Kuwait</p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <div class="contact-icon phone"></div>
+                    <div class="contact-details">
+                      <h4>Phone</h4>
+                      <p>+965 9668 6771</p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <div class="contact-icon email"></div>
+                    <div class="contact-details">
+                      <h4>Email</h4>
+                      <p>haseebzahid908&#64;gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="contact-cta" >
+                  <p class="cta-text">Ready to transform your space with premium upholstery?</p>
+                  <a  href="https://wa.me/+96596686771" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="cta-button">
+                    Contact Us Today
+                  </a>
+                </div>
+              </mat-card-content>
+            </mat-card>
           </div>
         </div>
-
-        <!-- Project Details -->
-        <mat-label class="f-s-14 f-w-600 d-block m-b-16 m-t-8">{{ 'CONTACT.PROJECT_DETAILS' | translate }}</mat-label>
-        <mat-form-field appearance="outline" class="w-100">
-          <textarea matInput rows="5" name="projectDetails" [(ngModel)]="formData.projectDetails"></textarea>
-        </mat-form-field>
-
-        <!-- Submit Button -->
-        <div class="row" [class.justify-content-end]="!isRTL" [class.justify-content-start]="isRTL">
-          <div class="col-sm-12">
-            <button mat-flat-button color="primary" class="w-100" type="submit">
-              {{ 'CONTACT.SEND' | translate }}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>

@@ -162,15 +162,11 @@
         <!-- features -->
         <div class="row m-t-24">
     @for(feature of translatedFeatures.slice(0, visibleFeatureCount); track feature.id) {
-          <div class="col-sm-4 col-lg-3 text-center">
-            <i-tabler [name]="feature.icon" class="icon-40 text-primary m-t-16"></i-tabler>
-            <h6 class="m-0 f-s-18 f-w-600 m-b-8 m-t-24">
-              {{ feature.translatedTitle }}
-            </h6>
-            <span class="f-s-14 m-b-24 d-block lh-base">{{
-              feature.translatedSubtext
-              }}</span>
-          </div>
+       <div class="col-sm-4 col-lg-3 text-center feature-item">
+    <i-tabler [name]="feature.icon" class="icon-40 text-primary m-t-16"></i-tabler>
+    <h6 class="m-0 f-s-18 f-w-600 m-b-8 m-t-24">{{ feature.translatedTitle }}</h6>
+    <span class="f-s-14 m-b-24 d-block lh-base">{{ feature.translatedSubtext }}</span>
+  </div>
           }
         </div>
           <!-- View More Button (if needed) -->
